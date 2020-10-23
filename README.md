@@ -9,6 +9,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 ### Organisation Features:
 - Organisation can set up sites or buildings with details of desk capacity with available and reserved desk.
 - Modify or delete existing setup.
+- Dashboard to view present state and availability. 
 
 ### Employee Features:
 - Employee can choose date and reserve desk prior coming to office.
