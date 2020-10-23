@@ -18,7 +18,7 @@ Employee Features:
 - Booking confirmation alert.
 
 Generic Requirement.
-- Organisation and Employee login for separate operations.
+- Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
 
 
