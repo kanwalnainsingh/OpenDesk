@@ -22,7 +22,7 @@ Generic Requirement.
 - Data security and privacy is crucial.
 
 
-#Note: 
+# Note: 
 - We are about to kick start this project. We welcome pull request feel free to comment or reach out to us. 
 - We welcome suggestions from everyone tech or non tech. 
 - If you are new to open source this is the perfect place to start.
