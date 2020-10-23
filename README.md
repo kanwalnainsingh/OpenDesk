@@ -1,4 +1,4 @@
-# OpenDeskt
+# OpenDest
 OpenDesk is an open source project for helping organisation optimize utilization office desk utilization. System will enable employees to reserve their desk when they want to work from office.
 
 # Why would organisation need OpenDesk?
