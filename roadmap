@@ -1,1 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2020-10-23T18:30:46.144Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36" version="13.8.1" etag="5mY4vTN1EQZOxrYzb3Xn" type="github"><diagram name="Page-1" id="d9b1e647-80fa-b4a2-5024-87a742678bcc">7VpLk9o4EP41HJPyk8cxwwxJbSV7Ybf2LOQGVJEljywBs79+uyWZx5hUclgCB3PA7ofUra+bz1LhUT6vD58Na7bfdAVylCXVYZQ/j7IsLfICL6R5C5piNguKjRFVdDopluJfiMokap2ooL1wtFpLK5pLJddKAbcXOmaM3l+6rbW8jNqwDfQUS85kX/uPqOw2atMkORm+gNhsY+hpGQ0rxr9vjHYqxhtl+dp/grlm3VzRv92ySu/PVPnLKJ8brW24qw9zkIRtB1sYt/iB9Zi3AWV/ZUA5WcOYrYAn03VS8NWHOMOOSRex+IOpmKt96/DBtBu6bS00o/xpvxUWlg3jpNtjS6Bua2uJUoq3a61srHE2JVlIOddSGz9ZniTTZLGIfmf6hf+gvrVGf4fOorTCmZ76K+1SB2PhcKaKK/8MugZr3tAlWmexCLFJ02mU92cln0Td9rzaUcdil22OM5+QxpsI9i8Cn/WA/8bMrYGflC/TOwCfFY+EfH4F+bdbIz+ezOd3QD5/qJ4v+mTj5O2hz+bFHaAvH6rpyx70SwT3xsiXs6fkDsiPH6rpxz3k/9S7WyNfPOMO7PcjP32onp/0kM+SdNKDHtdmL+G9Cs87jMfp0yePJZNio1DHETZA4xPBJXBv+SkaalFVFOtqUc8qWXYstYy5pf0KHiv7PxQrzd4VK+0Xazq+UqzxLYo17RXrqzZQ05CmdXStPAxYOmEpOIYcZfNwKGjxUADWkZVVohGt4EJtUAIpolcLlZ+DlMK1tSbRQt34OYXiohKVUzS1oy/JVhifvG0XG/yOfqMYhZHi1bGPePc32UGJ2gcnFxGEHSpZHaK/OtHiRWlsLUdOcADDhWVWaEUhpWQ1113c4IzL6LLx4UTjB9IX8+uucRW6QwDTsZTPcwjFnKV8hXE+7w48QdEMNAa2oCowHkuv3GnpGkwIfOoetwTalkSOrX8qgQfF4dfabQQjN0Xph3ZEhTOUxsuBQ2PBhYp5XDXnDLgfwV0jKmbDaI9AYzSeAVVXrVAJnxh3smEBQ5pkvcbikownRjDBr9YyJMwC9MJD3B7r6GpMaSzpZ77ChMYbulv6jvDwNmDahqa1Hjs8ztEida28KFoPisKlkQh44Dz14RE2X3/OXcuUFWdo1a8OfB6u6iy0QqstNUcSehzJ3xybBVgYgo0f1s1IYitSSak9LthcNpRiR0WMifteRX/fOMxwIhxuacQKEG3vLsK1EtyyE9JwaCSS1kp//BE/tkhc+KP6SyNtPeN+oseI8eD704dXR5gS1vaSAdMsygtWC0m09AXkDohN34WLnHyr59jx4B+pMbv2HCuuUGMxuQU3zgZuHLhx4MaBGx+BG7Pyobix27QO5DiQ40COAznelxyLx9o4pv2/dwZyHMhxIMeBHO9AjuWD7Rz7f8EO5DiQ40COAznegRwnD7Zz7L8lMZDjQI4DOQ7keAdynJbl7yNHFE8vZHrb2Vuv+ct/</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-10-23T18:35:49.226Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36" etag="5FQ4nnL8zcLYQJEanhIw" version="13.8.1" type="github">
+  <diagram name="Page-1" id="d9b1e647-80fa-b4a2-5024-87a742678bcc">
+    <mxGraphModel dx="1298" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="57fe6abec08f04cb-1" value="Nov" style="shape=step;whiteSpace=wrap;html=1;fontSize=28;fillColor=#0080FF;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="380" y="180" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="57fe6abec08f04cb-2" value="Dec" style="shape=step;whiteSpace=wrap;html=1;fontSize=28;fillColor=#0075E8;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="530" y="180" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="57fe6abec08f04cb-7" value="2020" style="text;html=1;strokeColor=none;fillColor=#61BAFF;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=54;fontStyle=1;fontColor=#004D99;" parent="1" vertex="1">
+          <mxGeometry x="440" y="100" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7pB8ujKH-J7-7kAcaJtY-1" value="&lt;ol style=&quot;font-size: 16px&quot;&gt;&lt;li&gt;Minimum feature list.&lt;/li&gt;&lt;li&gt;Architecture&amp;nbsp;&lt;/li&gt;&lt;li&gt;Technical Stack&lt;/li&gt;&lt;li&gt;Hello Open Desk&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="280" width="200" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
