@@ -2,7 +2,7 @@
 
 ## Road Map 2020 
 
-![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/plainning/roadmap_2020.jpg)
+![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/planning/roadmap_2020.jpg)
 
 November: 
 - The minimum requirement to kick start.
