@@ -8,6 +8,10 @@ November:
 - Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
 - Hello Open Desk project structure and running code base. All features not critical.
 
+December: 
+- CD CI setup.
+- Go live public url to access the application.
+
 ## Architecture Diagram
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
