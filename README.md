@@ -22,6 +22,8 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
 
+## Refer Plan below
+ https://github.com/kanwalnainsingh/OpenDesk/blob/main/docs/planning/README.md
 
 ## Note: 
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
