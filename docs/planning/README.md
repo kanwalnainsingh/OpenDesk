@@ -2,7 +2,7 @@
 
 ## Road Map 2020 
 
-![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/planning/roadmap_2020.jpg)
+![N|Solid](images/roadmap_2020.jpg)
 
 November: 
 - The minimum requirement to kick start.
@@ -17,7 +17,7 @@ December:
 
 ## Architecture Diagram
 
-![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/planning/Architecture.jpg)
+![Solid](images/Architecture.jpg)
 
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
@@ -25,6 +25,10 @@ December:
 - Booking Service: Microservice will allow the employee to book or reserve desk.
 - Authentication Service: Authentication and authorisation using SSO(Single Sign On).   
 - UI: Front end layer that will communicate with microservices to fetch data and perform all operations from UI.
+
+## Wireframe:
+### Organization On boarding
+![N|Solid](images/Organization_Onboarding_Wireframe_V1.jpg)
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
