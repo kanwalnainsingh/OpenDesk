@@ -22,7 +22,16 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
 
-## Refer Plan below
+
+## Tentative tech stack:
+- Java
+- Spring 
+- ReactJS
+- Docker
+- Kubernetes
+- AWS Cloud
+
+## Refer Plan below:
  https://github.com/kanwalnainsingh/OpenDesk/blob/main/docs/planning/README.md
 
 ## Note: 
