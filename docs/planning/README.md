@@ -2,7 +2,7 @@
 
 ## Road Map 2020 
 
-![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/Initial_Planning/docs/main/roadmap_2020.jpg)
+![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/plainning/roadmap_2020.jpg)
 
 November: 
 - The minimum requirement to kick start.
@@ -17,7 +17,7 @@ December:
 
 ## Architecture Diagram
 
-![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/Initial_Planning/docs/main/Architecture.jpg)
+![N|Solid](https://raw.githubusercontent.com/kanwalnainsingh/OpenDesk/main/docs/planning/Architecture.jpg)
 
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
