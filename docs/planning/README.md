@@ -17,7 +17,7 @@ December:
 
 ## Architecture Diagram
 
-![Solid](images/Architecture.jpg)
+![Solid](images/architecture_v1.jpg)
 
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
@@ -28,7 +28,10 @@ December:
 
 ## Wireframe:
 ### Organization On boarding
-![N|Solid](images/Organization_Onboarding_Wireframe_V1.jpg)
+![N|Solid](images/organization_onboarding_wireframe_v1.jpg)
+
+### User Journey
+![N|Solid](images/user_journey_wireframe_v1.jpg)
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
