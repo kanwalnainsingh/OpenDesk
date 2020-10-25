@@ -44,3 +44,6 @@ December:
 Site: Each organisation has multiple office. Each office location refereed as a site. e.g. Headquarter is one site.
 Need a kick start on how to start connect with me on linkedin. https://www.linkedin.com/in/kanwalnainsingh/ 
  
+## Join slack below for discussions
+
+https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
