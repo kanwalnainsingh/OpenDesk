@@ -31,8 +31,13 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Kubernetes
 - AWS Cloud
 
-## Refer Plan below:
+## To know more details about project and architecture refer below:
+
  https://github.com/kanwalnainsingh/OpenDesk/blob/main/docs/planning/README.md
+
+## Join slack below for discussions
+
+https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
 
 ## Note: 
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
