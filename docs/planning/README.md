@@ -9,13 +9,20 @@ November:
 - Initial Architecture diagram.
 - Finalise the technical stack.
 - Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk project structure and running code base. All features not critical.
+- Hello Open Desk project structure and running code base.
 
 December: 
 - CD CI setup.
 - Go live public url to access the application.
 
-## Architecture Diagram
+## Wireframe:
+### Organization On boarding
+![N|Solid](images/organization_onboarding_wireframe_v1.jpg)
+
+### User Journey
+![N|Solid](images/user_journey_wireframe_v1.jpg)
+
+## High Architecture Diagram
 
 ![Solid](images/architecture_v1.jpg)
 
@@ -26,12 +33,8 @@ December:
 - Authentication Service: Authentication and authorisation using SSO(Single Sign On).   
 - UI: Front end layer that will communicate with microservices to fetch data and perform all operations from UI.
 
-## Wireframe:
-### Organization On boarding
-![N|Solid](images/organization_onboarding_wireframe_v1.jpg)
-
-### User Journey
-![N|Solid](images/user_journey_wireframe_v1.jpg)
+## Microservice Architecture 
+![Solid](images/technical_architecture_v1.jpg)
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
