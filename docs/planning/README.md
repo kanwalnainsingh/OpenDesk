@@ -34,7 +34,13 @@ December:
 - UI: Front end layer that will communicate with microservices to fetch data and perform all operations from UI.
 
 ## Microservice Architecture 
-![Solid](images/technical_architecture_v1.jpg)
+![Solid](images/microservice_design_v1.jpg)
+- RestController will expose api endpoint and talk to other service layers to perform operations and send response back to client.
+- ValidationService purpose will be validate request and send response back to caller and return response back. 
+- LogicService will have all the business and processing logic e.g. filtering.
+- PresentationService is the transformation layer that will convert into desired presentation state or response. 
+- RepositoryService will perform database operations i.e. CRUD
+- APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
