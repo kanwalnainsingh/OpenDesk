@@ -35,13 +35,22 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
  https://github.com/kanwalnainsingh/OpenDesk/blob/main/docs/planning/README.md
 
+## Code of Conduct 
+
+- Please refer code of conduct at [Code of coduct](code-of-conduct.md)
+
+## How to submit a pull request.
+- Look at the existing issue or raise a new issue. Get clarity on the requirement.
+- Refer https://jarv.is/notes/how-to-pull-request-fork-github/ to get details on how to raise a pull request. 
+
 ## Join slack below for discussions
 
 https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
+
 
 ## Note: 
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
 - We welcome suggestions from everyone tech or non tech.
 - If you are new to open source this is the perfect place to start.
 
-Need a kick start on how to start connect with me on linkedin. https://www.linkedin.com/in/kanwalnainsingh/ 
+Need a kick start on how to start connect with me on linkedin. https://www.linkedin.com/in/kanwalnainsingh/  or join slack https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 

@@ -42,6 +42,15 @@ December:
 - RepositoryService will perform database operations i.e. CRUD
 - APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
+
+## Code of Conduct 
+- Please refer code of conduct at [Code of coduct](code-of-conduct.md)
+
+## How to submit a pull request.
+- Look at the existing issue or raise a new issue. Get clarity on the requirement.
+- Refer https://jarv.is/notes/how-to-pull-request-fork-github/ to get details on how to raise a pull request. 
+
+
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
 - We welcome suggestions from everyone tech or non tech.
