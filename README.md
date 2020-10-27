@@ -33,7 +33,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## To know more details about project and architecture refer below:
 
- https://github.com/kanwalnainsingh/OpenDesk/blob/main/docs/planning/README.md
+ [High Level Plan and Architecture](./docs/planning/README.md)
 
 ## Code of Conduct 
 
@@ -45,7 +45,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## Join slack below for discussions
 
-https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
+[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA)
 
 
 ## Note: 
@@ -53,4 +53,4 @@ https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0Jgb
 - We welcome suggestions from everyone tech or non tech.
 - If you are new to open source this is the perfect place to start.
 
-Need a kick start on how to start connect with me on linkedin. https://www.linkedin.com/in/kanwalnainsingh/  or join slack https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
+Need a kick start on how to start connect with me on linkedin. [Kanwal Nain Singh](https://www.linkedin.com/in/kanwalnainsingh/)  or join [Slack](https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 

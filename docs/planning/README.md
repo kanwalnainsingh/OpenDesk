@@ -48,7 +48,7 @@ December:
 
 ## How to submit a pull request.
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
-- Refer https://jarv.is/notes/how-to-pull-request-fork-github/ to get details on how to raise a pull request. 
+- Refer [How to submit pull request ](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request. 
 
 
 ## Note:
@@ -64,4 +64,4 @@ Need a kick start on how to start connect with me on linkedin. https://www.linke
  
 ## Join slack below for discussions
 
-https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA 
+[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 
