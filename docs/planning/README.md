@@ -42,6 +42,11 @@ December:
 - RepositoryService will perform database operations i.e. CRUD
 - APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
+## Frontend Architecture
+![Solid](images/architecture_frontend_organization.jpg)
+- For first time login - Organisation will setup site details and floor details
+- Future Login - Organisation can add more site / update existing site.
+
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
 - We welcome suggestions from everyone tech or non tech.
