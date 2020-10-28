@@ -18,10 +18,11 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Cancellation of existing reservations.
 - Booking confirmation alert.
 
-### Generic Requirement.
+## Future Release.
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
-
+- Department segregation
+- Desk map configrations and upload for organisation. 
 
 ## Tentative tech stack:
 - Java
@@ -39,9 +40,9 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 - Please refer code of conduct at [Code of coduct](code-of-conduct.md)
 
-## How to submit a pull request.
+## How to contribute
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
-- Refer https://jarv.is/notes/how-to-pull-request-fork-github/ to get details on how to raise a pull request. 
+- Refer [Pull Request Steps](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request. 
 
 ## Join slack below for discussions
 
