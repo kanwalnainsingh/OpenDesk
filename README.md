@@ -24,14 +24,6 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Department segregation
 - Desk map configrations and upload for organisation. 
 
-## Tentative tech stack:
-- Java
-- Spring 
-- ReactJS
-- Docker
-- Kubernetes
-- AWS Cloud
-
 ## To know more details about project and architecture refer below:
 
  [High Level Plan and Architecture](./docs/planning/README.md)
