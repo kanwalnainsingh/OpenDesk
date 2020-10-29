@@ -1,3 +1,4 @@
+![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
 # OpenDesk
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
 
