@@ -43,9 +43,13 @@ December:
 - APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
 ## Frontend Architecture
-![Solid](images/architecture_frontend_organization.jpg)
-- For first time login - Organisation will setup site details and floor details
-- Future Login - Organisation can add more site / update existing site.
+![Solid](images/Organization_Architechture.jpg)
+- Import Layout.js in App.js. Under Layout SetupBuilder.js & OrganizationBuilder.js present.
+- Based on login (First time on-boarding / future login), Setup Builder / Organization Builder will come up as a landing page.
+- On submit form POST call will happen in SetupBuilder.js, which will insert data for the organization in DB. 
+- Import Organization.js in OrganizationBuilder.js, on update state after GET call Organization will upload with previously saved data. Site details will be displayed in Organization cards.
+- Import Floor.js in Organization.js. On click on Organization card, Floor.js will upload. Floor.js will contain data of floor details for particular site.
+- HOC / Auxiliary.js will wrap all the components.
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
