@@ -50,6 +50,7 @@ December:
 - Import Organization.js in OrganizationBuilder.js, on update state after GET call Organization will upload with previously saved data. Site details will be displayed in Organization cards.
 - Import Floor.js in Organization.js. On click on Organization card, Floor.js will upload. Floor.js will contain data of floor details for particular site.
 - HOC / Auxiliary.js will wrap all the components.
+- CSS files will be along with .js file. As per requirement .css file name can change to .module.css so that css will apply particularly on .js file.
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
