@@ -5,7 +5,7 @@ import github.opendesk.bookingservice.model.BookingModel;
 
 import java.util.function.Function;
 
-public class BookingConvertor {
+public class BookingConverter {
 
     public static Function<BookingDao, BookingModel> bookingDaoToBookingModel
             = new Function<BookingDao, BookingModel>() {
@@ -35,7 +35,7 @@ public class BookingConvertor {
                    .bookingId(bookingModel.getBookingId())
                    .bookingTime(bookingModel.getBookingTime())
                    .floorId(bookingModel.getFloorId())
-                   .orgId(bookingModel.getFloorId()).build();
+                   .orgId(bookingModel.getOrgId()).build();
             return bookingDao;
         }
     };

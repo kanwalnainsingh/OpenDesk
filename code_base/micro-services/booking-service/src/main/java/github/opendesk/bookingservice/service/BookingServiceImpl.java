@@ -3,8 +3,8 @@ package github.opendesk.bookingservice.service;
 import github.opendesk.bookingservice.dao.BookingDao;
 import github.opendesk.bookingservice.model.BookingModel;
 import github.opendesk.bookingservice.repository.BookingRepository;
-import static github.opendesk.bookingservice.converter.BookingConvertor.bookingDaoToBookingModel;
-import static github.opendesk.bookingservice.converter.BookingConvertor.bookingModelToBookingDao;
+import static github.opendesk.bookingservice.converter.BookingConverter.bookingDaoToBookingModel;
+import static github.opendesk.bookingservice.converter.BookingConverter.bookingModelToBookingDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
