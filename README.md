@@ -33,7 +33,9 @@ November:
 - Initial Architecture diagram.
 - Finalise the technical stack.
 - Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk project structure and running code base.
+- Hello Open Desk deployed on Cloud with Public URL.
+  - Organisation onboarding with offices, floor and desk setup.  
+  - Employee shoudld be able to book a desk on selected floor office. 
 
 December: 
 - CD CI setup.
