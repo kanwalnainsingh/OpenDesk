@@ -1,10 +1,10 @@
-package com.opendesk;
+package github.opendesk;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class OrganisationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
