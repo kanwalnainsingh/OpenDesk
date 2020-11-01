@@ -1,20 +1,5 @@
 # OpenDesk Design Documents
 
-## Road Map 2020 
-
-![N|Solid](images/roadmap_2020.jpg)
-
-November: 
-- The minimum requirement to kick start.
-- Initial Architecture diagram.
-- Finalise the technical stack.
-- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk project structure and running code base.
-
-December: 
-- CD CI setup.
-- Go live public url to access the application.
-
 ## Wireframe:
 ### Organization On boarding
 ![N|Solid](images/organization_onboarding_wireframe_v1.jpg)
