@@ -1,0 +1,34 @@
+.my_d{
+    display: inline-flex;
+    align-content: center;
+}
+
+#desk{
+    margin-left: 50px;
+    margin-top: 75px;
+}
+#d{
+    color: white;
+    border: 2px solid hsl(194, 68%, 36%);
+    padding: 25px;
+    margin-top: 35px;
+    margin-left: 10px;
+    background-color:  hsl(194, 68%, 36%);
+}
+.open_desk{
+    font-weight: bold;
+    margin: 65px auto;
+}
+
+
+/* Here we will Using Media query For Mobile Screen*/
+
+@media (max-width: 575px) {
+    .my_d{
+        width: 575px;
+    }
+    .open_desk{
+        margin-top: 75px;
+        margin-right: 75px;
+    }
+}
