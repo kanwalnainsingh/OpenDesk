@@ -1,3 +1,4 @@
+![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
 # OpenDesk
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
 
@@ -18,18 +19,28 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Cancellation of existing reservations.
 - Booking confirmation alert.
 
-### Generic Requirement.
+## Future Release.
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
+- Department segregation
+- Desk map configrations and upload for organisation. 
 
+## Road Map
+![N|Solid](docs/planning/images/roadmap_2020.jpg)
 
-## Tentative tech stack:
-- Java
-- Spring 
-- ReactJS
-- Docker
-- Kubernetes
-- AWS Cloud
+November: 
+- The minimum requirement to kick start.
+- Initial Architecture diagram.
+- Finalise the technical stack.
+- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
+- Hello Open Desk deployed on Cloud with Public URL.
+  - Organisation onboarding with offices, floor and desk setup.  
+  - Employee shoudld be able to book a desk on selected floor office. 
+
+December: 
+- CD CI setup.
+- Go live public url to access the application.
+
 
 ## To know more details about project and architecture refer below:
 
@@ -39,9 +50,9 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 - Please refer code of conduct at [Code of coduct](code-of-conduct.md)
 
-## How to submit a pull request.
+## How to contribute
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
-- Refer https://jarv.is/notes/how-to-pull-request-fork-github/ to get details on how to raise a pull request. 
+- Refer [Pull Request Steps](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request. 
 
 ## Join slack below for discussions
 

@@ -1,0 +1,21 @@
+.logo-color{
+    color: #00acc1;
+    font-weight: bold;
+    margin-bottom: 70px;
+}
+.company_image{
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+@media (max-width: 575px) {
+    .p_text{
+        margin-right: 40px;
+    }
+    .mobile_screen_1{
+        margin-left: 60px;
+    }
+}
