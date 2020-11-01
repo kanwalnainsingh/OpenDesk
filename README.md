@@ -25,6 +25,21 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Department segregation
 - Desk map configrations and upload for organisation. 
 
+## Road Map
+![N|Solid](docs/planning/images/roadmap_2020.jpg)
+
+November: 
+- The minimum requirement to kick start.
+- Initial Architecture diagram.
+- Finalise the technical stack.
+- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
+- Hello Open Desk project structure and running code base.
+
+December: 
+- CD CI setup.
+- Go live public url to access the application.
+
+
 ## To know more details about project and architecture refer below:
 
  [High Level Plan and Architecture](./docs/planning/README.md)
