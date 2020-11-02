@@ -1,0 +1,32 @@
+.border_top{
+    margin-top: 50px;
+    border-top: 5px solid #00acc1;
+    border-left: 6px solid #00acc1;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.text_area{
+    margin-left: 10px;
+}
+
+.btn_style{
+    margin-top: 150px;
+    margin-right: 50px;
+}
+.text_color{
+    color: white;
+    border-radius: 15px;
+    background-color: #00acc1;
+}
+
+
+/* Here we will Using Media query For Mobile Screen*/
+@media (max-width: 575px) {
+
+    .mobile_screen_3{
+     width: 450px;
+    }
+    .btn_style{
+        margin-top: 270px;
+    }
+}

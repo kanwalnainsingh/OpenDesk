@@ -1,20 +1,5 @@
 # OpenDesk Design Documents
 
-## Road Map 2020 
-
-![N|Solid](images/roadmap_2020.jpg)
-
-November: 
-- The minimum requirement to kick start.
-- Initial Architecture diagram.
-- Finalise the technical stack.
-- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk project structure and running code base.
-
-December: 
-- CD CI setup.
-- Go live public url to access the application.
-
 ## Wireframe:
 ### Organization On boarding
 ![N|Solid](images/organization_onboarding_wireframe_v1.jpg)
@@ -43,13 +28,22 @@ December:
 - APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
 
+## Frontend Architecture
+![Solid](images/Organization_Architechture.jpg)
+- Import Layout.js in App.js. Under Layout SetupBuilder.js & OrganizationBuilder.js present.
+- Based on login (First time on-boarding / future login), Setup Builder / Organization Builder will come up as a landing page.
+- On submit form POST call will happen in SetupBuilder.js, which will insert data for the organization in DB. 
+- Import Organization.js in OrganizationBuilder.js, on update state after GET call Organization will upload with previously saved data. Site details will be displayed in Organization cards.
+- Import Floor.js in Organization.js. On click on Organization card, Floor.js will upload. Floor.js will contain data of floor details for particular site.
+- HOC / Auxiliary.js will wrap all the components.
+- CSS files will be along with .js file. As per requirement .css file name can change to .module.css so that css will apply particularly on .js file.
+
 ## Code of Conduct 
 - Please refer code of conduct at [Code of coduct](code-of-conduct.md)
 
 ## How to submit a pull request.
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
-- Refer [How to submit pull request ](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request. 
-
+- Refer [How to submit pull request ](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request.
 
 ## Note:
 - We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
