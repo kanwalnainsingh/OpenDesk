@@ -1,17 +1,14 @@
 package github.opendesk.bookingservice.converter;
 
 import github.opendesk.bookingservice.dao.BookingDao;
-import github.opendesk.bookingservice.model.BookingModel;
+import github.opendesk.bookingservice.model.Booking;
 
 import java.util.function.Function;
 
 public class BookingConverter {
 
-    public static Function<BookingDao, BookingModel> bookingDaoToBookingModel
-            = new Function<BookingDao, BookingModel>() {
-
-        public BookingModel apply(BookingDao bookingDao) {
-            BookingModel bookingModel = BookingModel.builder()
+    public static Function<BookingDao, Booking> bookingDaoToBookingModel
+            = bookingDao -> Booking.builder()
                     .userId(bookingDao.getUserId())
                     .siteId(bookingDao.getSiteId())
                     .bookingDate(bookingDao.getBookingDate())
@@ -20,23 +17,14 @@ public class BookingConverter {
                     .floorId(bookingDao.getFloorId())
                     .orgId(bookingDao.getOrgId())
                     .build();
-             return bookingModel;
-        }
-    };
 
-    public static Function<BookingModel, BookingDao> bookingModelToBookingDao
-            = new Function<BookingModel, BookingDao>() {
-
-        public  BookingDao apply( BookingModel  bookingModel) {
-           BookingDao bookingDao = BookingDao.builder()
-                   .userId(bookingModel.getUserId())
-                   .siteId(bookingModel.getSiteId())
-                   .bookingDate(bookingModel.getBookingDate())
-                   .bookingId(bookingModel.getBookingId())
-                   .bookingTime(bookingModel.getBookingTime())
-                   .floorId(bookingModel.getFloorId())
-                   .orgId(bookingModel.getOrgId()).build();
-            return bookingDao;
-        }
-    };
+    public static Function<Booking, BookingDao> bookingModelToBookingDao
+            = booking -> BookingDao.builder()
+                    .userId(booking.getUserId())
+                    .siteId(booking.getSiteId())
+                    .bookingDate(booking.getBookingDate())
+                    .bookingId(booking.getBookingId())
+                    .bookingTime(booking.getBookingTime())
+                    .floorId(booking.getFloorId())
+                    .orgId(booking.getOrgId()).build();
 }
