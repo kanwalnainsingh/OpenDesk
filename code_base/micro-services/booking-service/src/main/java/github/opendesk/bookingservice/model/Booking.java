@@ -6,7 +6,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookingModel {
+public class Booking {
     private String bookingId;
     private String siteId;
     private String bookingDate;
