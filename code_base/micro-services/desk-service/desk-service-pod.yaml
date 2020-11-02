@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: desk-service-pod
+  labels:
+    app: desk-service
+spec:
+  restartPolicy: Never
+  volumes:
+    - name: shared-data
+      emptyDir: {}
+
+  containers:
+    - name: desk-service-container
+      ports:
+      - containerPort: 8080
+      image: kanwalnainsingh/opendesk-desk-service:0.1-SNAPSHOT
+      args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+      volumeMounts:
+        - name: shared-data
+          mountPath: /tmp
+
+    - name: redis-container
+      image: redis
+      ports:
+        - containerPort: 6379
+      volumeMounts:
+        - name: shared-data
+          mountPath: /tmp
