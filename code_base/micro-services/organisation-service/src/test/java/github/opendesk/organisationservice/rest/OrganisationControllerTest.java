@@ -37,7 +37,7 @@ public class OrganisationControllerTest extends BaseTest {
     @Test
     public void getOrganisationByIdTest() throws Exception {
         when(organisationService.getOrganisationById(anyString())).thenReturn(getOrganisation());
-        RequestBuilder request = MockMvcRequestBuilders.get("/organisation/1").accept(MediaType.APPLICATION_JSON);
+        RequestBuilder request = MockMvcRequestBuilders.get("/organisation/{id}","orgId").accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
         String expected = "{ \"companyName\": \"companyName1\"}";
         JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
@@ -60,7 +60,7 @@ public class OrganisationControllerTest extends BaseTest {
     @Test
     public void getSiteByIdTest() throws Exception {
         when(organisationService.getSiteByID(anyString())).thenReturn(getSite());
-        RequestBuilder request = MockMvcRequestBuilders.get("/organisation/sites/siteId").accept(MediaType.APPLICATION_JSON);
+        RequestBuilder request = MockMvcRequestBuilders.get("/organisation/sites/{id}", "siteId").accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
         String expected = "{ \"siteId\": \"siteId\"}";
         JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
@@ -69,7 +69,7 @@ public class OrganisationControllerTest extends BaseTest {
     @Test
     public void createOrganisationTest() throws Exception {
         when(organisationService.createOrganisation(any())).thenReturn(getOrganisation());
-        RequestBuilder request = MockMvcRequestBuilders.post("/organisation/create").content(expectedResponse).contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
+        RequestBuilder request = MockMvcRequestBuilders.post("/organisation").content(expectedResponse).contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request).andExpect(status().isCreated()).andReturn();
         String expected = "{ \"companyName\": \"companyName1\"}";
         JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
@@ -80,8 +80,8 @@ public class OrganisationControllerTest extends BaseTest {
     public void addSiteTest() throws Exception {
         when(organisationService.getOrganisationById(anyString())).thenReturn(getOrganisation());
         when(organisationService.addSite(any())).thenReturn(getSite());
-        RequestBuilder request = MockMvcRequestBuilders.put("/organisation/site/add").content(expectedSiteResponse)
-                .param("orgId", "orgId").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
+        RequestBuilder request = MockMvcRequestBuilders.post("/organisation/{id}/site", "orgId").content(expectedSiteResponse)
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
         String expected = "Site(siteId=siteId, name=site1, floors=null, orgId=orgId)";
         assertEquals(expected, result.getResponse().getContentAsString());

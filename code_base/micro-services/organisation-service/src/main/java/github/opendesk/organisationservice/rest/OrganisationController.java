@@ -20,25 +20,26 @@ public class OrganisationController {
         return organisationService.getOrganisations();
     }
 
-    @GetMapping(value = "/organisation/{id}")
+    @GetMapping("/organisation/{id}")
     public Organisation getOrganisationById(@PathVariable(value = "id") String id) {
         return organisationService.getOrganisationById(id);
     }
 
-    @GetMapping(value = "/organisation/sites/{id}")
+    @GetMapping("/organisation/sites/{id}")
     public Site getSiteById(@PathVariable(value = "id") String id) {
         return organisationService.getSiteByID(id);
     }
 
-    @PostMapping(value = "/organisation/create")
+    @PostMapping("/organisation")
     @ResponseStatus(code = HttpStatus.CREATED)
     public Organisation createOrganisation(@RequestBody Organisation organisation) {
         return organisationService.createOrganisation(organisation);
     }
 
-    @PutMapping(value = "/organisation/site/add")
-    public ResponseEntity<String> addSite(@RequestBody Site site, @RequestParam("orgId") String orgId) {
-        //TODO: Make use of RequestParam Org Id to check if Organisation exists?
-        return organisationService.getOrganisationById(site.getOrgId()).getOrgId() != null ? new ResponseEntity<>(organisationService.addSite(site).toString(), HttpStatus.OK) : new ResponseEntity<>("Create an Organisation first - /organisation/create", HttpStatus.BAD_REQUEST);
+    @PostMapping("/organisation/{id}/site")
+    public ResponseEntity<String> addSite(@RequestBody Site site, @PathVariable(value = "id") String id) {
+        return organisationService.getOrganisationById(id).getCompanyName() != null ?
+                new ResponseEntity<>(organisationService.addSite(site).toString(), HttpStatus.OK) :
+                new ResponseEntity<>("Create an Organisation first - /organisation", HttpStatus.BAD_REQUEST);
     }
 }
