@@ -1,32 +1,32 @@
-package github.opendesk.converter;
+package github.opendesk.organisationservice.converter;
 
-import github.opendesk.dao.OrganisationDao;
-import github.opendesk.dao.SiteDao;
-import github.opendesk.model.OrganisationModel;
-import github.opendesk.model.Site;
+import github.opendesk.organisationservice.dao.OrganisationDao;
+import github.opendesk.organisationservice.dao.SiteDao;
+import github.opendesk.organisationservice.model.Organisation;
+import github.opendesk.organisationservice.model.Site;
 
 import java.util.function.Function;
 
 public class OrganisationConverter {
 
-    public static Function<OrganisationModel, OrganisationDao> organisationModelToOrganisationDao = organisationModel -> {
+    public static Function<Organisation, OrganisationDao> organisationModelToOrganisationDao = organisation -> {
         OrganisationDao organisationDao = OrganisationDao.builder()
-                .companyName(organisationModel.getCompanyName())
-                .city(organisationModel.getCity())
-                .headQuarters(organisationModel.getHeadQuarters())
-                .orgId(organisationModel.getOrgId())
+                .companyName(organisation.getCompanyName())
+                .city(organisation.getCity())
+                .headQuarters(organisation.getHeadQuarters())
+                .orgId(organisation.getOrgId())
                 .build();
         return organisationDao;
     };
 
-    public static Function<OrganisationDao, OrganisationModel> organisationDaoToOrganisationModel = organisationDao -> {
-        OrganisationModel organisationModel = OrganisationModel.builder()
+    public static Function<OrganisationDao, Organisation> organisationDaoToOrganisationModel = organisationDao -> {
+        Organisation organisation = Organisation.builder()
                 .companyName(organisationDao.getCompanyName())
                 .city(organisationDao.getCity())
                 .headQuarters(organisationDao.getHeadQuarters())
                 .orgId(organisationDao.getOrgId())
                 .build();
-        return organisationModel;
+        return organisation;
     };
 
     public static Function<Site, SiteDao> siteModelToSiteDao = site -> {

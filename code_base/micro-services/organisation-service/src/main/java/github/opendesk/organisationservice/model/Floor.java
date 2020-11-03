@@ -1,4 +1,4 @@
-package github.opendesk.model;
+package github.opendesk.organisationservice.model;
 
 
 import lombok.AllArgsConstructor;

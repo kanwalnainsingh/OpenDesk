@@ -1,5 +1,5 @@
 
-package github.opendesk.model;
+package github.opendesk.organisationservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrganisationModel {
+public class Organisation {
     private String orgId;
     private String companyName;
     private String city;

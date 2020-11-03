@@ -1,4 +1,4 @@
-package github.opendesk;
+package github.opendesk.organisationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

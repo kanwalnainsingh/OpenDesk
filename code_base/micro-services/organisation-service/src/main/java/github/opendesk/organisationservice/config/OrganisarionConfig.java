@@ -1,4 +1,4 @@
-package github.opendesk.config;
+package github.opendesk.organisationservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

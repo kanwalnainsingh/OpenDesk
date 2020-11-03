@@ -1,4 +1,4 @@
-package github.opendesk.dao;
+package github.opendesk.organisationservice.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

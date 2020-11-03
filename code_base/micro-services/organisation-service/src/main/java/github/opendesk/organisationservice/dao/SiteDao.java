@@ -1,5 +1,5 @@
 
-package github.opendesk.dao;
+package github.opendesk.organisationservice.dao;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package github.opendesk;
+package github.opendesk.organisationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
