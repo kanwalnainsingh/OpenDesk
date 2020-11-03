@@ -27,4 +27,4 @@ ARG DEPENDENCY=/open-desk/backend/desk-service/target/dependency
 COPY --from=microservice-build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=microservice-build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=microservice-build ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","github.opendesk.deskservice.DeskServiceApplication"]
