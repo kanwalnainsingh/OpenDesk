@@ -1,3 +1,4 @@
+![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
 # OpenDesk
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
 
@@ -23,6 +24,23 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Data security and privacy is crucial.
 - Department segregation
 - Desk map configrations and upload for organisation. 
+
+## Road Map
+![N|Solid](docs/planning/images/roadmap_2020.jpg)
+
+November: 
+- The minimum requirement to kick start.
+- Initial Architecture diagram.
+- Finalise the technical stack.
+- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
+- Hello Open Desk deployed on Cloud with Public URL.
+  - Organisation onboarding with offices, floor and desk setup.  
+  - Employee shoudld be able to book a desk on selected floor office. 
+
+December: 
+- CD CI setup.
+- Go live public url to access the application.
+
 
 ## To know more details about project and architecture refer below:
 
