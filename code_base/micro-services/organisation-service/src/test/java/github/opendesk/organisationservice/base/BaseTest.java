@@ -1,7 +1,9 @@
 package github.opendesk.organisationservice.base;
 
+import github.opendesk.organisationservice.dao.FloorDao;
 import github.opendesk.organisationservice.dao.OrganisationDao;
 import github.opendesk.organisationservice.dao.SiteDao;
+import github.opendesk.organisationservice.model.Floor;
 import github.opendesk.organisationservice.model.Organisation;
 import github.opendesk.organisationservice.model.Site;
 
@@ -16,6 +18,7 @@ public class BaseTest {
                 .city("city")
                 .headQuarters("headQuarters")
                 .orgId("orgId")
+                .sites(getSiteDaoList())
                 .build();
     }
 
@@ -25,6 +28,7 @@ public class BaseTest {
                 .city("city")
                 .headQuarters("headQuarters")
                 .orgId("orgId")
+                .sites(getSiteList())
                 .build();
     }
 
@@ -40,13 +44,50 @@ public class BaseTest {
         return SiteDao.builder()
                 .name("site1")
                 .orgId("orgId")
-                .siteId("siteId").build();
+                .siteId("siteId")
+                .floors(getFloorDaoList()).build();
     }
 
     public Site getSite() {
         return Site.builder()
                 .name("site1")
                 .orgId("orgId")
-                .siteId("siteId").build();
+                .siteId("siteId")
+                .floors(getFloorList()).build();
     }
+
+    public List<SiteDao> getSiteDaoList() {
+        return Arrays.asList(getSiteDao());
+    }
+
+    public List<Site> getSiteList() {
+        return Arrays.asList(getSite());
+    }
+
+    public FloorDao getFloorDao() {
+        return FloorDao.builder()
+                .name("floor1")
+                .siteId("siteId")
+                .floorId("floorId")
+                .totalSeat("totalSeat")
+                .build();
+    }
+
+    public Floor getFloor() {
+        return Floor.builder()
+                .name("floor1")
+                .siteId("siteId")
+                .floorId("floorId")
+                .totalSeat("totalSeat")
+                .build();
+    }
+
+    public List<FloorDao> getFloorDaoList() {
+        return Arrays.asList(getFloorDao());
+    }
+
+    public List<Floor> getFloorList() {
+        return Arrays.asList(getFloor());
+    }
+
 }
