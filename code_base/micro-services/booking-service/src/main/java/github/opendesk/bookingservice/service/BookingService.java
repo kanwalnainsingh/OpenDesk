@@ -1,6 +1,6 @@
 package github.opendesk.bookingservice.service;
 
-import github.opendesk.bookingservice.model.BookingModel;
+import github.opendesk.bookingservice.model.Booking;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ public interface BookingService {
 
     public List getBookings();
 
-    public BookingModel getBooking(String id);
+    public Booking getBooking(String id);
 
-    public BookingModel addBooking(BookingModel bookingModel);
+    public Booking addBooking(Booking booking);
 
-    public BookingModel updateBooking(BookingModel bookingModel);
+    public Booking updateBooking(Booking booking);
 
     public void deleteBooking(String id);
 }

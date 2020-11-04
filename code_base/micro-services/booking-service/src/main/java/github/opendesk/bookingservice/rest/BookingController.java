@@ -1,6 +1,6 @@
 package github.opendesk.bookingservice.rest;
 
-import github.opendesk.bookingservice.model.BookingModel;
+import github.opendesk.bookingservice.model.Booking;
 import github.opendesk.bookingservice.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,11 @@ import java.util.List;
 public class BookingController {
 
     @Autowired
-    private BookingService bookingService;
+    private final BookingService bookingService;
+
+    public BookingController(BookingService bookingService) {
+        this.bookingService = bookingService;
+    }
 
     @GetMapping("/bookings")
     public List getBookings() {
@@ -21,19 +25,19 @@ public class BookingController {
     }
 
     @GetMapping("/booking/{id}")
-    public BookingModel getCountryById(@PathVariable String id) {
+    public Booking getCountryById(@PathVariable String id) {
         return bookingService.getBooking(id);
     }
 
     @PostMapping("/booking")
     @ResponseStatus(HttpStatus.OK)
-    public BookingModel addCountry(@RequestBody BookingModel bookingModel) {
-        return bookingService.addBooking(bookingModel);
+    public Booking addCountry(@RequestBody Booking booking) {
+        return bookingService.addBooking(booking);
     }
 
     @PutMapping("/bookings")
-    public BookingModel updateCountry(@RequestBody BookingModel bookingModel) {
-        return bookingService.updateBooking(bookingModel);
+    public Booking updateCountry(@RequestBody Booking booking) {
+        return bookingService.updateBooking(booking);
 
     }
 
