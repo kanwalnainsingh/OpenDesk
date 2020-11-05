@@ -1,16 +1,6 @@
-# OpenDesk Design Documents
-
-## Wireframe:
-### Organization On boarding
-![N|Solid](images/organization_onboarding_wireframe_v1.1.jpg)
-
-### User Journey
-![N|Solid](images/user_journey_wireframe_v1.jpg)
-
 ## High Architecture Diagram
 
 ![Solid](images/architecture_v1.jpg)
-
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
 - Employee Service: Microservice for operation related to employee preference and bookings.
@@ -27,7 +17,6 @@
 - RepositoryService will perform database operations i.e. CRUD
 - APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
-
 ## Frontend Architecture
 ![Solid](images/Organization_Architechture.jpg)
 - Import Layout.js in App.js. Under Layout SetupBuilder.js & OrganizationBuilder.js present.
@@ -38,24 +27,11 @@
 - HOC / Auxiliary.js will wrap all the components.
 - CSS files will be along with .js file. As per requirement .css file name can change to .module.css so that css will apply particularly on .js file.
 
-## Code of Conduct 
-- Please refer code of conduct at [Code of coduct](code-of-conduct.md)
 
-## How to submit a pull request.
-- Look at the existing issue or raise a new issue. Get clarity on the requirement.
-- Refer [How to submit pull request ](https://jarv.is/notes/how-to-pull-request-fork-github/) to get details on how to raise a pull request.
-
-## Note:
-- We are about to kick start this project. We welcome pull requests. Feel free to comment or reach out to us. 
-- We welcome suggestions from everyone tech or non tech.
-- If you are new to open source this is the perfect place to start.
-- Open files with extension .drawio can be opened in https://app.diagrams.net. When you raise a pull request don't forget to include JPG for file diagram  as well. 
-
-
-## Acronym/glossary: 
-Site: Each organisation has multiple office. Each office location refereed as a site. e.g. Headquarter is one site.
-Need a kick start on how to start connect with me on linkedin. https://www.linkedin.com/in/kanwalnainsingh/ 
- 
-## Join slack below for discussions
-
-[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 
+## Organisation boarding flow
+![Solid](images/Organisation_Onboarding_v1.jpg)
+- UI will call organisation service to board an organisation.
+- Organisation details like name, logo and location will be saved to organisation db.
+- Desk details import file will be saved in persistence file storage.
+- A message will be sent to queue with desk details and import file path.
+- CRON Job inside desk-service will run and process the desk file and save data in desk-db. 

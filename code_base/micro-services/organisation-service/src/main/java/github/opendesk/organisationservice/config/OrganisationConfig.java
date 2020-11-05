@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 
 @Configuration
-public class OrganisarionConfig {
+public class OrganisationConfig {
     @Bean
     public JedisConnectionFactory redisConnectionFactory() {
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
