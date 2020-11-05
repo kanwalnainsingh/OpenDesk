@@ -31,7 +31,7 @@ jobs:
         run: | 
           cd code_base/micro-services/organisation-service/
           mvn -B clean package -DskipTests
-      - name: Maven Verify Desk Service
+      - name: Maven Verify Organisation Service
         run: |
            cd code_base/micro-services/organisation-service/
            mvn -B clean verify
