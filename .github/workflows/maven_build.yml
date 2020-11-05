@@ -26,6 +26,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.15
+          
+      - name: Maven Package Organisation Service
+        run: | 
+          cd code_base/micro-services/organisation-service/
+          mvn -B clean package -DskipTests
+      - name: Maven Verify Desk Service
+        run: |
+           cd code_base/micro-services/organisation-service/
+           mvn -B clean verify
+           
       - name: Maven Package Booking Service
         run: | 
           cd code_base/micro-services/booking-service/
