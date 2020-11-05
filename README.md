@@ -25,10 +25,11 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Department segregation
 - Desk map configurations and upload for organisation. 
 
-## Few Important links to start
+## Few Important links to start:
 - [Getting Started Guides](docs/getting-started/README.md)
 - [Technical Diagrams](docs/technical-design/README.md)
 - [Wireframes](docs/wireframe/README.md)
+- [Code Setup: MicroService](code_base/micro-services/README.md)
 
 ## Road Map
 ![N|Solid](docs/planning/images/roadmap_2020.jpg)
