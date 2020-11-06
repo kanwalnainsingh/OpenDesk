@@ -1,6 +1,12 @@
-Pre-requisite: 
-- node.js version 10.12.0 (minimum) installed in system.
+## Prerequisite:
+- Install node.js version 10.12.0 or above.
 
-To Start the application
-- run Command prompt in root folder. run $npm install. (This will install all the dependency using in this project)
-- after installing all the dependency, run $npm start. (This will run the application on localhost:3000)
+## To run the application
+- Install all project dependcies using below command under web-ui directory of code_base.
+```sh
+npm install
+```
+- After installing all the dependency run below command to run the web-ui at http://localhost:3000/
+```sh
+npm start
+```
