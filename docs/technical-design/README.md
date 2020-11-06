@@ -1,6 +1,6 @@
 ## High Architecture Diagram
 
-![Solid](images/architecture_v1.jpg)
+![Solid](images/architecture_v1.1.jpg)
 - Organisation Service: Microservice to provide api for all organisation related operations like registration, setting up sites.
 - Desk Service: Microservice to provide api for desk management operation like adding desk to a site per floor, available and reserved capacity.
 - Employee Service: Microservice for operation related to employee preference and bookings.
