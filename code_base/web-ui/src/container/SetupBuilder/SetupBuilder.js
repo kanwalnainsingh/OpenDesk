@@ -20,71 +20,7 @@ class setUpBuilder extends Component {
         fileName: '',
         floorCount: 0,
         cardsCount: 0,
-        floorJsx: <div style={{ display: 'flex', marginTop: '2%' }}>
-            <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '20%' }} label="Floor" />
-            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Total Desk" type="number" />
-            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%', backgroundColor: 'rgb(176,224,230)', borderRadius: '5px' }} label="Open Desk" type="number" />
-            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Reserved" type="number" />
-            <input type="file" hidden id="uploadFloorPlan" onChange={this.afterPlanUpload} />
-            <FormControl variant="filled" style={{ marginLeft: '2%', width: '20%' }}>
-                <InputLabel htmlFor="filled-adornment-password">Desk Plan</InputLabel>
-                <FilledInput
-                    id="filled-adornment-password"
-                    style={{ height: '60px' }}
-                    //value={this.state.floorPlan}
-                    endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                                onClick={this.uploadFloorPlanHandler}
-                                edge="end"
-                            >
-                                <BackupTwoToneIcon />
-                            </IconButton>
-                        </InputAdornment>
-                    }
-                />
-            </FormControl>
-        </div>,
-        siteJsx: <Paper elevation={3} className="sitePaper" style={{ marginTop: '2%' }}>
-            <h5 className="paperHead">Site Details</h5>
-            <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '93%' }} label="Site Name" />
-            <p style={{ marginTop: '16px' }}>Floor Details</p>
-            <div style={{ display: 'flex' }}>
-                <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '20%' }} label="Floor" />
-                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Total Desk" type="number" />
-                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%', backgroundColor: 'rgb(176,224,230)', borderRadius: '5px' }} label="Open Desk" type="number" />
-                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Reserved" type="number" />
-                <input type="file" hidden id="uploadFloorPlan" onChange={this.afterPlanUpload} />
-                <FormControl variant="filled" style={{ marginLeft: '2%', width: '20%' }}>
-                    <InputLabel htmlFor="filled-adornment-password">Desk Plan</InputLabel>
-                    <FilledInput
-                        id="filled-adornment-password"
-                        style={{ height: '60px' }}
-                        //value={this.state.floorPlan}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    onClick={this.uploadFloorPlanHandler}
-                                    edge="end"
-                                >
-                                    <BackupTwoToneIcon />
-                                </IconButton>
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
-            </div>
-            {/* <div>{this.getFloor()}</div> */}
-            <Chip
-                icon={<AddOutlinedIcon />}
-                label="Add Floor"
-                //onClick={this.addFloorHandler}
-                variant="outlined"
-                style={{ marginTop: '1% ' }}
-                color="primary"
-            />
-        </Paper>,
-        floorPlan: ''
+        floorPlan: '',
     }
 
     clickUploadHanler = () => {
@@ -124,23 +60,86 @@ class setUpBuilder extends Component {
     };
 
     getFloor = () => {
+        const floorJsx = (<div style={{ display: 'flex', marginTop: '2%' }}>
+            <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '20%' }} label="Floor" />
+            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Total Desk" type="number" />
+            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%', backgroundColor: 'rgb(176,224,230)', borderRadius: '5px' }} label="Open Desk" type="number" />
+            <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Reserved" type="number" />
+            <input type="file" hidden id="uploadFloorPlan" onChange={this.afterPlanUpload} />
+            <FormControl variant="filled" style={{ marginLeft: '2%', width: '20%' }}>
+                <InputLabel htmlFor="filled-adornment-password">Desk Plan</InputLabel>
+                <FilledInput
+                    id="filled-adornment-password"
+                    style={{ height: '60px' }}
+                    value={this.state.floorPlan}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                                onClick={this.uploadFloorPlanHandler}
+                                edge="end"
+                            >
+                                <BackupTwoToneIcon />
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                />
+            </FormControl>
+        </div>)
         let floor = [];
         for (let i = 0; i < this.state.floorCount; i++) {
-            floor.push(this.state.floorJsx)
+            floor.push(floorJsx)
         }
         return floor;
     }
 
     getCard = () => {
+        const siteJsx = (<Paper elevation={3} className="sitePaper" style={{ marginTop: '2%' }}>
+            <h5 className="paperHead">Site Details</h5>
+            <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '93%' }} label="Site Name" />
+            <p style={{ marginTop: '16px' }}>Floor Details</p>
+            <div style={{ display: 'flex' }}>
+                <TextField id="filled-basic" InputProps={{ disableUnderline: true }} variant="filled" style={{ width: '20%' }} label="Floor" />
+                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Total Desk" type="number" />
+                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%', backgroundColor: 'rgb(176,224,230)', borderRadius: '5px' }} label="Open Desk" type="number" />
+                <TextField id="filled-basic" InputProps={{ shrink: true, disableUnderline: true }} variant="filled" style={{ width: '15%', marginLeft: '2%' }} label="Reserved" type="number" />
+                <input type="file" hidden id="uploadFloorPlan" onChange={this.afterPlanUpload} />
+                <FormControl variant="filled" style={{ marginLeft: '2%', width: '20%' }}>
+                    <InputLabel htmlFor="filled-adornment-password">Desk Plan</InputLabel>
+                    <FilledInput
+                        id="filled-adornment-password"
+                        style={{ height: '60px' }}
+                        value={this.state.floorPlan}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    onClick={this.uploadFloorPlanHandler}
+                                    edge="end"
+                                >
+                                    <BackupTwoToneIcon />
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+            </div>
+            <div>{this.getFloor()}</div>
+            <Chip
+                icon={<AddOutlinedIcon />}
+                label="Add Floor"
+                onClick={this.addFloorHandler}
+                variant="outlined"
+                style={{ marginTop: '1% ' }}
+                color="primary"
+            />
+        </Paper>)
         let card = [];
         for (let i = 0; i < this.state.cardsCount; i++) {
-            card.push(this.state.siteJsx)
+            card.push(siteJsx)
         }
         return card;
     }
 
     render() {
-        console.log(this.state)
         return (
             <Aux>
                 <Paper elevation={3} style={{ width: '50%', padding: '20px', display: 'flex' }}>
@@ -153,11 +152,6 @@ class setUpBuilder extends Component {
                         <div style={{ marginTop: '15px' }}>
                             <TextField id="standard-basic" label="Location" multiline rowsMax={2} style={{ width: '100%' }} />
                         </div>
-                        {/* <div style={{ marginTop: '15px' }}>
-                            <Button variant="outlined" color="primary" style={{ float: 'right' }} onClick={this.addRobotHandler}>
-                                Submit
-                            </Button>
-                        </div> */}
                     </div>
                 </Paper>
                 <div style={{ marginTop: '30px' }}>
@@ -176,9 +170,7 @@ class setUpBuilder extends Component {
                                 <FilledInput
                                     id="filled-adornment-password"
                                     style={{ height: '60px' }}
-                                    //type="file"
                                     value={this.state.floorPlan}
-                                    // onChange={handleChange('password')}
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
@@ -212,7 +204,7 @@ class setUpBuilder extends Component {
                     style={{ marginTop: '1% ' }}
                     color="primary"
                 />
-                <Button variant="contained" color="primary" style={{ marginTop: '1%', marginLeft: '78%' }} onClick={this.addRobotHandler}>
+                <Button variant="contained" color="primary" style={{ marginTop: '1%', marginLeft: '78%' }}>
                     Submit
                 </Button>
             </Aux>
