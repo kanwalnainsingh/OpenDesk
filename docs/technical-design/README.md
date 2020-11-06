@@ -8,14 +8,14 @@
 - Authentication Service: Authentication and authorisation using SSO(Single Sign On).   
 - UI: Front end layer that will communicate with microservices to fetch data and perform all operations from UI.
 
-## Microservice Architecture 
-![Solid](images/microservice_design_v1.jpg)
-- RestController will expose api endpoint and talk to other service layers to perform operations and send response back to client.
-- ValidationService purpose will be validate request and send response back to caller and return response back. 
-- LogicService will have all the business and processing logic e.g. filtering.
-- PresentationService is the transformation layer that will convert into desired presentation state or response. 
-- RepositoryService will perform database operations i.e. CRUD
-- APIClient will talk to other microservices/endpoints or send messages to queues for the decoupling.
+## Microservice Architecture/Layers 
+![Solid](images/microservice_design_v1.1.jpg)
+- RestController class will expose api endpoint and talk to other service layers to perform operations and send response back to client.
+- Job class will be entry point for micro-service with cron or batch job.
+- Service class will perform all business operation, data consolidation, filtering. 
+- Converter class is the transformation layer that will convert into desired presentation state e.g. Request Objects(Model) to Data Access Objects(DAO) 
+- Repository class will perform database operations e.g. CRUD
+- APIClient class will talk to other microservices/endpoints or send messages to queues for the decoupling.
 
 ## Frontend Architecture
 ![Solid](images/Organization_Architechture.jpg)
