@@ -64,13 +64,7 @@ public class OrganisationControllerTest extends BaseTest {
         JSONAssert.assertEquals(organisationListContext.jsonString(), result.getResponse().getContentAsString(), true);
     }
 
-    @Test
-    public void getSiteByIdTest() throws Exception {
-        when(organisationService.getSiteByID(anyString())).thenReturn(getSite());
-        RequestBuilder request = MockMvcRequestBuilders.get("/organisation/sites/{id}", "siteId").accept(MediaType.APPLICATION_JSON);
-        MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
-        JSONAssert.assertEquals(siteContext.jsonString(), result.getResponse().getContentAsString(), true);
-    }
+
 
     @Test
     public void createOrganisationTest() throws Exception {
@@ -81,15 +75,5 @@ public class OrganisationControllerTest extends BaseTest {
 
     }
 
-    @Test
-    public void addSiteTest() throws Exception {
-        when(organisationService.getOrganisationById(anyString())).thenReturn(getOrganisation());
-        when(organisationService.addSite(any())).thenReturn(getSite());
-        RequestBuilder request = MockMvcRequestBuilders.post("/organisation/{id}/site", "orgId").content(siteContext.jsonString())
-                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
-        MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
-        String expected = "Site(siteId=siteId, name=site1, floors=[Floor(floorId=floorId, name=floor1, totalSeat=totalSeat, siteId=siteId)], orgId=orgId)";
-        assertEquals(expected, result.getResponse().getContentAsString());
-    }
 
 }

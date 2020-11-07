@@ -9,11 +9,11 @@ public interface OrganisationService {
 
     Organisation getOrganisationById(String id);
 
-    Site getSiteByID(String id);
 
     Organisation createOrganisation(Organisation organisation);
 
-    Site addSite(Site site);
 
     List<Organisation> getOrganisations();
+
+    List findByOrgIdAndSiteId(String orgId, String siteId);
 }

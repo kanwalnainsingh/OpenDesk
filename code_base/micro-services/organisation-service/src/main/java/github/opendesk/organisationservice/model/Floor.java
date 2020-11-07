@@ -15,6 +15,4 @@ public class Floor {
     private String floorId;
     private String name;
     private String totalSeat;
-    @JsonIgnore
-    private String siteId;
 }

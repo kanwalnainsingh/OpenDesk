@@ -37,8 +37,7 @@ public class OrganisationConverter {
     public static Function<Site, SiteDao> siteModelToSiteDao = site -> {
         SiteDao siteDao = SiteDao.builder()
                 .name(site.getName())
-                .siteId(site.getSiteId())
-                .orgId(site.getOrgId())
+                .id(site.getId())
                 .floors(site.getFloors().stream().map(OrganisationConverter.floorModelToFloorDao::apply).collect(Collectors.toList()))
                 .build();
         return siteDao;
@@ -46,8 +45,7 @@ public class OrganisationConverter {
     public static Function<SiteDao, Site> siteDaoToSiteModel = siteDao -> {
         Site site = Site.builder()
                 .name(siteDao.getName())
-                .orgId(siteDao.getOrgId())
-                .siteId(siteDao.getSiteId())
+                .id(siteDao.getId())
                 .floors(siteDao.getFloors().stream().map(OrganisationConverter.floorDaoToFloorModel::apply).collect(Collectors.toList())).build();
 
         return site;
@@ -57,7 +55,6 @@ public class OrganisationConverter {
                 .name(floor.getName())
                 .floorId(floor.getFloorId())
                 .totalSeat(floor.getTotalSeat())
-                .siteId(floor.getSiteId())
                 .build();
     };
     public static Function<FloorDao, Floor> floorDaoToFloorModel = floorDao -> {
@@ -65,7 +62,6 @@ public class OrganisationConverter {
                 .name(floorDao.getName())
                 .floorId(floorDao.getFloorId())
                 .totalSeat(floorDao.getTotalSeat())
-                .siteId(floorDao.getSiteId())
                 .build();
     };
 }
