@@ -1,7 +1,7 @@
 ##### Stage 1 - Lets build the "deployable package"
 
 FROM maven:3.6.3-jdk-11 as microservice-build
-WORKDIR /open-desk/backend/desk-service
+WORKDIR /open-desk/backend/organisation-service
 
 ### Step 1 - Copy pom.xml and download project dependencies
 
@@ -23,8 +23,8 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 FROM openjdk:11
 VOLUME /tmp
 
-ARG DEPENDENCY=/open-desk/backend/desk-service/target/dependency
+ARG DEPENDENCY=/open-desk/backend/organisation-service/target/dependency
 COPY --from=microservice-build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=microservice-build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=microservice-build ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","github.opendesk.deskservice.DeskServiceApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","github.opendesk.organisationservice.OrganisationServiceApplication"]

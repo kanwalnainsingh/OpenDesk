@@ -1,0 +1,21 @@
+[
+  {
+    "orgId": "orgId",
+    "companyName": "companyName1",
+    "city": "city",
+    "headQuarters": "headQuarters",
+    "sites": [
+      {
+        "id": "siteId",
+        "name": "site1",
+        "floors": [
+          {
+            "floorId": "floorId",
+            "name": "floor1",
+            "totalSeat": "totalSeat"
+          }
+        ]
+      }
+    ]
+  }
+]
