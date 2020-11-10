@@ -2,7 +2,6 @@ package github.opendesk.organisationservice.service;
 
 import github.opendesk.organisationservice.base.BaseTest;
 import github.opendesk.organisationservice.dao.OrganisationRepository;
-import github.opendesk.organisationservice.dao.SiteRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,8 +21,7 @@ public class OrganisationServiceImplTest extends BaseTest {
     private OrganisationServiceImpl organisationService;
     @Mock
     private OrganisationRepository organisationRepository;
-    @Mock
-    private SiteRepository siteRepository;
+
 
     @Test
     public void getOrganisationsTest() {
@@ -39,20 +37,9 @@ public class OrganisationServiceImplTest extends BaseTest {
     }
 
     @Test
-    public void getSiteByIDTest() {
-        when(siteRepository.findById(anyString())).thenReturn(Optional.of(getSiteDao()));
-        assertEquals(organisationService.getSiteByID("1"), getSite());
-    }
-
-    @Test
     public void createOrganisationTest() {
         when(organisationRepository.save(any())).thenReturn(getOrganisationDao());
         assertEquals(organisationService.createOrganisation(getOrganisation()), getOrganisation());
     }
 
-    @Test
-    public void addSiteTest() {
-        when(siteRepository.save(any())).thenReturn(getSiteDao());
-        assertEquals(organisationService.addSite(getSite()), getSite());
-    }
 }

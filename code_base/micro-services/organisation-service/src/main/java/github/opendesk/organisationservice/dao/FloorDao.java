@@ -9,7 +9,6 @@ import org.springframework.data.redis.core.index.Indexed;
 
 @Data
 @Builder
-@RedisHash(value = "Floor")
 public class FloorDao {
     @Id
     @Indexed
