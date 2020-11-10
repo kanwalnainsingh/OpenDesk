@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -19,5 +18,5 @@ public class OrganisationDao {
     private String companyName;
     private String city;
     private String headQuarters;
-    private List<SiteDao> sites= new ArrayList<>();;
+    private List<SiteDao> sites;
 }

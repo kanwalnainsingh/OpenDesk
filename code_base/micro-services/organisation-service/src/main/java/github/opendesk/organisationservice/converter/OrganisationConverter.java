@@ -55,6 +55,7 @@ public class OrganisationConverter {
                 .name(floor.getName())
                 .floorId(floor.getFloorId())
                 .totalSeat(floor.getTotalSeat())
+                .reservedSeat(floor.getReservedSeat())
                 .build();
     };
     public static Function<FloorDao, Floor> floorDaoToFloorModel = floorDao -> {
@@ -62,6 +63,7 @@ public class OrganisationConverter {
                 .name(floorDao.getName())
                 .floorId(floorDao.getFloorId())
                 .totalSeat(floorDao.getTotalSeat())
+                .reservedSeat(floorDao.getReservedSeat())
                 .build();
     };
 }
