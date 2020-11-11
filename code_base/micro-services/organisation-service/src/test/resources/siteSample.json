@@ -1,0 +1,11 @@
+{
+  "id": "siteId",
+  "name": "site1",
+  "floors": [
+    {
+      "floorId": "floorId",
+      "name": "floor1",
+      "totalSeat": "totalSeat"
+    }
+  ]
+}

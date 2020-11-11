@@ -23,7 +23,13 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
 - Department segregation
-- Desk map configrations and upload for organisation. 
+- Desk map configurations and upload for organisation. 
+
+## Few Important links to start:
+- [Getting Started Guides](docs/getting-started/README.md)
+- [Technical Design](docs/technical-design/README.md)
+- [Wireframes](docs/wireframe/README.md)
+- [Code Setup: MicroService](code_base/micro-services/README.md)
 
 ## Road Map
 ![N|Solid](docs/planning/images/roadmap_2020.jpg)
@@ -34,17 +40,12 @@ November:
 - Finalise the technical stack.
 - Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
 - Hello Open Desk deployed on Cloud with Public URL.
-  - Organisation onboarding with offices, floor and desk setup.  
-  - Employee shoudld be able to book a desk on selected floor office. 
+  - Organisation onboard with offices, floor and desk setup.  
+  - Employee should be able to book a desk on selected floor of an office. 
 
 December: 
 - CD CI setup.
 - Go live public url to access the application.
-
-
-## To know more details about project and architecture refer below:
-
- [High Level Plan and Architecture](./docs/planning/README.md)
 
 ## Code of Conduct 
 

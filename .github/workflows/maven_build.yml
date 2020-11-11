@@ -7,8 +7,12 @@ name: CI
 on:
   push:
     branches: [ Initial_Planning, main ]
+    paths-ignore:
+    - 'docs/**'
   pull_request:
     branches: [ Initial_Planning, main ]
+    paths-ignore:
+    - 'docs/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,6 +30,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.15
+          
+      - name: Maven Package Organisation Service
+        run: | 
+          cd code_base/micro-services/organisation-service/
+          mvn -B clean package -DskipTests
+      - name: Maven Verify Organisation Service
+        run: |
+           cd code_base/micro-services/organisation-service/
+           mvn -B clean verify
+           
       - name: Maven Package Booking Service
         run: | 
           cd code_base/micro-services/booking-service/
