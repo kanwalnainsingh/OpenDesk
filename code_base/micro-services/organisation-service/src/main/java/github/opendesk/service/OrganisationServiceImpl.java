@@ -8,11 +8,20 @@ import github.opendesk.model.OrganisationModel;
 import github.opendesk.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static github.opendesk.converter.OrganisationConverter.*;
 
 @Service
 public class OrganisationServiceImpl implements OrganisationService {
+
+    private static String UPLOADED_FOLDER = "C:/Users/user/Desktop/OpenDesk/new/";
+
     @Autowired
     private OrganisationRepository organisationRepository;
     @Autowired
@@ -38,6 +47,14 @@ public class OrganisationServiceImpl implements OrganisationService {
     public Site addSite(Site site) {
         SiteDao siteDao = siteRepository.save(siteModelToSiteDao.apply(site));
         return siteDaoToSiteModel.apply(siteDao);
+    }
+
+    @Override
+    public void uploadSiteDetials(MultipartFile uploadfile) throws IOException {
+        byte[] bytes = uploadfile.getBytes();
+        String str=new String(bytes);
+        Path path = Paths.get(UPLOADED_FOLDER + uploadfile.getOriginalFilename());
+        Files.write(path, bytes);
     }
 
 }
