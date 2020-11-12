@@ -22,8 +22,10 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 ## Future Release.
 - Organisation and employee login Single Sing On(SSO) with roles.
 - Data security and privacy is crucial.
+- Notification and booking confirmation via different channels like email.
 - Department segregation
 - Desk map configurations and upload for organisation. 
+- Organisation dashboard for realtime view of various office sites. 
 
 ## Few Important links to start:
 - [Getting Started Guides](docs/getting-started/README.md)
