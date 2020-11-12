@@ -66,7 +66,8 @@ public class BaseTest {
         return FloorDao.builder()
                 .name("floor1")
                 .floorId("floorId")
-                .totalSeat("totalSeat")
+                .totalSeat("100")
+                .reservedSeat("20")
                 .build();
     }
 
@@ -74,7 +75,8 @@ public class BaseTest {
         return Floor.builder()
                 .name("floor1")
                 .floorId("floorId")
-                .totalSeat("totalSeat")
+                .totalSeat("100")
+                .reservedSeat("20")
                 .build();
     }
 
