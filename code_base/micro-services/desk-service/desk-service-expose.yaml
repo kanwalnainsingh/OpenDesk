@@ -7,9 +7,9 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 8000
+  - port: 8082
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8082
   selector:
     app: desk-service
   type: ClusterIP

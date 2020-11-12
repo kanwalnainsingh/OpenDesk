@@ -7,9 +7,9 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 8000
+  - port: 8081
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8081
   selector:
     app: booking-service
   type: ClusterIP

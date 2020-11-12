@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: desk-service-pod
+  name: employee-service-pod
   labels:
-    app: desk-service
+    app: employee-service
 spec:
   restartPolicy: Never
   volumes:
@@ -11,11 +11,11 @@ spec:
       emptyDir: {}
 
   containers:
-    - name: desk-service-container
+    - name: employee-service-container
       ports:
-      - containerPort: 8082
-      image: kanwalnainsingh/opendesk-desk-service:latest
-      args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+      - containerPort: 8083
+      image: kanwalnainsingh/opendesk-employee-service:latest
+      args: ["java","-cp","app:app/lib/*","github.opendesk.employeeservice.EmployeeServiceApplication"]
       volumeMounts:
         - name: shared-data
           mountPath: /tmp
