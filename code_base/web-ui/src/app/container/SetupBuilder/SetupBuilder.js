@@ -9,7 +9,7 @@ import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import Aux from '../../HOC/Auxiliary'
 import './SetupBuilder.css'
 import Floor from '../../components/Onboarding/Floor'
-import Service from '../../services'
+import Service from '../../../services'
 
 class setUpBuilder extends Component {
     state = {
