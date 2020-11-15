@@ -1,7 +1,7 @@
 package github.opendesk.bookingservice.converter;
 
 import github.opendesk.bookingservice.dao.BookingDao;
-import github.opendesk.bookingservice.model.BookingModel;
+import github.opendesk.bookingservice.model.Booking;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,7 +26,7 @@ public class TestBookingConverter {
         String orgId = "firstOrgId";
         String userId = "firstUserId";
         String siteId = "firstSiteId";
-        BookingModel bookingModel = BookingModel.builder().
+        Booking booking = Booking.builder().
                 bookingDate(bookingDate.toString())
                 .bookingTime(bookingTime.toString())
                 .bookingId(bookingId)
@@ -36,16 +36,16 @@ public class TestBookingConverter {
                 .floorId(floorId).build();
 
         //When
-        BookingDao bookingDao = BookingConverter.bookingModelToBookingDao.apply(bookingModel);
+        BookingDao bookingDao = BookingConverter.bookingModelToBookingDao.apply(booking);
 
         //Then
-        Assertions.assertEquals(bookingDao.getBookingDate(), bookingModel.getBookingDate());
-        Assertions.assertEquals(bookingDao.getBookingId(), bookingModel.getBookingId());
-        Assertions.assertEquals(bookingDao.getBookingTime(), bookingModel.getBookingTime());
-        Assertions.assertEquals(bookingDao.getFloorId(), bookingModel.getFloorId());
-        Assertions.assertEquals(bookingDao.getSiteId(), bookingModel.getSiteId());
-        Assertions.assertEquals(bookingDao.getOrgId(), bookingModel.getOrgId());
-        Assertions.assertEquals(bookingDao.getUserId(), bookingModel.getUserId());
+        Assertions.assertEquals(bookingDao.getBookingDate(), booking.getBookingDate());
+        Assertions.assertEquals(bookingDao.getBookingId(), booking.getBookingId());
+        Assertions.assertEquals(bookingDao.getBookingTime(), booking.getBookingTime());
+        Assertions.assertEquals(bookingDao.getFloorId(), booking.getFloorId());
+        Assertions.assertEquals(bookingDao.getSiteId(), booking.getSiteId());
+        Assertions.assertEquals(bookingDao.getOrgId(), booking.getOrgId());
+        Assertions.assertEquals(bookingDao.getUserId(), booking.getUserId());
 
     }
 
@@ -69,16 +69,16 @@ public class TestBookingConverter {
                 .floorId(floorId).build();
 
         //When
-        BookingModel bookingModel = BookingConverter.bookingDaoToBookingModel.apply(bookingDao);
+        Booking booking = BookingConverter.bookingDaoToBookingModel.apply(bookingDao);
 
         //Then
-        Assertions.assertEquals(bookingModel.getBookingDate(), bookingDao.getBookingDate());
-        Assertions.assertEquals(bookingModel.getBookingId(), bookingDao.getBookingId());
-        Assertions.assertEquals(bookingModel.getBookingTime(), bookingDao.getBookingTime());
-        Assertions.assertEquals(bookingModel.getFloorId(), bookingDao.getFloorId());
-        Assertions.assertEquals(bookingModel.getSiteId(), bookingDao.getSiteId());
-        Assertions.assertEquals(bookingModel.getOrgId(), bookingDao.getOrgId());
-        Assertions.assertEquals(bookingModel.getUserId(), bookingDao.getUserId());
+        Assertions.assertEquals(booking.getBookingDate(), bookingDao.getBookingDate());
+        Assertions.assertEquals(booking.getBookingId(), bookingDao.getBookingId());
+        Assertions.assertEquals(booking.getBookingTime(), bookingDao.getBookingTime());
+        Assertions.assertEquals(booking.getFloorId(), bookingDao.getFloorId());
+        Assertions.assertEquals(booking.getSiteId(), bookingDao.getSiteId());
+        Assertions.assertEquals(booking.getOrgId(), bookingDao.getOrgId());
+        Assertions.assertEquals(booking.getUserId(), bookingDao.getUserId());
 
     }
 
