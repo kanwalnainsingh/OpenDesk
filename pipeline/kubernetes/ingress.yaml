@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: polling
+  name: opendesk
   annotations:
     dev.okteto.com/generate-host: "true"
 spec:
