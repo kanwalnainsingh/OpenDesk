@@ -1,0 +1,10 @@
+name: frontend
+image: okteto/node:12
+command: bash
+workdir: /okteto
+sync:
+  - .:/okteto
+resources:
+  limits:
+    cpu: "2"
+    memory: 4Gi
