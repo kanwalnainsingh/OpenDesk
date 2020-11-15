@@ -1,6 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  namespace: kanwalnainsingh
   name: opendesk
   annotations:
     dev.okteto.com/generate-host: "true"

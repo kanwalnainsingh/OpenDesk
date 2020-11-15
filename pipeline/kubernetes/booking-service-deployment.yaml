@@ -1,6 +1,7 @@
 apiVersion: apps/v1           # API version
 kind: Deployment              # Type of kubernetes resource
 metadata:
+  namespace: kanwalnainsingh
   name: booking    # Name of the kubernetes resource
   labels:                     # Labels that will be applied to this resource
     app: booking
