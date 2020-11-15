@@ -1,2 +1,2 @@
-devs:
-  - kubectl apply -f ./pipeline/
+deploy:
+  - kubectl apply -f pipeline/kubernetes
