@@ -1,26 +1,19 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   namespace: kanwalnainsingh
   name: opendesk
   annotations:
     dev.okteto.com/generate-host: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
     - http:
         paths:
-          - path: /booking
-            pathType: Prefix
-            backend:
-              service:
-               name: booking
-               port:
-                 number: 8081
           - path: /
-            pathType: Prefix
             backend:
-              service:
-                name: opendesk-web-ui
-                port:
-                  number: 3000
+              serviceName: booking
+              servicePort: 8081
+          - path: /ui
+            backend:
+              serviceName: opendesk-web-ui
+              servicePort: 3000
