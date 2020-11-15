@@ -5,7 +5,7 @@ workdir: /okteto
 sync:
   - .:/okteto
 forward:
-  - 3000:3000
+  - 80:80
 resources:
   limits:
     cpu: "2"

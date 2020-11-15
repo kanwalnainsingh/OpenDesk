@@ -20,5 +20,5 @@ spec:
           image: kanwalnainsingh/opendesk-web-ui:latest
           ports:
             - name: http
-              containerPort: 3000   # Should match the Port that the container listens on
+              containerPort: 80   # Should match the Port that the container listens on
           args: ["nginx", "-g", "daemon off;"]
