@@ -16,4 +16,4 @@ spec:
           - path: /ui
             backend:
               serviceName: opendesk-web-ui
-              servicePort: 3000
+              servicePort: 80
