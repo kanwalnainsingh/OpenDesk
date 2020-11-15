@@ -9,11 +9,11 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /api/booking/
             backend:
               serviceName: booking
               servicePort: 8081
-          - path: /ui
+          - path: /
             backend:
               serviceName: opendesk-web-ui
               servicePort: 80
