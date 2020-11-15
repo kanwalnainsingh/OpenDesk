@@ -1,4 +1,4 @@
-name: api
+name: booking
 image: okteto/maven:latest
 command: bash
 workdir: /okteto

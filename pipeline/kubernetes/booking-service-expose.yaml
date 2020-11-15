@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: booking-service
-  name: booking-service-expose
+    app: booking
+  name: booking
   namespace: kanwalnainsingh
 spec:
   ports:
@@ -11,5 +11,5 @@ spec:
     protocol: TCP
     targetPort: 8081
   selector:
-    app: booking-service
+    app: booking
   type: ClusterIP

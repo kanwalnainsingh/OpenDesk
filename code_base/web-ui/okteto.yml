@@ -1,9 +1,11 @@
-name: frontend
+name: opendesk-web-ui
 image: okteto/node:12
 command: bash
 workdir: /okteto
 sync:
   - .:/okteto
+forward:
+  - 3000:3000
 resources:
   limits:
     cpu: "2"

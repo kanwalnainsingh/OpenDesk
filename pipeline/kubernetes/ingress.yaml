@@ -10,9 +10,9 @@ spec:
         paths:
           - path: /api/booking
             backend:
-              serviceName: api
+              serviceName: booking
               servicePort: 8081
           - path: /
             backend:
-              serviceName: opendesk-web-ui-expose
+              serviceName: opendesk-web-ui
               servicePort: 3000

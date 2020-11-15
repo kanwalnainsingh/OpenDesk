@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: opendesk-web-ui
-  name: opendesk-web-ui-expose
+  name: opendesk-web-ui
   namespace: kanwalnainsingh
 spec:
   ports:
