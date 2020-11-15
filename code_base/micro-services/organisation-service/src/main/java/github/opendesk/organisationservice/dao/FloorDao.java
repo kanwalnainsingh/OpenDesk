@@ -4,7 +4,6 @@ package github.opendesk.organisationservice.dao;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
 @Data
@@ -16,4 +15,5 @@ public class FloorDao {
     private String name;
     private String totalSeat;
     private String siteId;
+    private String reservedSeat;
 }

@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.io.File;
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -65,15 +64,11 @@ public class OrganisationControllerTest extends BaseTest {
     }
 
 
-
     @Test
     public void createOrganisationTest() throws Exception {
         when(organisationService.createOrganisation(any())).thenReturn(getOrganisation());
         RequestBuilder request = MockMvcRequestBuilders.post("/organisation").content(organisationContext.jsonString()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request).andExpect(status().isCreated()).andReturn();
         JSONAssert.assertEquals(organisationContext.jsonString(), result.getResponse().getContentAsString(), true);
-
     }
-
-
 }

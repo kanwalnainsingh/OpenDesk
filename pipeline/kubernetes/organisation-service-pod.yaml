@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: booking-service-pod
+  name: organisation-service-pod
   labels:
-    app: booking-service
+    app: organisation-service
 spec:
   restartPolicy: Never
   volumes:
@@ -11,11 +11,11 @@ spec:
       emptyDir: {}
 
   containers:
-    - name: booking-service-container
+    - name: organisation-service-container
       ports:
-      - containerPort: 8080
-      image: kanwalnainsingh/opendesk-booking-service:0.1-SNAPSHOT
-      args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+      - containerPort: 8084
+      image: kanwalnainsingh/opendesk-organisation-service:latest
+      args: ["java","-cp","app:app/lib/*","github.opendesk.organisationservice.OrganisationServiceApplication"]
       volumeMounts:
         - name: shared-data
           mountPath: /tmp

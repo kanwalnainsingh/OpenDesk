@@ -11,5 +11,5 @@
 
 # Usage
 - Open cmd or bash, navigate to organisation-service and run : mvn clean install
-- After build is successful, run "java -jar target/organisation-service-0.0.1-SNAPSHOT.jar"
+- After build is successful, e.g. run "java -jar target/organisation-service-0.0.1-SNAPSHOT.jar"
 - Open browser and go to URL "http://localhost:8080/swagger-ui.html#/" and explore organisation-service.

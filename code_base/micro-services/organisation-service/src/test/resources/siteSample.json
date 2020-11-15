@@ -5,7 +5,8 @@
     {
       "floorId": "floorId",
       "name": "floor1",
-      "totalSeat": "totalSeat"
+      "totalSeat": "100",
+      "reservedSeat": "20"
     }
   ]
 }

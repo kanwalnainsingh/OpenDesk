@@ -1,7 +1,6 @@
 package github.opendesk.organisationservice.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,4 +14,5 @@ public class Floor {
     private String floorId;
     private String name;
     private String totalSeat;
+    private String reservedSeat;
 }

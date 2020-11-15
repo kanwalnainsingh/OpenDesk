@@ -13,8 +13,8 @@ spec:
   containers:
     - name: desk-service-container
       ports:
-      - containerPort: 8080
-      image: kanwalnainsingh/opendesk-desk-service:0.1-SNAPSHOT
+      - containerPort: 8082
+      image: kanwalnainsingh/opendesk-desk-service:latest
       args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
       volumeMounts:
         - name: shared-data

@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: booking-service
-  name: booking-service-expose
+    app: organisation-service
+  name: organisation-service-expose
   namespace: default
 spec:
   ports:
-  - port: 8000
+  - port: 8084
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8084
   selector:
-    app: booking-service
+    app: organisation-service
   type: ClusterIP
