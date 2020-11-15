@@ -4,7 +4,7 @@ metadata:
   labels:
     app: desk-service
   name: desk-service-expose
-  namespace: default
+  namespace: kanwalnainsingh
 spec:
   ports:
   - port: 8082

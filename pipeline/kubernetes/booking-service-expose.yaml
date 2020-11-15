@@ -4,7 +4,7 @@ metadata:
   labels:
     app: booking-service
   name: booking-service-expose
-  namespace: default
+  namespace: kanwalnainsingh
 spec:
   ports:
   - port: 8081
