@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: polling
+  annotations:
+    dev.okteto.com/generate-host: "true"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api/booking
+            backend:
+              serviceName: api
+              servicePort: 8081
+          - path: /
+            backend:
+              serviceName: opendesk-web-ui-expose
+              servicePort: 3000
