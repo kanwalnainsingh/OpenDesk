@@ -42,13 +42,13 @@ public class OrganisationController {
         return organisationService.createOrganisation(organisation);
     }
     @PostMapping("/organisation/upload")
-    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile uploadfile) throws IOException {
-        if (uploadfile.isEmpty()) {
+    public ResponseEntity<String> uploadOrganisation(@RequestParam("file") MultipartFile organisationLogo, @RequestParam("organisation") String organisation) throws IOException {
+        if (organisationLogo.isEmpty()) {
             logger.info("Empty file upload!");
             return new ResponseEntity<>("You must select a file!", HttpStatus.BAD_REQUEST);
         }
 
-        organisationService.uploadSiteDetials(uploadfile);
+        organisationService.uploadSiteDetials(organisationLogo);
         logger.info("file upload Successful!");
         return new ResponseEntity<>("file Uploaded!", HttpStatus.OK);
     }

@@ -22,7 +22,7 @@ import static github.opendesk.organisationservice.converter.OrganisationConverte
 @Service
 public class OrganisationServiceImpl implements OrganisationService {
 
-    private static final String UPLOADED_FOLDER = "C:/Users/user/Desktop/OpenDesk/new/";
+    private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
     @Autowired
     private OrganisationRepository organisationRepository;
 
@@ -53,10 +53,11 @@ public class OrganisationServiceImpl implements OrganisationService {
     }
 
     @Override
-    public void uploadSiteDetials(MultipartFile uploadfile) throws IOException {
-        byte[] bytes = uploadfile.getBytes();
+    public void uploadSiteDetials(MultipartFile organisationLogo) throws IOException {
+        byte[] bytes = organisationLogo.getBytes();
         String str=new String(bytes);
-        Path path = Paths.get(UPLOADED_FOLDER + uploadfile.getOriginalFilename());
+        Path path = Paths.get(UPLOADED_FOLDER + organisationLogo.getOriginalFilename());
+        System.out.println("Path: " + path.toString());
         Files.write(path, bytes);
     }
 

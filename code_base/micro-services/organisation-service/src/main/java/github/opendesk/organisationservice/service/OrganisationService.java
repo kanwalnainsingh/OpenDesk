@@ -18,5 +18,5 @@ public interface OrganisationService {
 
     List findByOrgIdAndSiteId(String orgId, String siteId);
 
-    void uploadSiteDetials(MultipartFile uploadfile) throws IOException;
+    void uploadSiteDetials(MultipartFile organisationLogo) throws IOException;
 }
