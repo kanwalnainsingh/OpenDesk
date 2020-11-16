@@ -1,0 +1,19 @@
+{
+    "orgId": "1",
+    "companyName": "Test Company",
+    "city": "Bangalore",
+    "headQuarters": "Gurgaon",
+    "sites": [
+      {
+        "id": "1",
+        "name": "Test IT Park",
+        "floors": [
+          {
+            "floorId": "1",
+            "name": "1st Floor",
+            "totalSeat": "1000"
+          }
+        ]
+      }
+    ]
+  }

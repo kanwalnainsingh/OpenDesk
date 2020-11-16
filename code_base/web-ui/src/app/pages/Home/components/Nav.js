@@ -51,7 +51,7 @@ export default function Nav() {
 
                     <div className={classes.logo}>
                     <img
-                    style={{maxHeight:'50%'}}
+                    style={{height:'8%', width: '8%'}}
                     alt="Logo"
                     src={toAbsoluteUrl("/media/logos/red-logo.png")}
                   />
