@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@GetMapping("/api/booking-service")
 public class BookingController {
 
     @Autowired
