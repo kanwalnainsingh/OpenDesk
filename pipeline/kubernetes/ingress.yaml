@@ -13,15 +13,15 @@ spec:
             backend:
               serviceName: booking-service
               servicePort: 8081
-          - path: /api/booking-service/
+          - path: /api/desk-service/
             backend:
               serviceName: desk-service
               servicePort: 8082
-          - path: /api/desk-service/
+          - path: /api/employee-service/
             backend:
               serviceName: employee-service
               servicePort: 8083
-          - path: /api/employee-service/
+          - path: /api/organisation-service/
             backend:
               serviceName: organisation-service
               servicePort: 8084
