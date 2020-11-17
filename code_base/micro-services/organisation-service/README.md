@@ -14,4 +14,4 @@
 #Usage
 - Open cmd or bash, navigate to organisation-service and run : mvn clean install
 - After build is successful, run "java -jar target/jar-name.jar" or run SpringBoot main class from IDE.
-- Open browser and go to URL "http://localhost:8084/swagger-ui.html#/" and explore service.
+- Open browser and go to URL "http://localhost:8084/api/organisation-service/swagger-ui.html/" and explore service.
