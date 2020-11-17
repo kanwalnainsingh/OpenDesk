@@ -11,7 +11,19 @@ spec:
         paths:
           - path: /api/booking-service/
             backend:
-              serviceName: booking
+              serviceName: booking-service
+              servicePort: 8081
+          - path: /api/booking-service/
+            backend:
+              serviceName: desk-service
+              servicePort: 8082
+          - path: /api/desk-service/
+            backend:
+              serviceName: employee-service
+              servicePort: 8083
+          - path: /api/employee-service/
+            backend:
+              serviceName: employee-service
               servicePort: 8081
           - path: /
             backend:

@@ -18,31 +18,31 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @GetMapping("/api/booking-service/bookings")
+    @GetMapping("/bookings")
     public List getBookings() {
         List listOfBookings = bookingService.getBookings();
         return listOfBookings;
     }
 
-    @GetMapping("/api/booking-service/booking/{id}")
-    public Booking getCountryById(@PathVariable String id) {
+    @GetMapping("/booking/{id}")
+    public Booking getBookingById(@PathVariable String id) {
         return bookingService.getBooking(id);
     }
 
-    @PostMapping("/api/booking-service/booking")
+    @PostMapping("/booking")
     @ResponseStatus(HttpStatus.OK)
-    public Booking addCountry(@RequestBody Booking booking) {
+    public Booking addBooking(@RequestBody Booking booking) {
         return bookingService.addBooking(booking);
     }
 
-    @PutMapping("/api/booking-service/bookings")
-    public Booking updateCountry(@RequestBody Booking booking) {
+    @PutMapping("/bookings")
+    public Booking updateBookings(@RequestBody Booking booking) {
         return bookingService.updateBooking(booking);
 
     }
 
-    @DeleteMapping("/api/booking-service/booking/{id}")
-    public void deleteCountry(@PathVariable("id") String bookingId) {
+    @DeleteMapping("/booking/{id}")
+    public void deleteBooking(@PathVariable("id") String bookingId) {
         bookingService.deleteBooking(bookingId);
     }
 

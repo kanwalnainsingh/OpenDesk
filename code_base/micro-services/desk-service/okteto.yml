@@ -7,7 +7,7 @@ volumes:
 sync:
   - .:/okteto
 forward:
-  - 8004:8004
+  - 8002:8002
 resources:
   limits:
     cpu: "2"
