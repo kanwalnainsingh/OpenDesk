@@ -22,8 +22,17 @@ spec:
             - name: http
               containerPort: 8081 # The port that the container exposes
           args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: 1Gi
 
         - name: redis-container
           image: redis
           ports:
            - containerPort: 6379
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: 1Gi
+
