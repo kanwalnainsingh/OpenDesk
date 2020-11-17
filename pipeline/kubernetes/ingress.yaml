@@ -23,8 +23,8 @@ spec:
               servicePort: 8083
           - path: /api/employee-service/
             backend:
-              serviceName: employee-service
-              servicePort: 8081
+              serviceName: organisation-service
+              servicePort: 8084
           - path: /
             backend:
               serviceName: opendesk-web-ui
