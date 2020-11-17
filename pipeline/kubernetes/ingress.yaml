@@ -4,7 +4,7 @@ metadata:
   namespace: kanwalnainsingh
   name: opendesk
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
     dev.okteto.com/generate-host: "true"
 spec:
   rules:
