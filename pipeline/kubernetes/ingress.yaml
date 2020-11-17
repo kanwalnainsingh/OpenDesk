@@ -4,17 +4,17 @@ metadata:
   namespace: kanwalnainsingh
   name: opendesk
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     dev.okteto.com/generate-host: "true"
 spec:
   rules:
     - http:
         paths:
-          - path: /api/booking-service
+          - path: /api/booking-service/?(.*)
             backend:
               serviceName: booking
               servicePort: 8081
-          - path: /
+          - path: /?(.*)
             backend:
               serviceName: opendesk-web-ui
               servicePort: 80
