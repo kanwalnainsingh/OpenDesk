@@ -1,0 +1,10 @@
+app:
+  name: employee-service
+  description: service related to users.
+
+server:
+  port : 8085
+
+spring:
+  profiles:
+    active: dev

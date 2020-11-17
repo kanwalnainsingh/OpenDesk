@@ -1,0 +1,6 @@
+booking.service.url: https://opendesk-kanwalnainsingh.cloud.okteto.net/api/booking-service
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
