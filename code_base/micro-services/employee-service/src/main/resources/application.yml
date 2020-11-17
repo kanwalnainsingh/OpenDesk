@@ -3,7 +3,9 @@ app:
   description: service related to users.
 
 server:
-  port : 8085
+  port: 8083
+  servlet:
+    context-path: /api/employee-service
 
 spring:
   profiles:
