@@ -9,4 +9,4 @@ forward:
 resources:
   limits:
     cpu: "2"
-    memory: 4Gi
+    memory: 2Gi

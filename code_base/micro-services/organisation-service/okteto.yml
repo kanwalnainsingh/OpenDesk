@@ -1,4 +1,4 @@
-name: booking
+name: organisation-service
 image: okteto/maven:latest
 command: bash
 workdir: /okteto
@@ -11,4 +11,4 @@ forward:
 resources:
   limits:
     cpu: "2"
-    memory: 4Gi
+    memory: 2Gi
