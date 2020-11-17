@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: desk-service
-  name: desk-service-expose
+  name: desk-service
   namespace: kanwalnainsingh
 spec:
   ports:

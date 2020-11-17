@@ -22,3 +22,10 @@ spec:
             - name: http
               containerPort: 80   # Should match the Port that the container listens on
           args: ["nginx", "-g", "daemon off;"]
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi
