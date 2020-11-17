@@ -3,8 +3,8 @@ kind: Service
 metadata:
   labels:
     app: desk-service
-  name: desk-service-expose
-  namespace: default
+  name: desk-service
+  namespace: kanwalnainsingh
 spec:
   ports:
   - port: 8082

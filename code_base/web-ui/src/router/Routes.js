@@ -1,7 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Spinner } from '../app/components/Spinner'
+import SetupBuilder from '../app/container/SetupBuilder/SetupBuilder'
 const HomeRouter = lazy(() => import("./HomeRouter"))
+
 
 export const Routes = () => {
   
@@ -13,6 +15,7 @@ export const Routes = () => {
         <Redirect exact from="/" to="/home" />
       }
       <Route path="/home" component={HomeRouter} />
+      <Route path="/organisation" component={SetupBuilder} />
     </Switch>
   </Suspense>
   );
