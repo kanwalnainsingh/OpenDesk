@@ -26,3 +26,6 @@ spec:
             requests:
               cpu: "0.5"
               memory: 0.5Gi
+            limits:
+              cpu: "0.5"
+              memory: 0.5Gi
