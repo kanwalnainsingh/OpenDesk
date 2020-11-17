@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/booking-service")
 public class BookingController {
 
     @Autowired
@@ -19,30 +18,30 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @GetMapping("/bookings")
+    @GetMapping("/api/booking-service/bookings")
     public List getBookings() {
         List listOfBookings = bookingService.getBookings();
         return listOfBookings;
     }
 
-    @GetMapping("/booking/{id}")
+    @GetMapping("/api/booking-service/booking/{id}")
     public Booking getCountryById(@PathVariable String id) {
         return bookingService.getBooking(id);
     }
 
-    @PostMapping("/booking")
+    @PostMapping("/api/booking-service/booking")
     @ResponseStatus(HttpStatus.OK)
     public Booking addCountry(@RequestBody Booking booking) {
         return bookingService.addBooking(booking);
     }
 
-    @PutMapping("/bookings")
+    @PutMapping("/api/booking-service/bookings")
     public Booking updateCountry(@RequestBody Booking booking) {
         return bookingService.updateBooking(booking);
 
     }
 
-    @DeleteMapping("/booking/{id}")
+    @DeleteMapping("/api/booking-service/booking/{id}")
     public void deleteCountry(@PathVariable("id") String bookingId) {
         bookingService.deleteBooking(bookingId);
     }
