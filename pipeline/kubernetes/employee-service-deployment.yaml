@@ -24,16 +24,19 @@ spec:
           args: ["java","-cp","app:app/lib/*","github.opendesk.employeeservice.EmployeeServiceApplication"]
           resources:
             requests:
-              cpu: "0.5"
+              cpu: "0.2"
               memory: 1Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi
         - name: redis-container
           image: redis
           ports:
             - containerPort: 6379
           resources:
             requests:
-              cpu: "0.5"
+              cpu: "0.2"
               memory: 0.5Gi
             limits:
-              cpu: "0.5"
+              cpu: "0.2"
               memory: 0.5Gi
