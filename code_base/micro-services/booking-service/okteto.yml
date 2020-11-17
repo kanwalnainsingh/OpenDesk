@@ -1,0 +1,14 @@
+name: booking
+image: okteto/maven:latest
+command: bash
+workdir: /okteto
+volumes:
+  - /root/.m2
+sync:
+  - .:/okteto
+forward:
+  - 8001:8001
+resources:
+  limits:
+    cpu: "2"
+    memory: 4Gi

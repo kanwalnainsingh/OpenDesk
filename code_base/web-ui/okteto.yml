@@ -1,0 +1,12 @@
+name: opendesk-web-ui
+image: okteto/node:12
+command: bash
+workdir: /okteto
+sync:
+  - .:/okteto
+forward:
+  - 80:80
+resources:
+  limits:
+    cpu: "2"
+    memory: 4Gi
