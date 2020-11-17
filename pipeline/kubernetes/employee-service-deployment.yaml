@@ -33,4 +33,4 @@ spec:
           resources:
             requests:
               cpu: "0.5"
-              memory: 1Gi
+              memory: 0.5Gi
