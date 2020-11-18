@@ -8,5 +8,9 @@ server:
     context-path: /api/employee-service
 
 spring:
-  profiles:
-    active: dev
+  redis:
+    host: localhost
+    port: 6379
+
+springdoc.swagger-ui.path: /api/employee-service/swagger-ui.html
+booking.service.url: https://opendesk-kanwalnainsingh.cloud.okteto.net/api/booking-service
