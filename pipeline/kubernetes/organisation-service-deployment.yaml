@@ -2,7 +2,7 @@ apiVersion: apps/v1           # API version
 kind: Deployment              # Type of kubernetes resource
 metadata:
   namespace: kanwalnainsingh
-  name: organisation-service    # Name of the kubernetes resource
+  name: organisation-service  # Name of the kubernetes resource
   labels:                     # Labels that will be applied to this resource
     app: organisation-service
 spec:
@@ -22,8 +22,21 @@ spec:
             - name: http
               containerPort: 8082 # The port that the container exposes
           args: ["java","-cp","app:app/lib/*","github.opendesk.organisationservice.OrganisationServiceApplication"]
-
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi
         - name: redis-container
           image: redis
           ports:
             - containerPort: 6379
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi

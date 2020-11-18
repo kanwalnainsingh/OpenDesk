@@ -8,5 +8,8 @@ forward:
   - 80:80
 resources:
   limits:
-    cpu: "2"
-    memory: 4Gi
+    cpu: "0.3"
+    memory: 0.5Gi
+  requests:
+    cpu: "0.3"
+    memory: 0.5Gi

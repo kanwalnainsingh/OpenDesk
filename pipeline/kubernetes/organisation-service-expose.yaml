@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: organisation-service
-  name: organisation-service-expose
+  name: organisation-service
   namespace: kanwalnainsingh
 spec:
   ports:
