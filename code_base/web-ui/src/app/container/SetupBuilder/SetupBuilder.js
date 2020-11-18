@@ -11,6 +11,8 @@ import './SetupBuilder.css'
 import Floor from '../../components/Onboarding/Floor'
 import Service from '../../../services'
 
+var onboardData = require('../../../Asset/mockData/onboardmock.json')
+
 class setUpBuilder extends Component {
     state = {
         fileName: '',
@@ -103,7 +105,8 @@ class setUpBuilder extends Component {
     }
 
     submitForm = () => {
-        Service.saveOnboardData("abc")
+        console.log(onboardData)
+        Service.saveOnboardData(onboardData)
             .then(response => console.log(response.data))
     }
 
