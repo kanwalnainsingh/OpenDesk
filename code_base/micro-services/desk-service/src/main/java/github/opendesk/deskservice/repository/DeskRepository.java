@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface DeskRepository extends CrudRepository<DeskDao, String> {
+    List findByOrgId(String orgId);
+    List findByOrgIdAndSiteId(String orgId, String siteId);
     List findByOrgIdAndSiteIdAndFloorId(String orgId, String siteId, String floorId);
 }

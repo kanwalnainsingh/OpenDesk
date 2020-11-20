@@ -1,0 +1,12 @@
+[
+  {
+    "id": "deskId",
+    "seatSerial": "serial",
+    "isReserved": "reserved",
+    "isAvailable": "available",
+    "orgId": "orgId",
+    "siteId": "siteId",
+    "floorId": "floorId",
+    "status": "status"
+  }
+]

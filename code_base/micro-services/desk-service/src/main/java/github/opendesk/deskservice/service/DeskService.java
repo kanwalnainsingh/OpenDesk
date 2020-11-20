@@ -15,5 +15,9 @@ public interface DeskService {
 
     List getDesks();
 
-    List getDesksByOragIdSiteIdAndFloorId(String orgId, String siteId, String floorId);
+    List getDesksByOrgIdSiteIdAndFloorId(String orgId, String siteId, String floorId);
+
+    List getDesksByOrgIdAndSiteId(String orgId, String siteId);
+
+    List getDesksByOrgId(String orgId);
 }

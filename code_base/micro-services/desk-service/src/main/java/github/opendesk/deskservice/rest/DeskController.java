@@ -25,10 +25,19 @@ public class DeskController {
         return deskService.getDesk(id);
     }
 
-    @GetMapping("/desk/{orgId}/{siteId}/{floorId}")
-    public List getDesksByOragIdSiteIdAndFloorId (@PathVariable(value = "orgId") String orgId, @PathVariable(value = "siteId") String siteId,@PathVariable(value = "floorId") String floorId) {
-        List listOfDesks = deskService.getDesksByOragIdSiteIdAndFloorId(orgId, siteId, floorId);
-        return listOfDesks;
+    @GetMapping("/desks/{orgId}/{siteId}/{floorId}")
+    public List getDesksByOrgIdSiteIdAndFloorId (@PathVariable(value = "orgId") String orgId, @PathVariable(value = "siteId") String siteId,@PathVariable(value = "floorId") String floorId) {
+        return deskService.getDesksByOrgIdSiteIdAndFloorId(orgId, siteId, floorId);
+    }
+
+    @GetMapping("/desks/{orgId}/{siteId}")
+    public List getDesksByOrgIdAndSiteId (@PathVariable(value = "orgId") String orgId, @PathVariable(value = "siteId") String siteId) {
+        return deskService.getDesksByOrgIdAndSiteId(orgId, siteId);
+    }
+
+    @GetMapping("/desks/{orgId}")
+    public List getDesksByOrgId (@PathVariable(value = "orgId") String orgId) {
+        return deskService.getDesksByOrgId(orgId);
     }
 
     @PostMapping("/desk")

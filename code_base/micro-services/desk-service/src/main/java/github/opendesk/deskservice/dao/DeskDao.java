@@ -16,8 +16,11 @@ public class DeskDao {
     private String seatSerial;
     private String isReserved;
     private String isAvailable;
+    @Indexed
     private String orgId;
+    @Indexed
     private String siteId;
+    @Indexed
     private String floorId;
     private String status;
 }

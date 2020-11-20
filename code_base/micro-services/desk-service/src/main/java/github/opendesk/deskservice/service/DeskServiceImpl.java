@@ -49,8 +49,21 @@ public class DeskServiceImpl implements DeskService {
     }
 
     @Override
-    public List getDesksByOragIdSiteIdAndFloorId(String orgId, String siteId, String floorId) {
-        return deskRepository.findByOrgIdAndSiteIdAndFloorId(orgId,siteId,floorId);
+    public List<Desk> getDesksByOrgIdSiteIdAndFloorId(String orgId, String siteId, String floorId) {
+        List<DeskDao>  deskDaoList = deskRepository.findByOrgIdAndSiteIdAndFloorId(orgId, siteId, floorId);
+        return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Desk> getDesksByOrgIdAndSiteId(String orgId, String siteId) {
+        List<DeskDao>  deskDaoList = deskRepository.findByOrgIdAndSiteId(orgId, siteId);
+        return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Desk> getDesksByOrgId(String orgId) {
+        List<DeskDao>  deskDaoList = deskRepository.findByOrgId(orgId);
+        return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
     }
 }
 
