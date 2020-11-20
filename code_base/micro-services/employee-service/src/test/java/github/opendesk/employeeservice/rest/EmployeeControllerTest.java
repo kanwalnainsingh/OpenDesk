@@ -20,7 +20,7 @@ public class EmployeeControllerTest {
 
     @Test
     public void testGetEmployeeBookingDetails() {
-        webTestClient.get().uri("api/employee-service/employee/1/bookings")
+        webTestClient.get().uri("api/employee-service/employee/2/bookings")
                 .exchange()
                 .expectStatus().isOk();
     }
