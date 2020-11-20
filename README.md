@@ -29,6 +29,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## Few Important links to start:
 - [Getting Started Guides](docs/getting-started/README.md)
+- [UI Prototype](docs/prototype/README.md)
 - [Technical Design](docs/technical-design/README.md)
 - [Wireframes](docs/wireframe/README.md)
 - [Code Setup: MicroService](code_base/micro-services/README.md)

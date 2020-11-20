@@ -17,6 +17,7 @@ export const Routes = () => {
         <Redirect exact from="/" to="/home" />
       }
       <Route path="/home" component={HomeRouter} />
+
       <Route path="/organization" component={AddSite} />
       <Route path="/tesOrganisation" component={SetupBuilder} />
     </Switch>
