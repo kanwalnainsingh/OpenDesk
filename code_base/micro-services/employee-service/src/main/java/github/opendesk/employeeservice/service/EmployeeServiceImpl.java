@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Flux<Booking> getEmployeeBookingDetails(String employeeId) {
         //ToDo: Change the booking service API to fetch bookingdetails assiciated to employeeId
         return this.bookingServiceClient.get()
-                .uri("/bookings/")
+                .uri("/bookings/employee/{empId}/", employeeId)
                 .retrieve()
                 .bodyToFlux(Booking.class)
                 .doOnError(err -> logger.info("Error in fetching booking details for employee", employeeId));
