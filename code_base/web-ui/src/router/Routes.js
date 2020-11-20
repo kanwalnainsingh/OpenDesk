@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Spinner } from '../app/components/Spinner'
 import SetupBuilder from '../app/container/SetupBuilder/SetupBuilder'
+import Site from '../app/components/Site/Site'
+import AddSite from '../app/container/AddSite/AddSite'
 const HomeRouter = lazy(() => import("./HomeRouter"))
 
 
@@ -15,7 +17,9 @@ export const Routes = () => {
         <Redirect exact from="/" to="/home" />
       }
       <Route path="/home" component={HomeRouter} />
-      <Route path="/organisation" component={SetupBuilder} />
+
+      <Route path="/organization" component={AddSite} />
+      <Route path="/tesOrganisation" component={SetupBuilder} />
     </Switch>
   </Suspense>
   );

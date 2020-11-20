@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFileUpload } from '@fortawesome/free-solid-svg-icons'
 
+import { BrowserRouter } from 'react-router-dom';
 import { Routes } from './router/Routes'
+
+library.add(faFileUpload)
+
 class App extends Component {
   render() {
     return (
