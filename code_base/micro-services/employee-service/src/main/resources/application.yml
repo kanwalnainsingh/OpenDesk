@@ -12,4 +12,4 @@ spring:
     host: localhost
     port: 6379
 
-booking.service.url: http://localhost:8082/api/booking-service/
+booking.service.url: https://opendesk-kanwalnainsingh.cloud.okteto.net/api/booking-service
