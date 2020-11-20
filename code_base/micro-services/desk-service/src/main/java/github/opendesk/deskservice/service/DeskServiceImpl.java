@@ -2,8 +2,8 @@ package github.opendesk.deskservice.service;
 
 import github.opendesk.deskservice.converter.DeskConverter;
 import github.opendesk.deskservice.dao.DeskDao;
-import github.opendesk.deskservice.model.Desk;
 import github.opendesk.deskservice.repository.DeskRepository;
+import github.opendesk.deskservice.model.Desk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +46,11 @@ public class DeskServiceImpl implements DeskService {
     @Override
     public void deleteDesk(String id) {
         deskRepository.deleteById(id);
+    }
+
+    @Override
+    public List getDesksByOragIdSiteIdAndFloorId(String orgId, String siteId, String floorId) {
+        return deskRepository.findByOrgIdAndSiteIdAndFloorId(orgId,siteId,floorId);
     }
 }
 

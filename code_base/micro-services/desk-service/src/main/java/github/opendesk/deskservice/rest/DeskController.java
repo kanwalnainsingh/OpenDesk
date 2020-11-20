@@ -25,6 +25,12 @@ public class DeskController {
         return deskService.getDesk(id);
     }
 
+    @GetMapping("/desk/{orgId}/{siteId}/{floorId}")
+    public List getDesksByOragIdSiteIdAndFloorId (@PathVariable(value = "orgId") String orgId, @PathVariable(value = "siteId") String siteId,@PathVariable(value = "floorId") String floorId) {
+        List listOfDesks = deskService.getDesksByOragIdSiteIdAndFloorId(orgId, siteId, floorId);
+        return listOfDesks;
+    }
+
     @PostMapping("/desk")
     @ResponseStatus(HttpStatus.OK)
     public Desk addCountry(@RequestBody Desk Desk) {

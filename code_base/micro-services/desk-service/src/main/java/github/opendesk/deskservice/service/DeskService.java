@@ -14,4 +14,6 @@ public interface DeskService {
     void deleteDesk(String deskId);
 
     List getDesks();
+
+    List getDesksByOragIdSiteIdAndFloorId(String orgId, String siteId, String floorId);
 }
