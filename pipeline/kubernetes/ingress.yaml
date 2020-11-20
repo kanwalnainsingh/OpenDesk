@@ -25,7 +25,7 @@ spec:
             backend:
               serviceName: organisation-service
               servicePort: 8084
-          - path: /
+          - path: /*
             backend:
               serviceName: opendesk-web-ui
               servicePort: 80
