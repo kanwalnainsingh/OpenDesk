@@ -1,6 +1,7 @@
 package github.opendesk.bookingservice.service;
 
 import github.opendesk.bookingservice.dao.BookingDao;
+import github.opendesk.bookingservice.model.Booking;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,7 +25,7 @@ public class TestBookingServiceImpl {
     private BookingServiceImpl bookingService;
 
     @Test
-    public void testGetBookings(){
+    public void testGetBookings() {
 
         //Given
         List bookingDoaList = new ArrayList();
@@ -79,6 +80,44 @@ public class TestBookingServiceImpl {
         Assertions.assertEquals(bookingService.getBookings().get(1).getUserId(), secondUserId);
         Assertions.assertEquals(bookingService.getBookings().get(1).getOrgId(), secondOrgId);
 
+    }
+
+    @Test
+    public void testGetBookingsForEmployee() {
+
+        //Given
+        List bookingDoaList = new ArrayList();
+        bookingDoaList.add(BookingDao.builder().
+                bookingDate(LocalDate.now().toString())
+                .bookingTime(LocalDate.now().toString())
+                .bookingId("2")
+                .orgId("2")
+                .userId("2")
+                .siteId("2")
+                .floorId("2").build());
+        bookingDoaList.add(BookingDao.builder().
+                bookingDate(LocalDate.now().toString())
+                .bookingTime(LocalDate.now().toString())
+                .bookingId("3")
+                .orgId("3")
+                .userId("3")
+                .siteId("3")
+                .floorId("3").build());
+        //when
+        Mockito.when(bookingRepository.findByUserId("2")).thenReturn(bookingDoaList);
+
+        List<Booking> bookingsForAnEmployee = bookingService.getBookingsForAnEmployee("2");
+
+        //then
+        Assertions.assertEquals(bookingsForAnEmployee.size(), bookingDoaList.size());
+        Assertions.assertEquals(bookingsForAnEmployee.get(0).getFloorId(), "2");
+        Assertions.assertEquals(bookingsForAnEmployee.get(0).getSiteId(), "2");
+        Assertions.assertEquals(bookingsForAnEmployee.get(0).getUserId(), "2");
+        Assertions.assertEquals(bookingsForAnEmployee.get(0).getOrgId(), "2");
+        Assertions.assertEquals(bookingsForAnEmployee.get(1).getFloorId(), "3");
+        Assertions.assertEquals(bookingsForAnEmployee.get(1).getSiteId(), "3");
+        Assertions.assertEquals(bookingsForAnEmployee.get(1).getUserId(), "3");
+        Assertions.assertEquals(bookingsForAnEmployee.get(1).getOrgId(), "3");
     }
 
 }
