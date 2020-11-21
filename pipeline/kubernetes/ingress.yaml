@@ -5,7 +5,6 @@ metadata:
   name: opendesk
   annotations:
     dev.okteto.com/generate-host: "true"
-    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
     - http:
