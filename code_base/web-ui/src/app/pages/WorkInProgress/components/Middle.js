@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     boxShadow: "none",
     marginTop: "3rem",
+    marginBottom: "1rem",
     [theme.breakpoints.down("sm")]: {
       height: "73vh",
     },

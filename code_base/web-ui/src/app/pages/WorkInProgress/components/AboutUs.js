@@ -2,21 +2,24 @@ import React from "react";
 import { Container, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#1F2E35",
     height: "50vh",
     color: "white",
     textAlign: "center",
-    padding: "0 3rem",
+    padding: "0 4rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 1.5rem",
+    },
   },
   title: {
     fontWeight: "bold",
   },
   description: {
-    marginTop: "3rem",
+    marginTop: "2rem",
   },
-});
+}));
 
 export default function AboutUs() {
   const classes = useStyles();
