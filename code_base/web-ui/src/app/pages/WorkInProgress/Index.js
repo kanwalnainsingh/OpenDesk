@@ -1,6 +1,4 @@
 import React from "react";
-// import Mobile from "./components/mobile/Mobile";
-// import Desktop from "./components/desktop/Desktop";
 import Nav from "./components/Nav";
 import Middle from "./components/Middle";
 import AboutUs from "./components/AboutUs";
