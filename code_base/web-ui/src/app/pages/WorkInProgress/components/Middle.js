@@ -2,25 +2,27 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
-  CardActions,
   Container,
   CardContent,
   CardMedia,
   Button,
   Typography,
 } from "@material-ui/core";
-
-import { toAbsoluteUrl } from "../../../../utils/utils";
+import { toAbsoluteUrl } from "../../../utils/utils";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { Grid, GridItem } from "@bigcommerce/big-design";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
     textAlign: "center",
     boxShadow: "none",
     marginTop: "3rem",
-    height: '90vh',
+    [theme.breakpoints.down("sm")]: {
+      height: "73vh",
+    },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontWeight: "bold",
@@ -40,7 +42,14 @@ const useStyles = makeStyles({
     width: "50%",
     alignContent: "center",
   },
-});
+  ctaButton: {
+    fontWeight: "bold",
+    lineHeight: 0,
+    "& svg": {
+      color: "#f66c74",
+    },
+  },
+}));
 
 export default function Middle() {
   const classes = useStyles();
@@ -74,23 +83,12 @@ export default function Middle() {
           >
             Hi, We are under progress right now
           </Typography>
-          <Typography gutterBottom >
-            <Button
-              size="medium"
-              color="inherit"
-              style={{ fontWeight: "bold" }}
-            >
-              CHECK PROGRESS
-              <ArrowForwardIosIcon style={{color: "#f66c74"}}/>
-            </Button>
-          </Typography>
 
-          <Grid gridColumns="repeat(2, 1fr)">
-            <GridItem></GridItem>
-            <GridItem></GridItem>
-          </Grid>
+          <Button size="medium" color="inherit" className={classes.ctaButton}>
+            CHECK PROGRESS
+            <ArrowForwardIosIcon />
+          </Button>
         </CardContent>
-        <CardActions></CardActions>
       </Container>
     </Card>
   );
