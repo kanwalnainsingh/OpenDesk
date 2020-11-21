@@ -8,6 +8,7 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import { Link } from 'react-router-dom'
 import { toAbsoluteUrl } from "../../../utils/utils";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
@@ -84,7 +85,7 @@ export default function Middle() {
             Hi, We are under progress right now
           </Typography>
 
-          <Button size="medium" color="inherit" className={classes.ctaButton}>
+          <Button size="medium" color="inherit" className={classes.ctaButton} component={Link} to="/home">
             CHECK PROGRESS
             <ArrowForwardIosIcon />
           </Button>
