@@ -55,14 +55,15 @@ export default function Footer() {
           justify="center"
           alignItems="center"
         >
-          <Link href="#">
+          <Link href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA">
             <img src={toAbsoluteUrl("/media/icons/slack.png")} alt="" />
             <Typography>SLACK</Typography>
           </Link>
-          <Link href="#">
+          <Link href="https://github.com/kanwalnainsingh/OpenDesk">
             <img src={toAbsoluteUrl("/media/icons/github.png")} alt="" />
             <Typography>GITHUB</Typography>
           </Link>
+
         </Grid>
       </Container>
     </Grid>

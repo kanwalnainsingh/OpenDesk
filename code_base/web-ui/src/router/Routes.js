@@ -15,7 +15,7 @@ export const Routes = () => {
     <Switch>
       {
         /* Redirect from root URL to /quick-start. */
-        <Redirect exact from="/" to="/home" />
+        <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
 
