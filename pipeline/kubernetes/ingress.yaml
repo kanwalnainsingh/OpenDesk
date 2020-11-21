@@ -28,4 +28,3 @@ spec:
           - backend:
               serviceName: opendesk-web-ui
               servicePort: 80
-            path: /(.+)
