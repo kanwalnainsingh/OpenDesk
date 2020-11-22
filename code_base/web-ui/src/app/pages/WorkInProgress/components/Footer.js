@@ -59,14 +59,14 @@ export default function Footer() {
             href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA"
             target="_blank"
           >
-            <img src={toAbsoluteUrl("/media/icons/slack.png")} alt="" />
+            <img src={toAbsoluteUrl("/media/wip/icons/slack.png")} alt="" />
             <Typography>SLACK</Typography>
           </Link>
           <Link
             href="https://github.com/kanwalnainsingh/OpenDesk"
             target="_blank"
           >
-            <img src={toAbsoluteUrl("/media/icons/github.png")} alt="" />
+            <img src={toAbsoluteUrl("/media/wip/icons/github.png")} alt="" />
             <Typography>GITHUB</Typography>
           </Link>
         </Grid>
