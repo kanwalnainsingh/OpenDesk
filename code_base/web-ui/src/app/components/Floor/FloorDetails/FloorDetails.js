@@ -14,17 +14,17 @@ const floorDetails = (props) => {
         <div className="floorDiv">
             <div className="formDisplay">
                 <span className="floorName">Floor</span>
-                <TextField id="outlined-basic" variant="outlined" className="floorNameInput"/>
+                <TextField id="floor" variant="outlined" className="floorNameInput" onChange={props.floorInput}/>
             </div>
             <Divider style={{marginTop:'30px'}}/>
             <div className="formDisplay">
-                <span className="openDesk">Opendesks</span>
-                <TextField id="outlined-basic" variant="outlined" className="floorNameInput"/>
+                <span className="openDesk">OpenDesks</span>
+                <TextField id="opendesk" variant="outlined" className="floorNameInput" onChange={props.opendeskInput}/>
             </div>
             <Divider style={{marginTop:'30px'}}/>
             <div className="formDisplay">
-                <span className="busyDesk">Busydesks</span>
-                <TextField id="outlined-basic" variant="outlined" className="floorNameInput"/>
+                <span className="busyDesk">ReservedDesks</span>
+                <TextField id="reservedesk" variant="outlined" className="floorNameInput"/>
             </div>
             <Divider style={{marginTop:'30px'}}/>
             <FontAwesomeIcon icon="file-upload" className="uploadButton"/>
