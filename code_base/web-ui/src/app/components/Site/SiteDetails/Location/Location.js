@@ -10,8 +10,7 @@ const location = (props) => {
         <Aux>
             <div className="locationBox">
                 <span className="location">Location</span>
-                {/* <input type="text" className="locationInput"/> */}
-                <TextField id="outlined-basic" variant="outlined" className="locationInput"/>
+                <TextField id="outlined-basic" variant="outlined" className="locationInput" onChange={props.locationInput}/>
                 <span className="pickButton">PICK ON MAP</span>
             </div>
         </Aux>

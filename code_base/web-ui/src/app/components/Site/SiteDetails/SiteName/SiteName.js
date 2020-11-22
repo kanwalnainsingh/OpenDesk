@@ -10,7 +10,7 @@ const siteName = (props) => {
         <Aux>
             <div className="box">
                 <span className="name">Site Name</span>
-                <TextField id="outlined-basic" variant="outlined" className="nameInput"/>
+                <TextField id="outlined-basic" variant="outlined" className="nameInput" onChange={props.siteInput}/>
             </div>
 
         </Aux>
