@@ -18,6 +18,7 @@ spec:
       containers:
         - name: desk-service-container
           image: kanwalnainsingh/opendesk-desk-service:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 8082 # The port that the container exposes

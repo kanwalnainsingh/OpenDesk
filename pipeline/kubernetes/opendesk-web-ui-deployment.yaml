@@ -18,6 +18,7 @@ spec:
       containers:
         - name: opendesk-web-ui-container
           image: kanwalnainsingh/opendesk-web-ui:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 80   # Should match the Port that the container listens on
