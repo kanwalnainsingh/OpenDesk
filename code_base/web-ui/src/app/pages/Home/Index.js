@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Tab, Tabs, Paper, Button , Typography} from "@material-ui/core";
-import Nav from './components/Nav'
-import Middle from './components/Middle'
+import React from "react";
+import {
+  createMuiTheme,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+import Home from "./components/Home/Home";
 
-const useStyles = makeStyles({
-
+const theme = createMuiTheme({
+  background: {
+    pink: "#FF575F",
+    black: "#1F2E35",
+    blue: "#407BFF",
+    yellow: "#FF8A34",
+    green: "#25C685",
+    purple: "#BA68C8",
+  },
 });
 
-export const Home = props => {
-    const classes = useStyles();
-
-    const [valueState, setValue] = useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    }
-
-
-    return (
-        <>
-         <Nav />
-         <Middle />
-        </>
-    );
-}
+export const HomeMain = () => {
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </>
+  );
+};

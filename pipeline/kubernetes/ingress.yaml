@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: kanwalnainsingh
+  name: opendesk
+  annotations:
+    dev.okteto.com/generate-host: "true"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api/booking-service/
+            backend:
+              serviceName: booking-service
+              servicePort: 8081
+          - path: /api/desk-service/
+            backend:
+              serviceName: desk-service
+              servicePort: 8082
+          - path: /api/employee-service/
+            backend:
+              serviceName: employee-service
+              servicePort: 8083
+          - path: /api/organisation-service/
+            backend:
+              serviceName: organisation-service
+              servicePort: 8084
+          - backend:
+              serviceName: opendesk-web-ui
+              servicePort: 80

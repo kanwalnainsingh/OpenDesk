@@ -1,0 +1,8 @@
+deploy:
+  - kubectl apply -f pipeline/kubernetes/.
+devs:
+  - code_base/web-ui/okteto.yml
+  - code_base/micro-services/booking-service/okteto.yml
+  - code_base/micro-services/desk-service/okteto.yml
+  - code_base/micro-services/employee-service/okteto.yml
+  - code_base/micro-services/organisation-service/okteto.yml

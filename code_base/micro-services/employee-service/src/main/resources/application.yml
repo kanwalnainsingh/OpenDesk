@@ -1,0 +1,15 @@
+app:
+  name: employee-service
+  description: service related to users.
+
+server:
+  port: 8083
+  servlet:
+    context-path: /api/employee-service
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+
+booking.service.url: https://opendesk-kanwalnainsingh.cloud.okteto.net/api/booking-service

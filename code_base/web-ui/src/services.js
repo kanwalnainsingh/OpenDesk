@@ -6,8 +6,8 @@ let API_URL = config.API_URL
 
 class Services {
     saveOnboardData(data) {
-        console.log(data)
         return axios.get('./data.json')
+        //return axios.post(API_URL, data) //add actual url here
     }
 }
 

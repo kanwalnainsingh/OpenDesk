@@ -9,6 +9,7 @@ public class DeskConverter {
     public static Function<DeskDao, Desk> deskDaoToDeskModel
             = deskDao -> Desk.builder()
                     .id(deskDao.getId())
+                    .seatSerial(deskDao.getSeatSerial())
                     .floorId(deskDao.getFloorId())
                     .isAvailable(deskDao.getIsAvailable())
                     .isReserved(deskDao.getIsReserved())
@@ -27,5 +28,5 @@ public class DeskConverter {
                     .siteId(desk.getSiteId())
                     .status(desk.getStatus())
                     .seatSerial(desk.getSeatSerial())
-                   .build();
+                    .build();
 }
