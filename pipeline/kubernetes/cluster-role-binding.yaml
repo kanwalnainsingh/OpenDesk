@@ -3,6 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   creationTimestamp: null
   name: admin
+  namespace: kanwalnainsingh
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
