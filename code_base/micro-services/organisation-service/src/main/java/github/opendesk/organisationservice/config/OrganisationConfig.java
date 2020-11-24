@@ -1,8 +1,10 @@
 package github.opendesk.organisationservice.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class OrganisationConfig {
@@ -12,5 +14,11 @@ public class OrganisationConfig {
 
         jedisConnectionFactory.afterPropertiesSet();
         return jedisConnectionFactory;
+    }
+
+    @LoadBalanced
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
