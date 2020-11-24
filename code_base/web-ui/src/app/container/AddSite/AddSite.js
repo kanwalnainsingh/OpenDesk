@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Sticky from 'react-sticky-el';
 
 import Aux from '../../HOC/Auxiliary'
+import OrganisationService from '../../service/organisation/OrganisationService'
 import Site from '../../components/Site/Site'
 import Floor from '../../components/Floor/Floor'
 import save from '../../../Asset/media/Group66.svg'
@@ -53,14 +54,17 @@ class addSite extends Component {
                 totalSeat: f.totalSeat
             })
         })
+
+        let sitesArray =[]
+        sitesArray.push({
+            siteName: this.state.siteName,
+            floors: floor
+        })
         let request = {
             city: this.state.location,
-            sites: {
-                name: this.state.siteName,
-                floors: floor
-
-            }
+            sites: sitesArray 
         }
+        let result = OrganisationService.saveOrganisation(request);
         console.log(request)
     }
     render() {
