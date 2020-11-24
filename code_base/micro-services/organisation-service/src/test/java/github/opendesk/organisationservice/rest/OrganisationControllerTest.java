@@ -3,6 +3,7 @@ package github.opendesk.organisationservice.rest;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import github.opendesk.organisationservice.base.BaseTest;
+import github.opendesk.organisationservice.client.BookingClient;
 import github.opendesk.organisationservice.service.OrganisationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -25,11 +27,14 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(OrganisationController.class)
+@TestPropertySource(locations="classpath:application-test.properties")
 public class OrganisationControllerTest extends BaseTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
     private OrganisationService organisationService;
+    @MockBean
+    private BookingClient bookingClient;
     private DocumentContext organisationContext;
     private DocumentContext organisationListContext;
     private DocumentContext siteContext;
