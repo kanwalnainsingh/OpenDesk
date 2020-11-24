@@ -2,12 +2,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   creationTimestamp: null
-  name: admin
+  name: OpenDeskRoleBinding
   namespace: kanwalnainsingh
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: kanwalnainsingh
+  name: OpenDeskRole
 subjects:
 - kind: ServiceAccount
   name: default
