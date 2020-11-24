@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const rootUrl = window.location.protocol+ '//' + window.location.hostname
+import { config } from '../../../congif'
+
+//const rootUrl = window.location.protocol+ '//' + window.location.hostname
+let rootUrl = config.API_URL
 const serviceBase = '/api/organisation-service' 
 
 class OrganisationService {

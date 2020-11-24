@@ -1,4 +1,6 @@
 import React from "react";
+import history from '../../../../../../history';
+
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Typography, Grid, Box } from "@material-ui/core";
 import { toAbsoluteUrl } from "../../../../../utils/utils";
@@ -79,7 +81,7 @@ export default function Middle() {
       </Grid>
       <Grid container className={classes.footerButton}>
         <Box width="50%" textAlign="center" className={classes.leftButton}>
-          <Button>
+          <Button onClick={() => history.push('/organisation')}>
             <img src={toAbsoluteUrl("/media/home/icons/building.png")} alt="" />
             <Box>
               <Typography gutterBottom>Continue as an</Typography>
