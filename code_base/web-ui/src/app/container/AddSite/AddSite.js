@@ -57,7 +57,7 @@ class addSite extends Component {
 
         let sitesArray =[]
         sitesArray.push({
-            siteName: this.state.siteName,
+            name: this.state.siteName,
             floors: floor
         })
         let request = {
