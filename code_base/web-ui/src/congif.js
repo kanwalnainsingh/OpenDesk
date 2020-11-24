@@ -3,7 +3,7 @@ const dev = {
 };
 
 const prod = {
-    API_URL: "OPENDESK"
+    API_URL: window.location.protocol+ '//' + window.location.hostname
 };
 
 export const config = process.env.REACT_APP_STAGE === 'prod'
