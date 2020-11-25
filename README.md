@@ -41,22 +41,6 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - [Wireframes](docs/wireframe/README.md)
 - [Code Setup: MicroService](code_base/micro-services/README.md)
 
-## Road Map
-![N|Solid](docs/planning/images/roadmap_2020.jpg)
-
-November: 
-- The minimum requirement to kick start.
-- Initial Architecture diagram.
-- Finalise the technical stack.
-- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk deployed on Cloud with Public URL.
-  - Organisation onboard with offices, floor and desk setup.  
-  - Employee should be able to book a desk on selected floor of an office. 
-
-December: 
-- CD CI setup.
-- Go live public url to access the application.
-
 ## Code of Conduct 
 
 - Please refer code of conduct at [Code of coduct](code-of-conduct.md)
