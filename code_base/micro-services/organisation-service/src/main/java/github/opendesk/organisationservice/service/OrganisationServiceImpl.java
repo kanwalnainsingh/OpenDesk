@@ -2,7 +2,7 @@ package github.opendesk.organisationservice.service;
 
 import github.opendesk.organisationservice.converter.OrganisationConverter;
 import github.opendesk.organisationservice.dao.OrganisationDao;
-import github.opendesk.organisationservice.dao.OrganisationRepository;
+import github.opendesk.organisationservice.repository.OrganisationRepository;
 import github.opendesk.organisationservice.model.Organisation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

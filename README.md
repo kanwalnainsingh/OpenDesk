@@ -1,7 +1,7 @@
 ![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
-# OpenDesk
+# [OpenDesk](https://www.bookopendesk.com/)
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
-We are running at http://www.bookopendesk.com/
+We are running at https://www.bookopendesk.com/
 
 ## Why would organisation need OpenDesk?
 As organisation are moving towards the culture of work from home(WFH), and many have decided for permanent WFH options, Organisation would like to reduce the cost of office infrastructure and reduce number of desk space. Open desk will help manage a balance between WFH and WFO culture.
@@ -40,22 +40,6 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - [Technical Design](docs/technical-design/README.md)
 - [Wireframes](docs/wireframe/README.md)
 - [Code Setup: MicroService](code_base/micro-services/README.md)
-
-## Road Map
-![N|Solid](docs/planning/images/roadmap_2020.jpg)
-
-November: 
-- The minimum requirement to kick start.
-- Initial Architecture diagram.
-- Finalise the technical stack.
-- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk deployed on Cloud with Public URL.
-  - Organisation onboard with offices, floor and desk setup.  
-  - Employee should be able to book a desk on selected floor of an office. 
-
-December: 
-- CD CI setup.
-- Go live public url to access the application.
 
 ## Code of Conduct 
 
