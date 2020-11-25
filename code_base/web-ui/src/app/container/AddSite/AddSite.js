@@ -45,7 +45,7 @@ class addSite extends Component {
     createFloorArray = () => {
         this.state.floor.push({
             name: this.state.floorName,
-            totalSeat: this.state.openDesk,
+            openDesk: this.state.openDesk,
             reservedDesk: this.state.reservedDesk
         })
     }
@@ -57,7 +57,7 @@ class addSite extends Component {
             floor.push({
                 floorId: index.toString(),
                 name: f.name,
-                totalDesk: f.totalSeat,
+                openDesk: f.openDesk,
                 reservedDesk: f.reservedDesk
             })
         })
@@ -69,6 +69,7 @@ class addSite extends Component {
             floors: floor
         })
 
+    
         let request = {
             city: this.state.location,
             sites: sitesArray 
