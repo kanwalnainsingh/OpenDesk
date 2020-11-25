@@ -14,6 +14,8 @@ import java.util.List;
 public class SiteDao {
     @Indexed
     private String id;
+    private String orgId;
     private String name;
+    private String location;
     private List<FloorDao> floors;
 }
