@@ -44,6 +44,8 @@ public class BaseTest {
         return SiteDao.builder()
                 .name("site1")
                 .id("siteId")
+                .orgId("org1")
+                .location("loc1")
                 .floors(getFloorDaoList()).build();
     }
 
@@ -51,6 +53,8 @@ public class BaseTest {
         return Site.builder()
                 .name("site1")
                 .id("siteId")
+                .orgId("org1")
+                .location("loc1")
                 .floors(getFloorList()).build();
     }
 
@@ -66,8 +70,8 @@ public class BaseTest {
         return FloorDao.builder()
                 .name("floor1")
                 .floorId("floorId")
-                .totalSeat("100")
-                .reservedSeat("20")
+                .openDesk("100")
+                .reservedDesk("20")
                 .build();
     }
 
@@ -75,8 +79,8 @@ public class BaseTest {
         return Floor.builder()
                 .name("floor1")
                 .floorId("floorId")
-                .totalSeat("100")
-                .reservedSeat("20")
+                .openDesk("100")
+                .reservedDesk("20")
                 .build();
     }
 

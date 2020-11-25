@@ -7,13 +7,15 @@
     "sites": [
       {
         "id": "siteId",
+        "orgId": "org1",
         "name": "site1",
+        "location": "loc1",
         "floors": [
           {
             "floorId": "floorId",
             "name": "floor1",
-            "totalSeat": "100",
-            "reservedSeat": "20"
+            "openDesk": "100",
+            "reservedDesk": "20"
           }
         ]
       }

@@ -8,7 +8,7 @@ import './Floor.css'
 
 const Floor = (props) => {
     let [floors, setFloors] = useState({ count: [1] })
-    let [floorDetails, setFloorDetails] = useState([<FloorDetails key={0} floorInput={props.floorInput} opendeskInput={props.opendeskInput}/>])
+    let [floorDetails, setFloorDetails] = useState([<FloorDetails key={0} floorInput={props.floorInput} opendeskInput={props.opendeskInput} reservedDeskInput={props.reservedDeskInput} />])
 
     const handleAddFloor = () => {
         let floorArray = [...floors.count]
@@ -18,7 +18,7 @@ const Floor = (props) => {
 
         for (let i = 0; i < floors.count.length; i++) {
             let displayFloor = [...floorDetails]
-            displayFloor.push(<FloorDetails key={floors.count[i]} floorInput={props.floorInput} opendeskInput={props.opendeskInput}/>)
+            displayFloor.push(<FloorDetails key={floors.count[i]} reservedDeskInput={props.reservedDeskInput} floorInput={props.floorInput} opendeskInput={props.opendeskInput}/>)
 
             setFloorDetails(displayFloor)
         }
