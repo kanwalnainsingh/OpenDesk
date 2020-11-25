@@ -1,7 +1,7 @@
 ![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
-# OpenDesk
+# [OpenDesk](https://www.bookopendesk.com/)
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
-We are running at http://www.bookopendesk.com/
+We are running at https://www.bookopendesk.com/
 
 ## Why would organisation need OpenDesk?
 As organisation are moving towards the culture of work from home(WFH), and many have decided for permanent WFH options, Organisation would like to reduce the cost of office infrastructure and reduce number of desk space. Open desk will help manage a balance between WFH and WFO culture.
