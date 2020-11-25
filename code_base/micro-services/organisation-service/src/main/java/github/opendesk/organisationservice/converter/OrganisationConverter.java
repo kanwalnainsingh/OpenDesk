@@ -39,6 +39,7 @@ public class OrganisationConverter {
                 .name(site.getName())
                 .id(site.getId())
                 .orgId(site.getOrgId())
+                .location(site.getLocation())
                 .floors(site.getFloors().stream().map(OrganisationConverter.floorModelToFloorDao::apply).collect(Collectors.toList()))
                 .build();
         return siteDao;
@@ -48,6 +49,7 @@ public class OrganisationConverter {
                 .name(siteDao.getName())
                 .id(siteDao.getId())
                 .orgId(siteDao.getOrgId())
+                .location(siteDao.getLocation())
                 .floors(siteDao.getFloors().stream().map(OrganisationConverter.floorDaoToFloorModel::apply).collect(Collectors.toList())).build();
 
         return site;
