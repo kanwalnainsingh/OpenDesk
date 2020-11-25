@@ -18,6 +18,7 @@ class addSite extends Component {
         floorName: '',
         floor: [],
         openDesk: '',
+        reservedDesk: '',
         openDeskArray: []
     }
 
@@ -37,10 +38,15 @@ class addSite extends Component {
         this.state.openDesk = e.target.value
     }
 
+    onChangeReservedDesk = (e) => {
+        this.state.reservedDesk = e.target.value
+    }
+
     createFloorArray = () => {
         this.state.floor.push({
             name: this.state.floorName,
-            totalSeat: this.state.openDesk
+            totalSeat: this.state.openDesk,
+            reservedDesk: this.state.reservedDesk
         })
     }
 
@@ -51,15 +57,18 @@ class addSite extends Component {
             floor.push({
                 floorId: index.toString(),
                 name: f.name,
-                totalSeat: f.totalSeat
+                totalDesk: f.totalSeat,
+                reservedDesk: f.reservedDesk
             })
         })
 
         let sitesArray =[]
         sitesArray.push({
             name: this.state.siteName,
+            location: this.state.location,
             floors: floor
         })
+
         let request = {
             city: this.state.location,
             sites: sitesArray 
@@ -71,16 +80,9 @@ class addSite extends Component {
         return (
             <Aux>
                 <Site siteInput={(event) => this.onChangeSite(event)} locationInput={(event) => this.onChangeLocation(event)} />
-                <Floor floorInput={(event) => this.onChangeFloor(event)} createArray={this.createFloorArray} opendeskInput={(event) => this.onChangeOpenDesk(event)} />
+                <Floor floorInput={(event) => this.onChangeFloor(event)} createArray={this.createFloorArray} opendeskInput={(event) => this.onChangeOpenDesk(event)}  reservedDeskInput={(event) => this.onChangeReservedDesk(event)}/>
                 <Sticky mode='bottom' className="buttons">
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        startIcon={<DeleteIcon />}
-                        style={{ borderRadius: '15px' }}
-                    >
-                        Delete
-                </Button>
+                    
                     <Button
                         variant="contained"
                         color="primary"
@@ -90,13 +92,7 @@ class addSite extends Component {
                     >
                         Save Site
                 </Button>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        style={{ marginLeft: '14px', borderRadius: '15px' }}
-                    >
-                        Save as Draft
-                </Button>
+                    
                 </Sticky>
             </Aux>
         )
