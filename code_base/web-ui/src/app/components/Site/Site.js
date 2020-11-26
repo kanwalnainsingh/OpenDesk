@@ -10,8 +10,8 @@ const site = (props) => {
         <Aux>
             <h3 className="addSite">ADD SITE</h3>
             <div style={{display: 'flex'}}>
-                <SiteName />
-                <Location />
+                <SiteName siteInput = {props.siteInput}/>
+                <Location locationInput = {props.locationInput}/>
             </div>
         </Aux>
     )

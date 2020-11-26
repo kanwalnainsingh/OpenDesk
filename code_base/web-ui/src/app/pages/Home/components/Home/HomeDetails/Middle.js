@@ -71,6 +71,7 @@ export default function Middle() {
               style={{ fontWeight: "bold" }}
             >
               <NavLink to="/home/about" style={{color: 'inherit', textDecoration:'none'}}>More</NavLink>
+              More
             </Button>
           </Typography>
           <Typography style={{ color: "#f66c74" }}>
