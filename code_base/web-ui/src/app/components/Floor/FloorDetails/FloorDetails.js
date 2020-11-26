@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
 
@@ -14,17 +12,17 @@ const floorDetails = (props) => {
         <div className="floorDiv">
             <div className="formDisplay">
                 <span className="floorName">Floor Name</span>
-                <TextField id="floor" variant="outlined" className="floorNameInput" onChange={props.floorInput}/>
+                <TextField id="floor" variant="outlined" className="floorNameInput" onBlur={(event, id)=>props.onBlurFloor(event, props.id)}/>
             </div>
             <Divider style={{marginTop:'30px'}}/>
             <div className="formDisplay">
                 <span className="openDesk">Open Desks</span>
-                <TextField id="opendesk" variant="outlined" className="floorNameInput" onChange={props.opendeskInput}/>
+                <TextField id="opendesk" variant="outlined" className="floorNameInput" onBlur={(event, id)=>props.onBlurOpd(event, props.id)}/>
             </div>
             <Divider style={{marginTop:'30px'}}/>
             <div className="formDisplay">
                 <span className="busyDesk">Reserved Desks</span>
-                <TextField id="reservedDesk" variant="outlined" className="floorNameInput" onChange={props.reservedDeskInput}/>
+                <TextField id="reservedDesk" variant="outlined" className="floorNameInput" onBlur={(event, id)=>props.onBlurRsD(event, props.id)}/>
             </div>
             {/* 
             TODO: Moving this to next release
