@@ -56,7 +56,7 @@ export default function Footer() {
           alignItems="center"
         >
           <Link
-            href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA"
+            href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw"
             target="_blank"
           >
             <img src={toAbsoluteUrl("/media/wip/icons/slack.png")} alt="" />

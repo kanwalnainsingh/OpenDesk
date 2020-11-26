@@ -9,7 +9,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 ## Contribution guide:
 - Fork the github project.
 - Look up issues section, pick an issue comment on issue for clarification or notify you are picking up.
-- Connect with community on  [Slack](https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 
+- Connect with community on  [Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw) 
 - Youtube Channel: [Link](https://www.youtube.com/channel/UCbjAYM7lRMbJPoYf7HYqQLw)
 
 ## The minimum requirement to kick start:
@@ -51,7 +51,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## Join slack below for discussions
 
-[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA)
+[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw)
 
 
 ## Note: 
@@ -59,4 +59,4 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - We welcome suggestions from everyone tech or non tech.
 - If you are new to open source this is the perfect place to start.
 
-Need a kick start on how to start connect with me on linkedin. [Kanwal Nain Singh](https://www.linkedin.com/in/kanwalnainsingh/)  or join [Slack](https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 
+Need a kick start on how to start connect with me on linkedin. [Kanwal Nain Singh](https://www.linkedin.com/in/kanwalnainsingh/)  or join [Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw)
