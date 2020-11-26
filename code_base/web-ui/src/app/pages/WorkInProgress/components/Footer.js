@@ -56,18 +56,32 @@ export default function Footer() {
           alignItems="center"
         >
           <Link
-            href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA"
+            href="https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw"
             target="_blank"
           >
-            <img src={toAbsoluteUrl("/media/wip/icons/slack.png")} alt="" />
+            <img src={toAbsoluteUrl("/media/wip/icons/slack.png")} alt="Slack Invitation" />
             <Typography>SLACK</Typography>
           </Link>
           <Link
             href="https://github.com/kanwalnainsingh/OpenDesk"
             target="_blank"
           >
-            <img src={toAbsoluteUrl("/media/wip/icons/github.png")} alt="" />
+            <img src={toAbsoluteUrl("/media/wip/icons/github.png")} alt="Github Source Code" />
             <Typography>GITHUB</Typography>
+          </Link>
+           <Link
+                      href="https://www.youtube.com/channel/UCbjAYM7lRMbJPoYf7HYqQLw/"
+                      target="_blank"
+                    >
+                      <img src={toAbsoluteUrl("/media/wip/icons/youtube.svg")} alt="Book Open Desk Youtube" />
+                      <Typography>YOUTUBE</Typography>
+                    </Link>
+        <Link
+            href="https://t.me/joinchat/MC6oMhvKc7QYogm6lBJgfg"
+            target="_blank"
+          >
+            <img src={toAbsoluteUrl("/media/wip/icons/telegram.svg")} alt="Telegram Channel" />
+            <Typography>TELEGRAM</Typography>
           </Link>
         </Grid>
       </Container>
