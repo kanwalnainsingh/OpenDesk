@@ -23,37 +23,65 @@ class addSite extends Component {
     }
 
     onChangeSite = (e) => {
-        this.setState({ siteName: e.target.value })
+        this.state.siteName = e.target.value
     }
 
     onChangeLocation = (e) => {
-        this.setState({ location: e.target.value })
+        this.state.location = e.target.value
     }
 
-    onChangeFloor = (e) => {
-        this.state.floorName = e.target.value
+    fieldBlur = (e, id) => {
+        console.log(this.state.floor)
+        if (this.state.floor.length > id) {
+            this.state.floor[id].name = e.target.value
+        }
+        else {
+            if (e.target.value != '') {
+                this.state.floor.push({
+                    name: e.target.value
+                })
+            }
+        }
     }
 
-    onChangeOpenDesk = (e) => {
-        this.state.openDesk = e.target.value
+    openDeskBlur = (e, id) => {
+        if (this.state.floor.length > id) {
+            this.state.floor[id].openDesk = e.target.value
+        }
+        else {
+            if (e.target.value != '') {
+                this.state.floor.push({
+                    openDesk: e.target.value
+                })
+            }
+        }
     }
 
-    onChangeReservedDesk = (e) => {
-        this.state.reservedDesk = e.target.value
-    }
-
-    createFloorArray = () => {
-        this.state.floor.push({
-            name: this.state.floorName,
-            openDesk: this.state.openDesk,
-            reservedDesk: this.state.reservedDesk
-        })
+    reserveDeskBlur = (e, id) => {
+        if (this.state.floor.length > id) {
+            this.state.floor[id].reservedDesk = e.target.value
+        }
+        else {
+            if (e.target.value != '') {
+                this.state.floor.push({
+                    reservedDesk: e.target.value
+                })
+            }
+        }
     }
 
     clickSubmit = () => {
         let floor = []
-        this.createFloorArray()
         this.state.floor.forEach((f, index) => {
+            if(f.name == undefined){
+                f.name=''
+            }
+            if(f.openDesk == undefined){
+                f.openDesk=''
+            }
+            if(f.reservedDesk == undefined){
+                f.reservedDesk=''
+            }
             floor.push({
                 floorId: index.toString(),
                 name: f.name,
@@ -62,28 +90,33 @@ class addSite extends Component {
             })
         })
 
-        let sitesArray =[]
+        let sitesArray = []
         sitesArray.push({
             name: this.state.siteName,
             location: this.state.location,
             floors: floor
         })
 
-    
+
         let request = {
             city: this.state.location,
-            sites: sitesArray 
+            sites: sitesArray
         }
         let result = OrganisationService.saveOrganisation(request);
         console.log(request)
     }
+
     render() {
         return (
             <Aux>
                 <Site siteInput={(event) => this.onChangeSite(event)} locationInput={(event) => this.onChangeLocation(event)} />
-                <Floor floorInput={(event) => this.onChangeFloor(event)} createArray={this.createFloorArray} opendeskInput={(event) => this.onChangeOpenDesk(event)}  reservedDeskInput={(event) => this.onChangeReservedDesk(event)}/>
+                <Floor
+                    onBlurFloor={(event, id) => this.fieldBlur(event, id)}
+                    onBlurOpd={(event, id) => this.openDeskBlur(event, id)}
+                    onBlurRsD={(event, id) => this.reserveDeskBlur(event, id)}
+                />
                 <Sticky mode='bottom' className="buttons">
-                    
+
                     <Button
                         variant="contained"
                         color="primary"
@@ -93,7 +126,7 @@ class addSite extends Component {
                     >
                         Save Site
                 </Button>
-                    
+
                 </Sticky>
             </Aux>
         )
