@@ -1,4 +1,6 @@
 import React from "react";
+import history from '../../../../../../history';
+
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Typography, Grid, Box } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
@@ -71,7 +73,6 @@ export default function Middle() {
               style={{ fontWeight: "bold" }}
             >
               <NavLink to="/home/about" style={{color: 'inherit', textDecoration:'none'}}>More</NavLink>
-              More
             </Button>
           </Typography>
           <Typography style={{ color: "#f66c74" }}>
@@ -81,7 +82,7 @@ export default function Middle() {
       </Grid>
       <Grid container className={classes.footerButton}>
         <Grid item xs={6} className={classes.leftButton}>
-          <Button>
+          <Button onClick={() => history.push('/organisation')}>
             <img src={toAbsoluteUrl("/media/home/icons/building.png")} alt="" />
             <Box>
               <Typography gutterBottom>Continue as an</Typography>
