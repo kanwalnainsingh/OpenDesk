@@ -1,8 +1,7 @@
 import React from "react";
-import history from '../../../../../../history';
-
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Typography, Grid, Box } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 import { toAbsoluteUrl } from "../../../../../utils/utils";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -11,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     height: "65vh",
   },
   media: {
-    width: "100vh",
+    width: "40rem",
   },
   footerButton: {
     flex: "1",
@@ -71,6 +70,7 @@ export default function Middle() {
               color="inherit"
               style={{ fontWeight: "bold" }}
             >
+              <NavLink to="/home/about" style={{color: 'inherit', textDecoration:'none'}}>More</NavLink>
               More
             </Button>
           </Typography>
@@ -80,8 +80,8 @@ export default function Middle() {
         </Box>
       </Grid>
       <Grid container className={classes.footerButton}>
-        <Box width="50%" textAlign="center" className={classes.leftButton}>
-          <Button onClick={() => history.push('/organisation')}>
+        <Grid item xs={6} className={classes.leftButton}>
+          <Button>
             <img src={toAbsoluteUrl("/media/home/icons/building.png")} alt="" />
             <Box>
               <Typography gutterBottom>Continue as an</Typography>
@@ -94,8 +94,8 @@ export default function Middle() {
               </Typography>
             </Box>
           </Button>
-        </Box>
-        <Box width="50%" textAlign="center" className={classes.rightButton}>
+        </Grid>
+        <Grid item xs={6} className={classes.rightButton}>
           <Button>
             <Box>
               <Typography gutterBottom>Employee ?</Typography>
@@ -109,7 +109,7 @@ export default function Middle() {
             </Box>
             <img src={toAbsoluteUrl("/media/home/icons/desk.png")} alt="" />
           </Button>
-        </Box>
+        </Grid>
       </Grid>
     </>
   );
