@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Route, Switch } from "react-router-dom";
 import SideNav from "./components/SideNav";

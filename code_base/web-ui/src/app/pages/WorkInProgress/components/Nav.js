@@ -12,17 +12,15 @@ export default function Nav() {
         color="transparent"
         style={{ boxShadow: "none" }}
       >
-        <Container>
           <Toolbar>
             <div>
               <img
-                style={{ width: "4rem" }}
+                style={{ width: "3.5rem" }}
                 alt="Logo"
-                src={toAbsoluteUrl("/media/logos/red-logo.png")}
+                src={toAbsoluteUrl("/media/logo.svg")}
               />
             </div>
           </Toolbar>
-        </Container>
       </AppBar>
     </div>
   );
