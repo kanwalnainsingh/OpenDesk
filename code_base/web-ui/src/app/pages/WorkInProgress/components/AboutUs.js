@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "0 1.5rem",
     },
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "13rem",
+    },
   },
   title: {
     fontWeight: "bold",
@@ -24,9 +27,15 @@ const useStyles = makeStyles((theme) => ({
 export default function AboutUs() {
   const classes = useStyles();
   return (
-    <Grid className={classes.root} container display="flex" justify="center" alignItems="center">
+    <Grid
+      className={classes.root}
+      container
+      display="flex"
+      justify="center"
+      alignItems="center"
+    >
       <Container>
-        <Typography variant="h5" component="h5" className={classes.title}>
+        <Typography variant="h4" component="h4" className={classes.title}>
           About Us
         </Typography>
         <Typography className={classes.description}>

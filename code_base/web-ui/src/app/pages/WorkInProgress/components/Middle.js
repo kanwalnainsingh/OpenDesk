@@ -1,23 +1,16 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  Container,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@material-ui/core";
-import { Link } from 'react-router-dom'
-import { toAbsoluteUrl } from "../../../utils/utils";
+import { Container, Button, Typography, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { toAbsoluteUrl } from "../../../utils/utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     textAlign: "center",
     boxShadow: "none",
-    marginTop: "3rem",
+    marginTop: "1rem",
     marginBottom: "1rem",
     [theme.breakpoints.down("sm")]: {
       height: "73vh",
@@ -28,15 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: "bold",
-    marginBottom: "5rem",
+    marginBottom: theme.spacing(8),
   },
   description: {
     fontWeight: "bold",
-    marginTop: "2rem",
+    marginTop: theme.spacing(6),
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+      fontSize: "2rem",
+    },
+    fontSize: "1.5rem",
   },
   mediaContainter: {
-    verticalAlign: "top",
-    textAlign: "center",
     maxWidth: "100%",
   },
   media: {
@@ -46,52 +42,65 @@ const useStyles = makeStyles((theme) => ({
   },
   ctaButton: {
     fontWeight: "bold",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
+      marginTop: theme.spacing(5),
+    },
     lineHeight: 0,
+    fontSize: "0.9rem",
     "& svg": {
       color: "#f66c74",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "1.25rem",
+      },
+      fontSize: "0.9rem",
     },
   },
 }));
 
-export default function Middle() {
+export default function Middle(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Grid className={classes.root}>
       <Container>
-        <Typography
-          className={classes.title}
-          gutterBottom
-          variant="h4"
-          component="h4"
-        >
-          Opendesk
-        </Typography>
+        {props.mobileBreakPoint ? (
+          <Typography className={classes.title} gutterBottom variant="h4">
+            Opendesk
+          </Typography>
+        ) : (
+          ""
+        )}
         <div className={classes.mediaContainter}>
-          <CardMedia
+          <img
             className={classes.media}
             component="img"
             alt="Opendesk"
-            src={toAbsoluteUrl("/media/wip/WIP-home.png")}
+            src={toAbsoluteUrl("/media/wip/wip-home.svg")}
           />
         </div>
 
-        <CardContent>
+        <Grid container direction="column" alignItems="center">
           <Typography
             className={classes.description}
             gutterBottom
-            variant="h5"
-            component="h2"
+            component="h5"
           >
             Hi, We are under progress right now
           </Typography>
 
-          <Button size="medium" color="inherit" className={classes.ctaButton} component={Link} to="/home">
+          <Button
+            size="large"
+            color="inherit"
+            className={classes.ctaButton}
+            component={Link}
+            to="/home"
+          >
             CHECK PROGRESS
             <ArrowForwardIosIcon />
           </Button>
-        </CardContent>
+        </Grid>
       </Container>
-    </Card>
+    </Grid>
   );
 }
