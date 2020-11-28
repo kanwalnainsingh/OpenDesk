@@ -17,6 +17,7 @@ export const Routes = () => {
       <Route path="/home" component={HomeRouter} />
       <Route path="/organisation" component={AddSite} />
       <Route path="/wip" component={WIPRouter} />
+      <Route path="/sites/:id" component={Sites}/>
     </Switch>
     </Router>
   );
