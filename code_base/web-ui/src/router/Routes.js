@@ -4,6 +4,7 @@ import history from '../history';
 import AddSite from '../app/container/AddSite/AddSite'
 import HomeRouter from "./HomeRouter"
 import WIPRouter from "./WIPRouter"
+import Sites from '../app/container/Sites/Sites'
 
 export const Routes = () => {
   
