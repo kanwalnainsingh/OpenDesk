@@ -24,10 +24,6 @@ public class BookingController {
         return listOfBookings;
     }
 
-    /**
-     * @param empId
-     * @return
-     */
     @GetMapping("/bookings/employee/{empId}")
     public List getBookingsForAnEmployee(@PathVariable(name = "empId") String empId) {
         return bookingService.getBookingsForAnEmployee(empId);

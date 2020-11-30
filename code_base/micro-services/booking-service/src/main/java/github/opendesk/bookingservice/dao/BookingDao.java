@@ -19,4 +19,5 @@ public class BookingDao {
     private String floorId;
     @Indexed
     private String userId;
+    private String deskId;
 }
