@@ -38,6 +38,8 @@ public class OrganisationConverter {
         SiteDao siteDao = SiteDao.builder()
                 .name(site.getName())
                 .id(site.getId())
+                .orgId(site.getOrgId())
+                .location(site.getLocation())
                 .floors(site.getFloors().stream().map(OrganisationConverter.floorModelToFloorDao::apply).collect(Collectors.toList()))
                 .build();
         return siteDao;
@@ -46,6 +48,8 @@ public class OrganisationConverter {
         Site site = Site.builder()
                 .name(siteDao.getName())
                 .id(siteDao.getId())
+                .orgId(siteDao.getOrgId())
+                .location(siteDao.getLocation())
                 .floors(siteDao.getFloors().stream().map(OrganisationConverter.floorDaoToFloorModel::apply).collect(Collectors.toList())).build();
 
         return site;
@@ -54,16 +58,16 @@ public class OrganisationConverter {
         return FloorDao.builder()
                 .name(floor.getName())
                 .floorId(floor.getFloorId())
-                .totalSeat(floor.getTotalSeat())
-                .reservedSeat(floor.getReservedSeat())
+                .openDesk(floor.getOpenDesk())
+                .reservedDesk(floor.getReservedDesk())
                 .build();
     };
     public static Function<FloorDao, Floor> floorDaoToFloorModel = floorDao -> {
         return Floor.builder()
                 .name(floorDao.getName())
                 .floorId(floorDao.getFloorId())
-                .totalSeat(floorDao.getTotalSeat())
-                .reservedSeat(floorDao.getReservedSeat())
+                .openDesk(floorDao.getOpenDesk())
+                .reservedDesk(floorDao.getReservedDesk())
                 .build();
     };
 }

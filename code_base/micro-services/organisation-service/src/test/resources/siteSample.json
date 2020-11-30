@@ -1,12 +1,14 @@
 {
   "id": "siteId",
   "name": "site1",
+  "orgId": "org1",
+  "location": "loc1",
   "floors": [
     {
       "floorId": "floorId",
       "name": "floor1",
-      "totalSeat": "100",
-      "reservedSeat": "20"
+      "openDesk": "100",
+      "reservedDesk": "20"
     }
   ]
 }

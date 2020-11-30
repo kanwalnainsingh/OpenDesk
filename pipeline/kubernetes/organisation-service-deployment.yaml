@@ -18,6 +18,7 @@ spec:
       containers:
         - name: organisation-service-container
           image: kanwalnainsingh/opendesk-organisation-service:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 8082 # The port that the container exposes
