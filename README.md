@@ -36,14 +36,14 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## Few Important links to start:
 - [Getting Started Guides](docs/getting-started/README.md)
-- [UI Prototype](docs/prototype/README.md)
+- [UX Design Prototype](docs/UX/README.md)
 - [Technical Design](docs/technical-design/README.md)
-- [Wireframes](docs/wireframe/README.md)
 - [Code Setup: MicroService](code_base/micro-services/README.md)
+- [Wireframes-Deprecated](docs/wireframe/README.md)
 
 ## Code of Conduct 
 
-- Please refer code of conduct at [Code of coduct](code-of-conduct.md)
+- Please refer code of conduct at [Code of conduct](code-of-conduct.md)
 
 ## How to contribute
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
