@@ -22,5 +22,10 @@ public interface DeskService {
 
     List<Desk> getDesksByOrgId(String orgId);
 
-    List<Desk> updateOrganisation(Organisation organisation);
+    /**
+     *
+     * @param organisation
+     * @return
+     */
+    List<Desk> persistDesks(Organisation organisation);
 }
