@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: desk-organisation-persistent-volume
+  name: open-desk-persistent-volume
   namespace: kanwalnainsingh
 spec:
   capacity:
@@ -11,6 +11,6 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: desk-organisation-persistent-volume
+  storageClassName: open-desk-persistent-volume
   hostPath:
     path: /mnt/

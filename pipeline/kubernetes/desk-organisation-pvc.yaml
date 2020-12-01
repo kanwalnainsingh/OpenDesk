@@ -11,5 +11,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: desk-organisation-persistent-volume
+  storageClassName: open-desk-persistent-volume
 
