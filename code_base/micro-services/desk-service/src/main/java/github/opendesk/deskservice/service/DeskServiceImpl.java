@@ -2,6 +2,9 @@ package github.opendesk.deskservice.service;
 
 import github.opendesk.deskservice.converter.DeskConverter;
 import github.opendesk.deskservice.dao.DeskDao;
+import github.opendesk.deskservice.model.Floor;
+import github.opendesk.deskservice.model.Organisation;
+import github.opendesk.deskservice.model.Site;
 import github.opendesk.deskservice.repository.DeskRepository;
 import github.opendesk.deskservice.model.Desk;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +66,46 @@ public class DeskServiceImpl implements DeskService {
     @Override
     public List<Desk> getDesksByOrgId(String orgId) {
         List<DeskDao>  deskDaoList = deskRepository.findByOrgId(orgId);
+        return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Desk> updateOrganisation(Organisation organisation) {
+
+        List<DeskDao> deskDaoList = new ArrayList<>();
+        for (Site site: organisation.getSites()) {
+            for ( Floor floor: site.getFloors()) {
+
+                int i = 0;
+                for (int openDesk = 0; openDesk < Integer.parseInt(floor.getOpenDesk()); openDesk++) {
+                    DeskDao desk = deskRepository.save(DeskDao.builder()
+                            .id(organisation.getOrgId() + site.getSiteId() + floor.getFloorId() + "_" + ++i)
+                            .seatSerial("A"+ "_" + i)
+                            .isReserved("N")
+                            .isAvailable("A")
+                            .orgId(organisation.getOrgId())
+                            .siteId(site.getSiteId())
+                            .floorId(floor.getFloorId())
+                            .status("status")
+                            .build());
+                    deskDaoList.add(desk);
+                }
+
+                for (int reserveDesk = 0; reserveDesk < Integer.parseInt(floor.getReservedDesk()); reserveDesk++) {
+                    DeskDao desk = deskRepository.save(DeskDao.builder()
+                            .id(organisation.getOrgId() + site.getSiteId() + floor.getFloorId() + "_" + ++i)
+                            .seatSerial("A"+ "_" + i)
+                            .isReserved("Y")
+                            .isAvailable("N")
+                            .orgId(organisation.getOrgId())
+                            .siteId(site.getSiteId())
+                            .floorId(floor.getFloorId())
+                            .status("status")
+                            .build());
+                    deskDaoList.add(desk);
+                }
+            }
+        }
         return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
     }
 }

@@ -1,6 +1,7 @@
 package github.opendesk.deskservice.rest;
 
 import github.opendesk.deskservice.model.Desk;
+import github.opendesk.deskservice.model.Organisation;
 import github.opendesk.deskservice.service.DeskService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -68,6 +69,18 @@ public class DeskController {
     @ResponseStatus(HttpStatus.CREATED)
     public Desk addDesk(@RequestBody Desk Desk) {
         return deskService.addDesk(Desk);
+    }
+
+    @PostMapping("/desks/updateOrganisation")
+    @Operation(responses = {
+            @ApiResponse(responseCode = "200", description = "OK"),
+            @ApiResponse(responseCode = "204", description = "No Content")
+    }
+    )
+    public ResponseEntity<List<Desk>> updateOrganisation(@RequestBody Organisation organisation) {
+        List<Desk> desks = deskService.updateOrganisation(organisation);
+        ResponseEntity.BodyBuilder responseEntityBuilder = buildResponseEntity(desks);
+        return responseEntityBuilder.body(desks);
     }
 
     @PutMapping("/desk")

@@ -1,0 +1,15 @@
+##This volume claim is shared between the 'Desk Service' deployment pods and the 'Organisation Service' deployment pods
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: desk-organisation-persistent-volume-claim
+  namespace: kanwalnainsingh
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: open-desk-persistent-volume
+

@@ -12,7 +12,7 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 - Connect with community on  [Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw) 
 - Youtube Channel: [Link](https://www.youtube.com/channel/UCbjAYM7lRMbJPoYf7HYqQLw)
 
-## The minimum requirement to kick start:
+## OpenDesk features under development:
  
 ### Organisation Features:
 - Organisation can set up sites or buildings with details of desk capacity with available and reserved desk.
