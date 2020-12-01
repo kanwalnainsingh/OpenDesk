@@ -33,11 +33,7 @@ public class OrganisationServiceImpl implements OrganisationService {
 
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
-
-
-//    @Value(value = "${spring.kafka.producer.topic}")
-//    private String topic;
-
+    
     @Autowired
     private Gson gson;
 
