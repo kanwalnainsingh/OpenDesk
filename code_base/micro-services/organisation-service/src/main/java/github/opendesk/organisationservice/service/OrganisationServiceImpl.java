@@ -33,7 +33,7 @@ public class OrganisationServiceImpl implements OrganisationService {
 
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
-    
+
     @Autowired
     private Gson gson;
 
