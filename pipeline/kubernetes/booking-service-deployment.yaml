@@ -1,0 +1,43 @@
+apiVersion: apps/v1           # API version
+kind: Deployment              # Type of kubernetes resource
+metadata:
+  namespace: kanwalnainsingh
+  name: booking-service    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: booking-service
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: booking-service
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: booking-service
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+        - name: booking-service-container
+          image: kanwalnainsingh/opendesk-booking-service:latest
+          imagePullPolicy: "Always"
+          ports:
+            - name: http
+              containerPort: 8081 # The port that the container exposes
+          args: ["java","-cp","app:app/lib/*","github.opendesk.bookingservice.BookingServiceApplication"]
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi
+        - name: redis-container
+          image: redis
+          ports:
+           - containerPort: 6379
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi

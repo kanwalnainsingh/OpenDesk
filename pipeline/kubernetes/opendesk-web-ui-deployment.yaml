@@ -1,0 +1,32 @@
+apiVersion: apps/v1             # API version
+kind: Deployment                # Type of kubernetes resource
+metadata:
+  namespace: kanwalnainsingh
+  name: opendesk-web-ui
+  labels:
+    app: opendesk-web-ui
+spec:
+  replicas: 1                   # No of replicas/pods to run
+  selector:
+    matchLabels:                # This deployment applies to Pods matching the specified labels
+      app: opendesk-web-ui
+  template:                     # Template for creating the Pods in this deployment
+    metadata:
+      labels:                   # Labels that will be applied to all the Pods in this deployment
+        app: opendesk-web-ui
+    spec:                       # Spec for the containers that will run inside the Pods
+      containers:
+        - name: opendesk-web-ui-container
+          image: kanwalnainsingh/opendesk-web-ui:latest
+          imagePullPolicy: "Always"
+          ports:
+            - name: http
+              containerPort: 80   # Should match the Port that the container listens on
+          args: ["nginx", "-g", "daemon off;"]
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi

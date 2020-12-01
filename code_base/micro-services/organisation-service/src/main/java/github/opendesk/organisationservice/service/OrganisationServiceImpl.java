@@ -3,7 +3,7 @@ package github.opendesk.organisationservice.service;
 import com.google.gson.Gson;
 import github.opendesk.organisationservice.converter.OrganisationConverter;
 import github.opendesk.organisationservice.dao.OrganisationDao;
-import github.opendesk.organisationservice.dao.OrganisationRepository;
+import github.opendesk.organisationservice.repository.OrganisationRepository;
 import github.opendesk.organisationservice.model.Organisation;
 import github.opendesk.organisationservice.rest.OrganisationController;
 import org.slf4j.Logger;

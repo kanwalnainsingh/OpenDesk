@@ -1,0 +1,23 @@
+spring:
+  application.name: organisation-service
+  cloud.kubernetes.reload.enabled: true
+  redis:
+    host: redis-service
+    port: 6379
+server.port: 8084
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+ribbon:
+  http:
+    client:
+      enabled: true
+server.servlet.context-path: /api/organisation-service
+client:
+  api:
+    booking-service: http://booking-service:8081/api/booking-service

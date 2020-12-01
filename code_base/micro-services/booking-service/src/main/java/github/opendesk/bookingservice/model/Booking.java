@@ -13,5 +13,6 @@ public class Booking {
     private String bookingTime;
     private String orgId;
     private String floorId;
+    private String deskId;
     private String userId;
 }
