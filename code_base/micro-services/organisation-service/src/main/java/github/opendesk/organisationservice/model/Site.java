@@ -14,7 +14,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Site {
+    private String orgId;
     private String id;
     private String name;
+    private String location;
     private List<Floor> floors;
 }

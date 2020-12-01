@@ -1,0 +1,22 @@
+spring:
+  application.name: organisation-service
+  cloud.kubernetes.reload.enabled: false
+server.port: 8084
+management:
+  endpoint:
+    restart:
+      enabled: false
+    health:
+      enabled: true
+    info:
+      enabled: true
+ribbon:
+  http:
+    client:
+      enabled: false
+server.servlet.context-path: /api/organisation-service
+client:
+  api:
+    booking-service: http://localhost:8081/api/booking-service
+
+

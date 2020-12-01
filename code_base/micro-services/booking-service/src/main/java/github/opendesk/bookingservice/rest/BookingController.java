@@ -24,25 +24,29 @@ public class BookingController {
         return listOfBookings;
     }
 
+    @GetMapping("/bookings/employee/{empId}")
+    public List getBookingsForAnEmployee(@PathVariable(name = "empId") String empId) {
+        return bookingService.getBookingsForAnEmployee(empId);
+    }
+
     @GetMapping("/booking/{id}")
-    public Booking getCountryById(@PathVariable String id) {
+    public Booking getBookingById(@PathVariable String id) {
         return bookingService.getBooking(id);
     }
 
     @PostMapping("/booking")
     @ResponseStatus(HttpStatus.OK)
-    public Booking addCountry(@RequestBody Booking booking) {
+    public Booking addBooking(@RequestBody Booking booking) {
         return bookingService.addBooking(booking);
     }
 
     @PutMapping("/bookings")
-    public Booking updateCountry(@RequestBody Booking booking) {
+    public Booking updateBookings(@RequestBody Booking booking) {
         return bookingService.updateBooking(booking);
-
     }
 
     @DeleteMapping("/booking/{id}")
-    public void deleteCountry(@PathVariable("id") String bookingId) {
+    public void deleteBooking(@PathVariable("id") String bookingId) {
         bookingService.deleteBooking(bookingId);
     }
 

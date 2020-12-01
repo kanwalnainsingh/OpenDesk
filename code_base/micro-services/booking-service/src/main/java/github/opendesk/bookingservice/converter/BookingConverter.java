@@ -16,6 +16,7 @@ public class BookingConverter {
                     .bookingTime(bookingDao.getBookingTime())
                     .floorId(bookingDao.getFloorId())
                     .orgId(bookingDao.getOrgId())
+                    .deskId(bookingDao.getDeskId())
                     .build();
 
     public static Function<Booking, BookingDao> bookingModelToBookingDao
@@ -26,5 +27,6 @@ public class BookingConverter {
                     .bookingId(booking.getBookingId())
                     .bookingTime(booking.getBookingTime())
                     .floorId(booking.getFloorId())
+                    .deskId(booking.getDeskId())
                     .orgId(booking.getOrgId()).build();
 }

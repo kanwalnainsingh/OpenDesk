@@ -11,9 +11,13 @@ import java.util.List;
 
 @Data
 @Builder
+@RedisHash(value = "Sites")
 public class SiteDao {
+    @Id
     @Indexed
     private String id;
+    private String orgId;
     private String name;
+    private String location;
     private List<FloorDao> floors;
 }

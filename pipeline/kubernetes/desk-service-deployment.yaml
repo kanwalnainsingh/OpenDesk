@@ -1,0 +1,56 @@
+apiVersion: apps/v1           # API version
+kind: Deployment              # Type of kubernetes resource
+metadata:
+  namespace: kanwalnainsingh
+  name: desk-service    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: desk-service
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: desk-service
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: desk-service
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+        - name: desk-service-container
+          image: kanwalnainsingh/opendesk-desk-service:latest
+          imagePullPolicy: "Always"
+          ports:
+            - name: http
+              containerPort: 8082 # The port that the container exposes
+          args: ["java","-cp","app:app/lib/*","github.opendesk.deskervice.DeskServiceApplication"]
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+              cpu: "0.2"
+              memory: 0.5Gi
+          volumeMounts:
+            - mountPath: /mnt/
+              name: desk-service-volume
+        - name: redis-container
+          image: redis
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 0.5Gi
+            limits:
+             cpu: "0.2"
+             memory: 0.5Gi
+          volumeMounts:
+            - mountPath: /mnt/
+              name: desk-redis-volume
+      volumes:
+      - name: desk-service-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim
+      - name: desk-redis-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim

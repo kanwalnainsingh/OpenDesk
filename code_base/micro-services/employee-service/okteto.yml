@@ -1,0 +1,17 @@
+name: employee-service
+image: okteto/maven:latest
+command: bash
+workdir: /okteto
+volumes:
+  - /root/.m2
+sync:
+  - .:/okteto
+forward:
+  - 8003:8003
+resources:
+  limits:
+    cpu: "0.3"
+    memory: 0.5Gi
+  requests:
+    cpu: "0.3"
+    memory: 0.5Gi
