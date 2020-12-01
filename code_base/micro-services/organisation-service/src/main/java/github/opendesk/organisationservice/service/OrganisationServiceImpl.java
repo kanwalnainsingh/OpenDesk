@@ -1,10 +1,16 @@
 package github.opendesk.organisationservice.service;
 
+import com.google.gson.Gson;
 import github.opendesk.organisationservice.converter.OrganisationConverter;
 import github.opendesk.organisationservice.dao.OrganisationDao;
 import github.opendesk.organisationservice.dao.OrganisationRepository;
 import github.opendesk.organisationservice.model.Organisation;
+import github.opendesk.organisationservice.rest.OrganisationController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +28,18 @@ import static github.opendesk.organisationservice.converter.OrganisationConverte
 @Service
 public class OrganisationServiceImpl implements OrganisationService {
 
+    private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
+
+    @Value(value = "${spring.kafka.producer.topic:orgInfo}")
+    private String topic;
+
+    @Autowired
+    private Gson gson;
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
     @Autowired
     private OrganisationRepository organisationRepository;
 
@@ -35,6 +52,9 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public Organisation createOrganisation(Organisation organisation) {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
+        String organizationDetails=gson.toJson(organisation);
+        logger.info("organization Details : "+organizationDetails);
+        kafkaTemplate.send(topic, organizationDetails);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
