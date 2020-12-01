@@ -1,0 +1,15 @@
+##This volume is shared between the 'Desk Service' deployment pods and the 'Organisation Service' deployment pods
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: desk-organisation-persistent-volume
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: desk-organisation-persistent-volume
+  hostPath:
+    path: /mnt/
