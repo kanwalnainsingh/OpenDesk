@@ -10,6 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +34,9 @@ public class OrganisationServiceImpl implements OrganisationService {
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
 
-    @Value(value = "${spring.kafka.producer.topic:orgInfo}")
-    private String topic;
+
+//    @Value(value = "${spring.kafka.producer.topic}")
+//    private String topic;
 
     @Autowired
     private Gson gson;
@@ -43,6 +47,9 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Autowired
     private OrganisationRepository organisationRepository;
 
+    @Autowired
+    Environment env;
+
     @Override
     public Organisation getOrganisationById(String id) {
         return organisationDaoToOrganisationModel.apply(organisationRepository.findById(id).orElseGet(() -> OrganisationDao.builder().build()));
@@ -52,9 +59,9 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public Organisation createOrganisation(Organisation organisation) {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
-        String organizationDetails=gson.toJson(organisation);
-        logger.info("organization Details : "+organizationDetails);
-        kafkaTemplate.send(topic, organizationDetails);
+        if (env.acceptsProfiles(Profiles.of("local"))) {
+            sendDataToKafka(organisation);
+        }
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -81,4 +88,11 @@ public class OrganisationServiceImpl implements OrganisationService {
         Files.write(path, bytes);
     }
 
+    private void sendDataToKafka(Organisation organisation) {
+        String organizationDetails=gson.toJson(organisation);
+        String topicName=env.getProperty("spring.kafka.producer.topic");
+        logger.info("topic Name: "+topicName);
+        logger.info("organization Details : "+ organizationDetails);
+        kafkaTemplate.send(topicName, organizationDetails);
+    }
 }

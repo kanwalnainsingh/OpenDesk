@@ -1,9 +1,10 @@
 spring:
   application.name: organisation-service
   cloud.kubernetes.reload.enabled: false
-  producer:
-    bootstrap-servers: localhost:9092
-    topic: orgInfo
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      topic: orgInfo
   redis:
     host: localhost
     port: 6379

@@ -10,17 +10,19 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
+
 @Configuration
+@Profile("local")
 public class KafkaConfig {
 
-    @Value(value = "${spring.kafka.producer.bootstrap-servers:localhost:9092}")
+    @Value(value = "${spring.kafka.producer.bootstrap-servers}")
     private String bootstrapAddress;
-
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
