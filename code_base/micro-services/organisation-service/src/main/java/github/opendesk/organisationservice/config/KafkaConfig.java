@@ -21,8 +21,6 @@ public class KafkaConfig {
     @Value(value = "${spring.kafka.producer.bootstrap-servers:localhost:9092}")
     private String bootstrapAddress;
 
-//    @Value(value = "${spring.kafka.producer.topic:orgInfo}")
-//    private String topic;
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
@@ -37,11 +35,5 @@ public class KafkaConfig {
         return new KafkaTemplate<>(producerFactory());
     }
 
-//    @Bean
-//    public NewTopic topicExample() {
-//        return TopicBuilder.name(topic)
-//                .partitions(1)
-//                .replicas(1)
-//                .build();
-//    }
+
 }

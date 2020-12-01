@@ -39,7 +39,6 @@ public class OrganisationController {
     @PostMapping("/organisation")
     @ResponseStatus(code = HttpStatus.CREATED)
     public Organisation createOrganisation(@RequestBody Organisation organisation) {
-        logger.info(organisation.toString());
         return organisationService.createOrganisation(organisation);
     }
     @PostMapping("/organisation/upload")
