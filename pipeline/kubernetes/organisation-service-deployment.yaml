@@ -53,7 +53,4 @@ spec:
           claimName: desk-organisation-persistent-volume-claim
       - name: organisation-redis-volume
         persistentVolumeClaim:
-          claimName: desk-organisation-persistent-volume-claim 
-
-
-              
+          claimName: desk-organisation-persistent-volume-claim
