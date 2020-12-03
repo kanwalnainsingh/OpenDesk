@@ -1,11 +1,18 @@
 ![CI](https://github.com/kanwalnainsingh/OpenDesk/workflows/CI/badge.svg)
-# OpenDesk
+# [OpenDesk](https://www.bookopendesk.com/)
 OpenDesk is an open source project for helping organisation optimize office desk utilization. System will enable employees to reserve their desk when they want to work from office.
+We are running at https://www.bookopendesk.com/
 
 ## Why would organisation need OpenDesk?
 As organisation are moving towards the culture of work from home(WFH), and many have decided for permanent WFH options, Organisation would like to reduce the cost of office infrastructure and reduce number of desk space. Open desk will help manage a balance between WFH and WFO culture.
 
-## The minimum requirement to kick start:
+## Contribution guide:
+- Fork the github project.
+- Look up issues section, pick an issue comment on issue for clarification or notify you are picking up.
+- Connect with community on  [Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw) 
+- Youtube Channel: [Link](https://www.youtube.com/channel/UCbjAYM7lRMbJPoYf7HYqQLw)
+
+## OpenDesk features under development:
  
 ### Organisation Features:
 - Organisation can set up sites or buildings with details of desk capacity with available and reserved desk.
@@ -29,30 +36,14 @@ As organisation are moving towards the culture of work from home(WFH), and many 
 
 ## Few Important links to start:
 - [Getting Started Guides](docs/getting-started/README.md)
-- [UI Prototype](docs/prototype/README.md)
+- [UX Design Prototype](docs/UX/README.md)
 - [Technical Design](docs/technical-design/README.md)
-- [Wireframes](docs/wireframe/README.md)
 - [Code Setup: MicroService](code_base/micro-services/README.md)
-
-## Road Map
-![N|Solid](docs/planning/images/roadmap_2020.jpg)
-
-November: 
-- The minimum requirement to kick start.
-- Initial Architecture diagram.
-- Finalise the technical stack.
-- Code standards and follow best practices guide. https://bestpractices.coreinfrastructure.org/
-- Hello Open Desk deployed on Cloud with Public URL.
-  - Organisation onboard with offices, floor and desk setup.  
-  - Employee should be able to book a desk on selected floor of an office. 
-
-December: 
-- CD CI setup.
-- Go live public url to access the application.
+- [Wireframes-Deprecated](docs/wireframe/README.md)
 
 ## Code of Conduct 
 
-- Please refer code of conduct at [Code of coduct](code-of-conduct.md)
+- Please refer code of conduct at [Code of conduct](code-of-conduct.md)
 
 ## How to contribute
 - Look at the existing issue or raise a new issue. Get clarity on the requirement.
@@ -60,7 +51,7 @@ December:
 
 ## Join slack below for discussions
 
-[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA)
+[Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw)
 
 
 ## Note: 
@@ -68,4 +59,4 @@ December:
 - We welcome suggestions from everyone tech or non tech.
 - If you are new to open source this is the perfect place to start.
 
-Need a kick start on how to start connect with me on linkedin. [Kanwal Nain Singh](https://www.linkedin.com/in/kanwalnainsingh/)  or join [Slack](https://join.slack.com/t/kanwalnain/shared_invite/zt-igi3hzmb-gIHpAlM0JgbGXbydMwUfoA) 
+Need a kick start on how to start connect with me on linkedin. [Kanwal Nain Singh](https://www.linkedin.com/in/kanwalnainsingh/)  or join [Slack](https://join.slack.com/t/opendeskworkspace/shared_invite/zt-jf6wxjc3-aj5SF9S6t~VSJiRswQwXbw)

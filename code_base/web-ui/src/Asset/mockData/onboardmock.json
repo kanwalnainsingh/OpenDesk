@@ -1,19 +1,62 @@
 {
-    "orgId": "1",
-    "companyName": "Test Company",
-    "city": "Bangalore",
-    "headQuarters": "Gurgaon",
-    "sites": [
-      {
-        "id": "1",
-        "name": "Test IT Park",
-        "floors": [
-          {
-            "floorId": "1",
-            "name": "1st Floor",
-            "totalSeat": "1000"
-          }
-        ]
-      }
-    ]
-  }
+  "orgId": "14f664ad-11c7-474f-9ed2-a2ba59895a1c",
+  "companyName": "ABC Corp",
+  "sites": [
+    {
+      "id": "1",
+      "name": "DLF",
+      "location": "Gurgaon",
+      "floors": [
+        {
+          "floorId": "0",
+          "name": "1",
+          "openDesk": "100",
+          "reservedDesk": "20"
+        },
+        {
+          "floorId": "1",
+          "name": "2",
+          "openDesk": "200",
+          "reservedDesk": "10"
+        },
+        {
+          "floorId": "2",
+          "name": "3",
+          "openDesk": "200",
+          "reservedDesk": "5"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tech Space",
+      "location": "Bangalore",
+      "floors": [
+        {
+          "floorId": "0",
+          "name": "1",
+          "openDesk": "100",
+          "reservedDesk": "20"
+        },
+        {
+          "floorId": "1",
+          "name": "2",
+          "openDesk": "200",
+          "reservedDesk": "10"
+        },
+        {
+          "floorId": "2",
+          "name": "3",
+          "openDesk": "200",
+          "reservedDesk": "5"
+        },
+        {
+          "floorId": "3",
+          "name": "3",
+          "openDesk": "300",
+          "reservedDesk": "20"
+        }
+      ]
+    }
+  ]
+}

@@ -18,6 +18,7 @@ spec:
       containers:
         - name: employee-service-container
           image: kanwalnainsingh/opendesk-employee-service:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 8083 # The port that the container exposes

@@ -1,22 +1,25 @@
-import React, { Suspense, lazy } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import { Spinner } from '../app/components/Spinner'
-import SetupBuilder from '../app/container/SetupBuilder/SetupBuilder'
-const HomeRouter = lazy(() => import("./HomeRouter"))
-
+import React from "react";
+import { Redirect, Route, Switch, Router } from "react-router-dom";
+import history from '../history';
+import AddSite from '../app/container/AddSite/AddSite'
+import HomeRouter from "./HomeRouter"
+import WIPRouter from "./WIPRouter"
+import Sites from '../app/container/Sites/Sites'
 
 export const Routes = () => {
   
   return (
-    <Suspense fallback={<Spinner />}>
+    <Router history={history}>
     <Switch>
       {
         /* Redirect from root URL to /quick-start. */
-        <Redirect exact from="/" to="/home" />
+        <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      <Route path="/organisation" component={SetupBuilder} />
+      <Route path="/organisation" component={AddSite} />
+      <Route path="/wip" component={WIPRouter} />
+      <Route path="/sites/:id" component={Sites}/>
     </Switch>
-  </Suspense>
+    </Router>
   );
 };

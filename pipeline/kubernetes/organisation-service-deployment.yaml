@@ -18,6 +18,7 @@ spec:
       containers:
         - name: organisation-service-container
           image: kanwalnainsingh/opendesk-organisation-service:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 8082 # The port that the container exposes
@@ -29,6 +30,9 @@ spec:
             limits:
               cpu: "0.2"
               memory: 0.5Gi
+          volumeMounts:
+            - mountPath: /mnt/
+              name: organisation-service-volume
         - name: redis-container
           image: redis
           ports:
@@ -40,3 +44,13 @@ spec:
             limits:
               cpu: "0.2"
               memory: 0.5Gi
+          volumeMounts:
+            - mountPath: /mnt/
+              name: organisation-redis-volume
+      volumes:
+      - name: organisation-service-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim
+      - name: organisation-redis-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim

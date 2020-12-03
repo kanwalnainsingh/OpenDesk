@@ -24,6 +24,11 @@ public class BookingController {
         return listOfBookings;
     }
 
+    @GetMapping("/bookings/employee/{empId}")
+    public List getBookingsForAnEmployee(@PathVariable(name = "empId") String empId) {
+        return bookingService.getBookingsForAnEmployee(empId);
+    }
+
     @GetMapping("/booking/{id}")
     public Booking getBookingById(@PathVariable String id) {
         return bookingService.getBooking(id);
@@ -38,7 +43,6 @@ public class BookingController {
     @PutMapping("/bookings")
     public Booking updateBookings(@RequestBody Booking booking) {
         return bookingService.updateBooking(booking);
-
     }
 
     @DeleteMapping("/booking/{id}")

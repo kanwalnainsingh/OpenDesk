@@ -13,7 +13,7 @@ public class FloorDao {
     @Indexed
     private String floorId;
     private String name;
-    private String totalSeat;
+    private String openDesk;
     private String siteId;
-    private String reservedSeat;
+    private String reservedDesk;
 }

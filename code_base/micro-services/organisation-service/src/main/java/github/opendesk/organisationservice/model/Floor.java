@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class Floor {
     private String floorId;
     private String name;
-    private String totalSeat;
-    private String reservedSeat;
+    private String openDesk;
+    private String reservedDesk;
 }

@@ -18,6 +18,7 @@ spec:
       containers:
         - name: booking-service-container
           image: kanwalnainsingh/opendesk-booking-service:latest
+          imagePullPolicy: "Always"
           ports:
             - name: http
               containerPort: 8081 # The port that the container exposes

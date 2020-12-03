@@ -1,12 +1,13 @@
 package github.opendesk.organisationservice.service;
 
 import github.opendesk.organisationservice.base.BaseTest;
-import github.opendesk.organisationservice.dao.OrganisationRepository;
+import github.opendesk.organisationservice.repository.OrganisationRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.core.env.Environment;
 
 import java.util.Optional;
 
@@ -22,6 +23,8 @@ public class OrganisationServiceImplTest extends BaseTest {
     @Mock
     private OrganisationRepository organisationRepository;
 
+    @Mock
+    private Environment env;
 
     @Test
     public void getOrganisationsTest() {
