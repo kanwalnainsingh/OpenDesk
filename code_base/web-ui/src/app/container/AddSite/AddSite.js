@@ -9,6 +9,7 @@ import OrganisationService from '../../service/organisation/OrganisationService'
 import Site from '../../components/Site/Site'
 import Floor from '../../components/Floor/Floor'
 import save from '../../../Asset/media/Group66.svg'
+import history from '../../../history'
 import './AddSite.css'
 
 class addSite extends Component {
@@ -102,8 +103,16 @@ class addSite extends Component {
             city: this.state.location,
             sites: sitesArray
         }
-        let result = OrganisationService.saveOrganisation(request);
+        OrganisationService.saveOrganisation(request)
+        .then((response)=>{
+            console.log(response.data)
+            let id = response.data.orgId;
+            history.push({
+                pathname: ('/sites/'+ id)
+            })
+        })
         console.log(request)
+        // this.state.id = 2;
     }
 
     render() {

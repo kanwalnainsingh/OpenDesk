@@ -1,0 +1,22 @@
+apiVersion: apps/v1           # API version
+kind: Deployment              # Type of kubernetes resource
+metadata:
+  namespace: kanwalnainsingh
+  name: redis    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: redis
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: redis
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: redis
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+        - name: redis-container
+          image: redis
+          ports:
+            - containerPort: 6379
