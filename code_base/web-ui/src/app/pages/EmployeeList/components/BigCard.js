@@ -24,12 +24,17 @@ const useStyles = makeStyles({
     title: {
       fontSize: 70,
       fontWeight: 600,
-      marginBottom: 0
+      height: 80,
+      marginTop: 20
+    },
+    titleNov: {
+        marginBottom: 20,
+        fontWeight: 500
     },
     subtitle: {
       fontSize: 24,
       fontWeight: 700,
-      marginBottom: 30
+      marginBottom: 20
     },
     text: {
       fontSize: 17,  
@@ -48,7 +53,7 @@ const BigCard = () => {
         <Typography className={classes.title}>
             13
         </Typography>
-        <Typography >
+        <Typography className={classes.titleNov}>
             Nov,Wed
         </Typography>
         <Typography className={classes.subtitle}>
