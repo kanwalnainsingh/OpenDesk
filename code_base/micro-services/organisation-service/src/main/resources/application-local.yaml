@@ -1,14 +1,18 @@
 spring:
   application.name: organisation-service
-  cloud.kubernetes.reload.enabled: true
+  cloud.kubernetes.reload.enabled: false
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      topic: orgInfo
   redis:
-    host: redis-service
+    host: localhost
     port: 6379
 server.port: 8084
 management:
   endpoint:
     restart:
-      enabled: true
+      enabled: false
     health:
       enabled: true
     info:
@@ -16,8 +20,10 @@ management:
 ribbon:
   http:
     client:
-      enabled: true
+      enabled: false
 server.servlet.context-path: /api/organisation-service
 client:
   api:
-    booking-service: http://booking-service:8081/api/booking-service
+    booking-service: http://localhost:8081/api/booking-service
+
+

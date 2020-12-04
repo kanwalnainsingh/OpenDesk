@@ -30,7 +30,9 @@ spec:
             limits:
               cpu: "0.2"
               memory: 0.5Gi
-
+          volumeMounts:
+            - mountPath: /mnt/
+              name: desk-service-volume
         - name: redis-container
           image: redis
           ports:
@@ -42,3 +44,13 @@ spec:
             limits:
              cpu: "0.2"
              memory: 0.5Gi
+          volumeMounts:
+            - mountPath: /mnt/
+              name: desk-redis-volume
+      volumes:
+      - name: desk-service-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim
+      - name: desk-redis-volume
+        persistentVolumeClaim:
+          claimName: desk-organisation-persistent-volume-claim

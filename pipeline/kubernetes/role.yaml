@@ -1,8 +1,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: kanwalnainsingh
   name: OpenDeskRole
+  namespace: kanwalnainsingh
 rules:
 - apiGroups: [""]
   resources: ["pods"]
