@@ -17,15 +17,18 @@ class sites extends Component {
         this.state.id = this.props.match.params.id
         SiteService.getSite(this.state.id)
             .then((response) => {
-                this.state.siteDetails = response.data
+                console.log(response.data)
+                this.setState({
+                    siteDetails: response.data
+                })
+                this.countOpenDesk(response.data);
             })
         //uncomment below line to run from mock data
         //this.state.siteDetails = data
-        this.countOpenDesk();
     }
 
-    countOpenDesk = () => {
-        let siteDetailsObj = { ...this.state.siteDetails }
+    countOpenDesk = (response) => {
+        let siteDetailsObj = response
         if (Object.keys(siteDetailsObj).length != 0) {
             siteDetailsObj.sites.forEach((i) => {
                 let count = 0
@@ -41,6 +44,7 @@ class sites extends Component {
         }
     }
     render() {
+        console.log(this.state.siteDetails)
         return (
             <Aux>
                 {Object.keys(this.state.siteDetails).length != 0 ?
