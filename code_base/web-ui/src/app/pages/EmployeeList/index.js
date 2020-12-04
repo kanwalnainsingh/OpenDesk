@@ -1,7 +1,12 @@
 import React from 'react'
+import BigCard from './components/BigCard'
 
 const EmployeeList = () => {
-    return <h1>Employee List</h1>
+    return (
+        <div>
+            <BigCard />
+        </div>
+    )
 };
 
 export default EmployeeList;
