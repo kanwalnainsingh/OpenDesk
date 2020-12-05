@@ -105,10 +105,10 @@ public class DeskServiceImpl implements DeskService {
         IntStream.rangeClosed(1, isOpenDesk ? Integer.parseInt(floor.getOpenDesk()) :
                 Integer.parseInt(floor.getReservedDesk())).forEach(deskNo -> {
             persistDesks.add(DeskDao.builder()
-                    .id(orgId + siteId + floor.getFloorId() + "_" + deskNo)
-                    .seatSerial(floor.getName() + "_" + deskNo)
+                    .id(orgId + siteId + floor.getFloorId() + (isOpenDesk ? "_OP" : "_RE") + "_" + deskNo)
+                    .seatSerial(floor.getName() + (isOpenDesk ? "_OP" : "_RE") + "_" + deskNo)
                     .isReserved(isOpenDesk ? "N" : "Y")
-                    .isAvailable(isOpenDesk ? "A": "NA")
+                    .isAvailable(isOpenDesk ? "A" : "NA")
                     .orgId(orgId)
                     .siteId(siteId)
                     .floorId(floor.getFloorId())
