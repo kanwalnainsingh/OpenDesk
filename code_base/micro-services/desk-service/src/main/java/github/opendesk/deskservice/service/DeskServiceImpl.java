@@ -43,6 +43,7 @@ public class DeskServiceImpl implements DeskService {
 
     @Override
     public Desk updateDesk(Desk desk) {
+        //ToDO: add desk and update desk seems to be same code, will have to merge it to one
         DeskDao bookingDao = deskRepository.save(DeskConverter.deskModelToDeskDao.apply(desk));
         return DeskConverter.deskDaoToDeskModel.apply(bookingDao);
     }
