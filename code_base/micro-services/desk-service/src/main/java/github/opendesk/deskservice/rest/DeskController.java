@@ -18,17 +18,33 @@ public class DeskController {
     @Autowired
     private DeskService deskService;
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/desks")
     public List<Desk> getDesks() {
         List<Desk> listOfDesks = deskService.getDesks();
         return listOfDesks;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/desk/{id}")
     public Desk getCountryById(@PathVariable String id) {
         return deskService.getDesk(id);
     }
 
+    /**
+     *
+     * @param orgId
+     * @param siteId
+     * @param floorId
+     * @return
+     */
     @GetMapping("/desks/{orgId}/{siteId}/{floorId}")
     @Operation(responses = {
             @ApiResponse(responseCode = "200", description = "OK"),
@@ -41,6 +57,12 @@ public class DeskController {
         return responseEntityBuilder.body(desks);
     }
 
+    /**
+     *
+     * @param orgId
+     * @param siteId
+     * @return
+     */
     @GetMapping("/desks/{orgId}/{siteId}")
     @Operation(responses = {
             @ApiResponse(responseCode = "200", description = "OK"),
@@ -53,6 +75,11 @@ public class DeskController {
         return responseEntityBuilder.body(desks);
     }
 
+    /**
+     *
+     * @param orgId
+     * @return
+     */
     @GetMapping("/desks/{orgId}")
     @Operation(responses = {
             @ApiResponse(responseCode = "200", description = "OK"),
@@ -65,6 +92,11 @@ public class DeskController {
         return responseEntityBuilder.body(desks);
     }
 
+    /**
+     *
+     * @param Desk
+     * @return
+     */
     @PostMapping("/desk")
     @ResponseStatus(HttpStatus.CREATED)
     public Desk addDesk(@RequestBody Desk Desk) {
@@ -83,6 +115,11 @@ public class DeskController {
         return responseEntityBuilder.body(desks);
     }
 
+    /**
+     *
+     * @param Desk
+     * @return
+     */
     @PutMapping("/desk")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Desk updateDesk(@RequestBody Desk Desk) {
@@ -90,6 +127,10 @@ public class DeskController {
 
     }
 
+    /**
+     *
+     * @param DeskId
+     */
     @DeleteMapping("/desk/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteDesk(@PathVariable("id") String DeskId) {
@@ -97,6 +138,12 @@ public class DeskController {
     }
 
 
+    /**
+     *
+     * @param list
+     * @param <T>
+     * @return
+     */
     private <T> ResponseEntity.BodyBuilder buildResponseEntity(List<T> list) {
         if (list.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT);
