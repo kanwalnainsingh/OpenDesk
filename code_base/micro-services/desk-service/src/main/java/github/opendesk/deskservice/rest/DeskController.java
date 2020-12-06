@@ -20,7 +20,6 @@ public class DeskController {
     @Autowired
     private DeskService deskService;
 
-    @Autowired
     private BookingClient bookingClient;
 
     @GetMapping("/desks")
