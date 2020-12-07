@@ -14,8 +14,8 @@ public class BookingClient {
 
     @Autowired
     RestTemplate restTemplate;
-
-    String bookingServiceUrl = "https://www.bookopendesk.com/api/booking-service";
+    @Value("${client.api.booking-service}")
+    String bookingServiceUrl;
 
     public ResponseEntity getBookings(){
         String resourceUrl = bookingServiceUrl + "/bookings";
