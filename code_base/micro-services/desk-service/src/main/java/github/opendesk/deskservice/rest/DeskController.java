@@ -1,5 +1,7 @@
 package github.opendesk.deskservice.rest;
 
+import github.opendesk.deskservice.client.BookingClient;
+import github.opendesk.deskservice.model.Booking;
 import github.opendesk.deskservice.model.Desk;
 import github.opendesk.deskservice.model.Organisation;
 import github.opendesk.deskservice.service.DeskService;
@@ -17,6 +19,8 @@ public class DeskController {
 
     @Autowired
     private DeskService deskService;
+
+    private BookingClient bookingClient;
 
     /**
      *
@@ -101,6 +105,13 @@ public class DeskController {
     @ResponseStatus(HttpStatus.CREATED)
     public Desk addDesk(@RequestBody Desk Desk) {
         return deskService.addDesk(Desk);
+    }
+
+    @PostMapping("/availability")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Desk checkAvailability(@RequestBody Booking booking) {
+        ResponseEntity<List> bookings = bookingClient.getBookings();
+        return deskService.checkAvailability(bookings.getBody(), booking);
     }
 
     @PostMapping("/desks")
