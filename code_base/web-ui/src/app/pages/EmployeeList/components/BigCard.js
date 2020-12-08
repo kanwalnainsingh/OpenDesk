@@ -5,6 +5,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import CreateIcon from '@material-ui/icons/Create';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles({
@@ -15,6 +19,14 @@ const useStyles = makeStyles({
       textAlign: "center",
       background: "#F2F2F2",
       fontFamily: "Popins"
+    },
+    cardBlue: {
+        width: 250,
+        height: 384,
+        borderRadius: 20,
+        background: "#407BFF",
+        color: "#F2F2F2",
+        fontSize: "large"
     },
     bullet: {
       display: 'absolute',
@@ -41,6 +53,10 @@ const useStyles = makeStyles({
       fontWeight: 500,
       lineHeight: 1.8
     },
+    grid: {
+        textAlign: 'center',
+        marginTop: 5
+    }
   });
 
 const BigCard = () => {
@@ -48,27 +64,40 @@ const BigCard = () => {
     const bull = <span className={classes.bullet}>•</span>;
 
     return(
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title}>
-            13
-        </Typography>
-        <Typography className={classes.titleNov}>
-            Nov,Wed
-        </Typography>
-        <Typography className={classes.subtitle}>
-            Desk 3A
-        </Typography>
-        <Typography lineHeight="1.9" className={classes.text}>
-            3rd Floor
-        </Typography>
-        <Typography className={classes.text}>
-            2464 Royal Ln. Mesa, <br/> New Jersey 45463
-        </Typography>
-      </CardContent>
-      <CardActions>
-      </CardActions>
-    </Card>
+        <Card className={classes.cardBlue} >
+            <Card className={classes.root}>
+            <CardContent>
+                <Typography className={classes.title}>
+                    13
+                </Typography>
+                <Typography className={classes.titleNov}>
+                    Nov,Wed
+                </Typography>
+                <Typography className={classes.subtitle}>
+                    Desk 3A
+                </Typography>
+                <Typography lineHeight="1.9" className={classes.text}>
+                    3rd Floor
+                </Typography>
+                <Typography className={classes.text}>
+                    2464 Royal Ln. Mesa, <br/> New Jersey 45463
+                </Typography>
+            </CardContent>
+            <CardActions>
+            </CardActions>
+            </Card>
+            <Grid className={classes.grid} container spacing={3}>
+                <Grid item xs={4}>
+                    <DeleteOutlinedIcon />
+                </Grid>
+                <Grid item xs={4}>
+                    <FileCopyOutlinedIcon />
+                </Grid>
+                <Grid item xs={4}>
+                    <CreateIcon />
+                </Grid>
+            </Grid>
+        </Card>
     )
 }
 
