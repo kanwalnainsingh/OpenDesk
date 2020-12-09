@@ -3,7 +3,6 @@ import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
@@ -18,7 +17,7 @@ const useStyles = makeStyles({
       borderRadius: 20,
       textAlign: "center",
       background: "#F2F2F2",
-      fontFamily: "Popins"
+      fontFamily: "Popins",
     },
     cardBlue: {
         width: 250,
@@ -26,7 +25,9 @@ const useStyles = makeStyles({
         borderRadius: 20,
         background: "#407BFF",
         color: "#F2F2F2",
-        fontSize: "large"
+        fontSize: "large",
+        margin: "0 auto"
+
     },
     bullet: {
       display: 'absolute',
