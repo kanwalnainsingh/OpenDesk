@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     grid: {
         padding: "25px",
         display: "flex",
+        justifyContent: "center",
         flexWrap: "wrap"
     },
     side: {
@@ -31,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
         icons: {
             display: "flex",
             justifyContent: "flex-end",
-            alignItems: "center"
+            alignItems: "center",
+        },
+        icon: {
+            margin: 5,
+        },
+        iconActive: {
+            color: "white",
+            background: "#407BFF",
+            borderRadius: "5px",
+            padding: 5
         }
   }));
   
@@ -43,7 +53,6 @@ const EmployeeList = () => {
     const classes = useStyles();
 
 
-
     return (
         <Grid container spacing={3}>   
             <Grid  item xs={12}>
@@ -52,9 +61,21 @@ const EmployeeList = () => {
                     <h2>Your bookings</h2>
                 </Container>
                 <Container className={classes.icons}>
-                    <CropPortraitIcon onClick={() => {setList(true); setListSmall(false); setCalendar(false)}}/>
-                    <FormatListBulletedIcon onClick={() => {setList(false); setListSmall(true); setCalendar(false)}}/>
-                    <CalendarTodayIcon onClick={() => {setList(false); setListSmall(false); setCalendar(true)} } />
+                    <CropPortraitIcon className={!list?classes.icon:classes.iconActive} 
+                                            onClick={() => {setList(true); 
+                                            setListSmall(false); 
+                                            setCalendar(false)}}/>  
+                    
+
+                    <FormatListBulletedIcon className={!listSmall?classes.icon:classes.iconActive} 
+                                            onClick={() => {setList(false); 
+                                            setListSmall(true); 
+                                            setCalendar(false)}}/>
+
+                    <CalendarTodayIcon className={!calendar?classes.icon:classes.iconActive} 
+                                        onClick={() => {setList(false); 
+                                        setListSmall(false); 
+                                        setCalendar(true);}}/>
                 </Container>
             </Grid>
                 <Grid className={classes.grid}>
