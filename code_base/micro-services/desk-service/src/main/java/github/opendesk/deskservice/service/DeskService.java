@@ -1,5 +1,6 @@
 package github.opendesk.deskservice.service;
 
+import github.opendesk.deskservice.model.Booking;
 import github.opendesk.deskservice.model.Desk;
 import github.opendesk.deskservice.model.Organisation;
 
@@ -22,6 +23,7 @@ public interface DeskService {
 
     List<Desk> getDesksByOrgId(String orgId);
 
+    Desk checkAvailability(List bookings, Booking booking);
     /**
      *
      * @param organisation
