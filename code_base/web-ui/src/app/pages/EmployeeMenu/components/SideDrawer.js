@@ -24,6 +24,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import BorderAllIcon from '@material-ui/icons/BorderAll';
 import theme from '../Index';
+import { NavBar } from '../components/NavBar'
 
 const userInfo = {
   avatar: '/static/images/avatar/1.jpg',
@@ -89,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
     backgroundColor: '#407BFF',
+    width: 411,
   }
 }));
 
@@ -126,9 +128,6 @@ export default function SideDrawer() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
 
   const handleDrawerClose = () => {
     setOpen(false);
@@ -137,18 +136,8 @@ export default function SideDrawer() {
   return (
     <div className={{ style: { theme } }}>
       <CssBaseline />
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <NavBar
+        handleDrawerOpen={() => setOpen(true)} />
       <Drawer
         variant="persistent"
         anchor="left"
@@ -164,7 +153,7 @@ export default function SideDrawer() {
             <Avatar
               src={userInfo.avatar}
               className="avatar" />
-              <div class="oval-shadow"></div>
+            <div class="oval-shadow"></div>
           </UserItem>
           {[userInfo.email, userInfo.orgName].map((text) => (
             <ListItem key={text} className="user-text" style={{ padding: 0 }}>
