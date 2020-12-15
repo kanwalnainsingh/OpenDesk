@@ -16,7 +16,10 @@ const theme = createMuiTheme({
 export default function Index() {
   return (
     <ThemeProvider theme={theme}>
-      <SideDrawer />
+      <div>
+        <SideDrawer />
+      </div>
     </ThemeProvider>
+
   );
 }
