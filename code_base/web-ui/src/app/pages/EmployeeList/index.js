@@ -15,6 +15,10 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
       fontFamily: "Popins",
     },
+    title: {
+        fontSize: 18,
+        fontWeight: 600
+    },
     header: {
         display: "flex",
         justifyContent: "space-between"
@@ -63,7 +67,7 @@ const EmployeeList = () => {
             <Grid  item xs={12}>
             <Grid className={classes.header}>
                 <Container>
-                    <Typography component="h3">Your bookings</Typography>
+                    <Typography className={classes.title}>Your bookings</Typography>
                 </Container>
                 <Container className={classes.icons}>
                     <SvgIcon className={!list?classes.icon:classes.iconActive} 
