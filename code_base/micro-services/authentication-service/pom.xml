@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>github.opendesk</groupId>
-	<artifactId>opendesk-authentication-service</artifactId>
+	<artifactId>authentication-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>authentication-service</name>
 	<description>POC to validate spring security compatibility in opendesk</description>
