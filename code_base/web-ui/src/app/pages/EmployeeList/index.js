@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
-import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
-import CropPortraitIcon from '@material-ui/icons/CropPortrait';
 import Container from '@material-ui/core/Container';
 import BigCard from './components/BigCard';
 import SmallCard from './components/SmallCard';
+import Typography from '@material-ui/core/Typography';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
+const small = [1,2,3,4,5,6]
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      fontFamily: "Popins",
     },
     header: {
         display: "flex",
@@ -29,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     cardContainer: {
         margin: 25
         },
+    smallCardContainer:{
+        margin: 0,
+    },
         icons: {
             display: "flex",
             justifyContent: "flex-end",
@@ -41,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
             color: "white",
             background: "#407BFF",
             borderRadius: "5px",
-            padding: 5
+            padding: 5,
         }
   }));
   
@@ -58,13 +63,15 @@ const EmployeeList = () => {
             <Grid  item xs={12}>
             <Grid className={classes.header}>
                 <Container>
-                    <h2>Your bookings</h2>
+                    <Typography component="h3">Your bookings</Typography>
                 </Container>
                 <Container className={classes.icons}>
-                    <CropPortraitIcon className={!list?classes.icon:classes.iconActive} 
-                                            onClick={() => {setList(true); 
-                                            setListSmall(false); 
-                                            setCalendar(false)}}/>  
+                    <SvgIcon className={!list?classes.icon:classes.iconActive} 
+                                        onClick={() => {setList(true); 
+                                        setListSmall(false); 
+                                        setCalendar(false)}}>
+                                            <path fill="currentColor" d="M15 7V16H10V7H15M21 5H18V18H21V5M17 5H8V18H17V5M7 5H4V18H7V5Z" />
+                                        </SvgIcon>  
                     
 
                     <FormatListBulletedIcon className={!listSmall?classes.icon:classes.iconActive} 
@@ -72,37 +79,31 @@ const EmployeeList = () => {
                                             setListSmall(true); 
                                             setCalendar(false)}}/>
 
-                    <CalendarTodayIcon className={!calendar?classes.icon:classes.iconActive} 
+                    <SvgIcon className={!calendar?classes.icon:classes.iconActive} 
                                         onClick={() => {setList(false); 
                                         setListSmall(false); 
-                                        setCalendar(true);}}/>
+                                        setCalendar(true);}}>
+                                            <path fill="currentColor" d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z" />
+                                        </SvgIcon>
                 </Container>
             </Grid>
                 <Grid className={classes.grid}>
                     {list && (
                         <>
-                            <Grid className={classes.cardContainer}>
-                                <BigCard item xs={8} />
-                             </Grid>
-                            <Grid className={classes.cardContainer}>
-                                <BigCard item xs={8} />
-                            </Grid>
-                            <Grid className={classes.cardContainer}>
-                                <BigCard item xs={8} />
-                            </Grid>
+                            {small.map(x => (
+                                <Grid className={classes.cardContainer}>
+                                    <BigCard item xs={8} />
+                                </Grid>
+                            ))}
                         </>
                     )}
                     {listSmall && (
                         <>
-                         <Grid className={classes.cardContainer}>
-                                <SmallCard item xs={8} />
-                             </Grid>
-                            <Grid className={classes.cardContainer}>
-                                <SmallCard item xs={8} />
-                            </Grid>
-                            <Grid className={classes.cardContainer}>
-                                <SmallCard item xs={8} />
-                            </Grid>
+                           {small.map(x => (
+                                <Grid className={classes.smallCardContainer}>
+                                    <SmallCard item xs={8} />
+                                </Grid>
+                           ))}
                         </>
                     )}
                     {

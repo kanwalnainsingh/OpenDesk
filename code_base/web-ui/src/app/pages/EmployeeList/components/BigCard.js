@@ -5,7 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import CreateIcon from '@material-ui/icons/Create';
 import Grid from '@material-ui/core/Grid';
 
@@ -92,7 +92,9 @@ const BigCard = () => {
                     <DeleteOutlinedIcon />
                 </Grid>
                 <Grid item xs={4}>
-                    <FileCopyOutlinedIcon />
+                    <SvgIcon>
+                        <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </SvgIcon>
                 </Grid>
                 <Grid item xs={4}>
                     <CreateIcon />
