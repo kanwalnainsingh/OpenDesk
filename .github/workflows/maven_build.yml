@@ -66,11 +66,11 @@ jobs:
            cd code_base/micro-services/desk-service/
            mvn -B clean verify
       - name: Maven Package Authentication Service
-          run: |
-            cd code_base/micro-services/authentication-service/
-            mvn -B clean package -DskipTests
+        run: |
+          cd code_base/micro-services/authentication-service/
+          mvn -B clean package -DskipTests
       - name: Maven Verify Authentication Service
-          run: |
-            cd code_base/micro-services/authentication-service/
-            mvn -B clean verify
+        run: |
+          cd code_base/micro-services/authentication-service/
+          mvn -B clean verify
                 
