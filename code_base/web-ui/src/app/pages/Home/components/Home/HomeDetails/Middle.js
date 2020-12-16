@@ -97,15 +97,15 @@ export default function Middle() {
           </Button>
         </Grid>
         <Grid item xs={6} className={classes.rightButton}>
-          <Button>
+          <Button onClick={() => history.push('/employee')}>
             <Box>
-              <Typography gutterBottom>Employee ?</Typography>
+              <Typography gutterBottom>Continue as an</Typography>
               <Typography
                 variant="h4"
                 component="h4"
                 style={{ fontWeight: "bold" }}
               >
-                BOOK A DESK
+                EMPLOYEE
               </Typography>
             </Box>
             <img src={toAbsoluteUrl("/media/home/icons/desk.png")} alt="" />
