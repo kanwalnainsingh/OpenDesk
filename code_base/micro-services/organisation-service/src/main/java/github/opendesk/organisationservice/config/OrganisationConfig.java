@@ -1,5 +1,6 @@
 package github.opendesk.organisationservice.config;
 
+import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,4 +22,18 @@ public class OrganisationConfig {
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+    /**
+     * Rabbitmq
+     */
+    @Bean
+    public FanoutExchange fanout() {
+        return new FanoutExchange("fanout");
+    }
+
+    @Bean
+    public RabbitMQSender sender() {
+        return new RabbitMQSender();
+    }
+
 }

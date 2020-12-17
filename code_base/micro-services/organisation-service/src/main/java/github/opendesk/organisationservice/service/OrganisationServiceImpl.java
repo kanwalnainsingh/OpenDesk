@@ -34,8 +34,10 @@ public class OrganisationServiceImpl implements OrganisationService {
 
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
+
     @Autowired
     private RabbitMQSender sender;
+
     @Autowired
     private Gson gson;
 
@@ -59,9 +61,9 @@ public class OrganisationServiceImpl implements OrganisationService {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
+            // Send site save request that came from ui to rabbitmq queue
+            sendDataToRabbitMq(organisation);
         }
-        // Send site save request that came from ui to rabbitmq queue
-        sendDataToRabbitMq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
