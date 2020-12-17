@@ -58,6 +58,8 @@ public class OrganisationServiceImpl implements OrganisationService {
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
         }
+        // Send site save request that came from ui to rabbitmq queue
+        sendDataToRabbitmq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -90,5 +92,9 @@ public class OrganisationServiceImpl implements OrganisationService {
         logger.info("topic Name: "+topicName);
         logger.info("organization Details : "+ organizationDetails);
         kafkaTemplate.send(topicName, organizationDetails);
+    }
+
+    private void sendDataToRabbitmq(Organisation organisation) {
+
     }
 }

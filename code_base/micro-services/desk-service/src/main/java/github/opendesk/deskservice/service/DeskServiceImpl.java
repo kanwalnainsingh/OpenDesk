@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import org.springframework.util.StopWatch;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collector;
@@ -153,6 +155,23 @@ public class DeskServiceImpl implements DeskService {
         List<Desk> modelDesks = new ArrayList<Desk>();
         items.forEach(item -> modelDesks.add(DeskConverter.deskDaoToDeskModel.apply(item)));
         return modelDesks;
+    }
+
+    public void receive(String in, int receiver) throws InterruptedException {
+        StopWatch watch = new StopWatch();
+        watch.start();
+        System.out.println("instance " + receiver + " [x] Received '" + in + "'");
+        doWork(in);
+        watch.stop();
+        System.out.println("instance " + receiver + " [x] Done in " + watch.getTotalTimeSeconds() + "s");
+    }
+
+    private void doWork(String in) throws InterruptedException {
+        for (char ch : in.toCharArray()) {
+            if (ch == '.') {
+                Thread.sleep(1000);
+            }
+        }
     }
 }
 
