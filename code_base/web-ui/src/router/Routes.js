@@ -6,6 +6,7 @@ import HomeRouter from "./HomeRouter"
 import WIPRouter from "./WIPRouter"
 import Sites from '../app/container/Sites/Sites'
 import Index from '../app/pages/EmployeeMenu/Index'
+import NewSite from '../app/pages/NewSite/NewSite'
 
 export const Routes = () => {
   
@@ -19,6 +20,7 @@ export const Routes = () => {
       <Route path="/home" component={HomeRouter} />
       <Route path="/organisation" component={AddSite} />
       <Route path="/wip" component={WIPRouter} />
+      <Route path="/newsite" component={NewSite}/>
       <Route path="/sites/:id" component={Sites}/>
       <Route exact path="/employee" component={Index} />
     </Switch>
