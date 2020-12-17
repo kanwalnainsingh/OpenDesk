@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "40px 40px 0 0"
     },
     grid: {
-        padding: "25px",
+        padding: "25px 0",
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap"
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
         },
     smallCardContainer:{
         margin: 0,
+        width: "100%"
     },
         icons: {
             display: "flex",

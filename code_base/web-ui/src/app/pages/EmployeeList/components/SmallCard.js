@@ -8,7 +8,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      width: 411,
       margin: 0,
       boxShadow: "none",
       borderBottom: ".5px solid #C4C4C4",
