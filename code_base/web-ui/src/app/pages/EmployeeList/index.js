@@ -5,8 +5,11 @@ import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import Container from '@material-ui/core/Container';
 import BigCard from './components/BigCard';
 import SmallCard from './components/SmallCard';
+import Calendar from './components/Calendar';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
+
+import { MakeBooking } from './components/MakeBooking';
 
 const small = [1,2,3,4,5,6]
 
@@ -19,9 +22,16 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 18,
         fontWeight: 600
     },
+    headerContainer: {
+        background: "#407BFF",
+        height: "50px"
+    },
     header: {
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        padding: "20px 15px",
+        background: "white",
+        borderRadius: "40px 40px 0 0"
     },
     grid: {
         padding: "25px",
@@ -65,6 +75,8 @@ const EmployeeList = () => {
     return (
         <Grid container spacing={3}>   
             <Grid  item xs={12}>
+            <MakeBooking />
+            <Container className={classes.headerContainer}>
             <Grid className={classes.header}>
                 <Container>
                     <Typography className={classes.title}>Your bookings</Typography>
@@ -91,6 +103,8 @@ const EmployeeList = () => {
                                         </SvgIcon>
                 </Container>
             </Grid>
+            </Container>
+            
                 <Grid className={classes.grid}>
                     {list && (
                         <>
@@ -112,7 +126,7 @@ const EmployeeList = () => {
                     )}
                     {
                         calendar && (
-                            <h1>Calendar</h1>
+                            <Calendar />
                         )
                     }
                 </Grid>
