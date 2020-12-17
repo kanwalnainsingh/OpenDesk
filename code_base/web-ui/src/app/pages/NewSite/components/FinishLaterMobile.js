@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme) => ({
 
 export const FinishLaterMobile = () => {
     const classes = useStyles();
-    
+
     return (
         <div className={classes.finishLater}>
             <IconButton aria-label="delete">
                 <DeleteIcon style={{ fill: "white" }} />
             </IconButton>
-            <Typography>
+            <Typography style={{ fontSize: 14, fontWeight: 600 }}>
                 Finish Later?
             </Typography>
             <IconButton aria-label="done">

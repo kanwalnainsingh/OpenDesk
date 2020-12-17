@@ -22,13 +22,17 @@ const useStyles = makeStyles((theme) => ({
         height: 55,
         borderRadius: 15,
         backgroundColor: "white",
+        fontWeight: 600,
+        fontSize: 20
     },
     addFloor: {
         width: 381,
         height: 55,
         backgroundColor: "white",
         borderRadius: 15,
-        marginBottom: 42
+        marginBottom: 42,
+        fontWeight: 600,
+        fontSize: 18
     }
 }))
 

@@ -46,13 +46,14 @@ export const LocationForm = () => {
     return (
         <div className={classes.root}>
             <div className={classes.outerSpace}>
-                <Typography style={{ marginTop: 21 }}>PICK ON MAP</Typography>
+                <Typography style={{ marginTop: 21, fontWeight: 600, fontSize: 16 }}>PICK ON MAP</Typography>
                 <FormControl className={classes.margin}>
                     <Input
                         className={classes.input}
                         id="location"
                         placeholder="Location"
                         disableUnderline={true}
+                        style={{ fontWeight: 600, fontSize: 20 }}
                     />
                 </FormControl>
                 <img className={classes.locationPin} src={locationPin}></img>

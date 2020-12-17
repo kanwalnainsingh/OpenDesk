@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
         width: 381,
         height: 55,
         borderRadius: 15,
-        backgroundColor: "white"
+        backgroundColor: "white",
+        fontWeight: 600,
+        fontSize: 20
     }
 }))
 
