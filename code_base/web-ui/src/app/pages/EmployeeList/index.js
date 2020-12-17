@@ -18,13 +18,18 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
       fontFamily: "Popins",
     },
+    gridContainer: {
+        padding: 0
+    },
     title: {
         fontSize: 18,
         fontWeight: 600
     },
     headerContainer: {
         background: "#407BFF",
-        height: "50px"
+        height: "50px",
+        paddingRight: "0",
+        paddingLeft: "0"
     },
     header: {
         display: "flex",
@@ -73,8 +78,8 @@ const EmployeeList = () => {
 
 
     return (
-        <Grid container spacing={3}>   
-            <Grid  item xs={12}>
+        <Grid spacing={3}>   
+            <Grid item xs={12}>
             <MakeBooking />
             <Container className={classes.headerContainer}>
             <Grid className={classes.header}>
