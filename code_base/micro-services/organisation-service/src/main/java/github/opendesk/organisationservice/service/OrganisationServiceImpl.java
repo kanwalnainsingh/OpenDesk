@@ -1,6 +1,7 @@
 package github.opendesk.organisationservice.service;
 
 import com.google.gson.Gson;
+import github.opendesk.organisationservice.config.RabbitMQSender;
 import github.opendesk.organisationservice.converter.OrganisationConverter;
 import github.opendesk.organisationservice.dao.OrganisationDao;
 import github.opendesk.organisationservice.repository.OrganisationRepository;
@@ -33,7 +34,8 @@ public class OrganisationServiceImpl implements OrganisationService {
 
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
-
+    @Autowired
+    private RabbitMQSender sender;
     @Autowired
     private Gson gson;
 
@@ -59,7 +61,7 @@ public class OrganisationServiceImpl implements OrganisationService {
             sendDataToKafka(organisation);
         }
         // Send site save request that came from ui to rabbitmq queue
-        sendDataToRabbitmq(organisation);
+        sendDataToRabbitMq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -94,7 +96,9 @@ public class OrganisationServiceImpl implements OrganisationService {
         kafkaTemplate.send(topicName, organizationDetails);
     }
 
-    private void sendDataToRabbitmq(Organisation organisation) {
-
+    private void sendDataToRabbitMq(Organisation organisation) {
+        String organizationDetails=gson.toJson(organisation);
+        logger.info("Info sended to rabbitmq : "+ organizationDetails);
+        sender.send(organizationDetails);
     }
 }
