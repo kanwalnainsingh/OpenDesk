@@ -37,7 +37,6 @@ const SmallCard = () => {
     return(
         <Card className={classes.root}>
          
-           
             <CardContent className={classes.header}>
                 <Typography fontWeight="500"  component="p">
                 13 November, Wednesday <br/> DESK 2A, Floor 3

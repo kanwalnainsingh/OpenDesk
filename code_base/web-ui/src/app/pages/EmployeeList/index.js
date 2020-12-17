@@ -81,7 +81,8 @@ const EmployeeList = () => {
     return (
         <Grid spacing={3}>   
             <Grid item xs={12}>
-            <MakeBooking />
+            {list && <MakeBooking />}
+            {listSmall && <MakeBooking />}
             <Container className={classes.headerContainer}>
             <Grid className={classes.header}>
                 <Container>
