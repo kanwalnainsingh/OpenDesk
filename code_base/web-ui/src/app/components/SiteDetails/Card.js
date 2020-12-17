@@ -31,7 +31,7 @@ export default function SiteCard({ site }) {
       <CardContent className={classes.content}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6" component="div">
-            {site.title}
+            {site.name}
           </Typography>
           <IconButton edge="end" size="small" style={{ marginRight: "-10px" }}>
             <MoreVertIcon />
@@ -44,7 +44,7 @@ export default function SiteCard({ site }) {
                 <div>{site.floors} Floors</div>
               </Grid>
               <Grid item xs="auto">
-                <div>{site.desks} Desks</div>
+                <div>{site.openDesk} Desks</div>
               </Grid>
               <Grid item xs={12}>
                 <div>
