@@ -40,15 +40,18 @@ const useStyles = makeStyles((theme) => ({
     },
     grid: {
         padding: "25px 0",
+    },
+    gridBigCard: {
         display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap"
+        overflow: "scroll",
+        padding: "0 50px",
     },
     side: {
         background: "#407BFF"
     },
     cardContainer: {
-        margin: 25
+        margin: "20px",
+        padding: "30px"
         },
     smallCardContainer:{
         margin: 0,
@@ -67,7 +70,16 @@ const useStyles = makeStyles((theme) => ({
             background: "#407BFF",
             borderRadius: "5px",
             padding: 5,
-        }
+        },
+        breakpoints: {
+            values: {
+              xs: 0,
+              sm: 100,
+              md: 960,
+              lg: 1280,
+              xl: 1920,
+            },
+          },
   }));
   
 
@@ -114,22 +126,22 @@ const EmployeeList = () => {
             
                 <Grid className={classes.grid}>
                     {list && (
-                        <>
+                        <Grid className={classes.gridBigCard}>
                             {small.map(x => (
                                 <Grid className={classes.cardContainer}>
                                     <BigCard item xs={8} />
                                 </Grid>
                             ))}
-                        </>
+                        </Grid>
                     )}
                     {listSmall && (
-                        <>
+                        <Grid>
                            {small.map(x => (
                                 <Grid className={classes.smallCardContainer}>
                                     <SmallCard item xs={8} />
                                 </Grid>
                            ))}
-                        </>
+                        </Grid>
                     )}
                     {
                         calendar && (
