@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
         },
         icon: {
             margin: 5,
+            paddingLeft: 5
         },
         iconActive: {
             color: "white",
@@ -84,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   
 
 const EmployeeList = () => {
-    const [list, setList] = useState(false);
+    const [listBig, setListBig] = useState(true);
     const [listSmall, setListSmall] = useState(false);
     const [calendar, setCalendar] = useState(false);
     const classes = useStyles();
@@ -93,7 +94,7 @@ const EmployeeList = () => {
     return (
         <Grid spacing={3}>   
             <Grid item xs={12}>
-            {list && <MakeBooking />}
+            {listBig && <MakeBooking />}
             {listSmall && <MakeBooking />}
             <Container className={classes.headerContainer}>
             <Grid className={classes.header}>
@@ -101,8 +102,8 @@ const EmployeeList = () => {
                     <Typography className={classes.title}>Your bookings</Typography>
                 </Container>
                 <Container className={classes.icons}>
-                    <SvgIcon className={!list?classes.icon:classes.iconActive} 
-                                        onClick={() => {setList(true); 
+                    <SvgIcon className={!listBig?classes.icon:classes.iconActive} 
+                                        onClick={() => {setListBig(true); 
                                         setListSmall(false); 
                                         setCalendar(false)}}>
                                             <path fill="currentColor" d="M15 7V16H10V7H15M21 5H18V18H21V5M17 5H8V18H17V5M7 5H4V18H7V5Z" />
@@ -110,22 +111,22 @@ const EmployeeList = () => {
                     
 
                     <FormatListBulletedIcon className={!listSmall?classes.icon:classes.iconActive} 
-                                            onClick={() => {setList(false); 
+                                            onClick={() => {setListBig(false); 
                                             setListSmall(true); 
                                             setCalendar(false)}}/>
 
                     <SvgIcon className={!calendar?classes.icon:classes.iconActive} 
-                                        onClick={() => {setList(false); 
+                                        onClick={() => {setListBig(false); 
                                         setListSmall(false); 
                                         setCalendar(true);}}>
                                             <path fill="currentColor" d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z" />
                                         </SvgIcon>
                 </Container>
             </Grid>
-            </Container>
+            
             
                 <Grid className={classes.grid}>
-                    {list && (
+                    {listBig && (
                         <Grid className={classes.gridBigCard}>
                             {small.map(x => (
                                 <Grid className={classes.cardContainer}>
@@ -149,6 +150,7 @@ const EmployeeList = () => {
                         )
                     }
                 </Grid>
+                </Container>
             </Grid>
         </Grid>
     );
