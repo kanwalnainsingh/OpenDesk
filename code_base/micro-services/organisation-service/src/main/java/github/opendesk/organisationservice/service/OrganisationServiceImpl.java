@@ -60,17 +60,13 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public Organisation createOrganisation(Organisation organisation) {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
-        System.out.println(Profiles.of("rabbit"));
-        System.out.println("accepted "+ env.acceptsProfiles(Profiles.of("rabbit")));
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
         }
         if (env.acceptsProfiles(Profiles.of("rabbit"))) {
-            System.out.println("here is entering");
             // Send site save request that came from ui to rabbitmq queue
             sendDataToRabbitMq(organisation);
         }
-        System.out.println("here is not entering");
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -106,11 +102,9 @@ public class OrganisationServiceImpl implements OrganisationService {
     }
 
     private void sendDataToRabbitMq(Organisation organisation) {
-        System.out.println("Sending data? ");
         String organizationDetails=gson.toJson(organisation);
-        System.out.println("Info sended to rabbitmq : "+ organizationDetails);
+        // System.out.println("Info sended to rabbitmq : "+ organizationDetails);
         logger.info("Info sended to rabbitmq : "+ organizationDetails);
-        System.out.println(rabbitMQSender);
         rabbitMQSender.send(organizationDetails);
     }
 }
