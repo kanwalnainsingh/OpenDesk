@@ -9,6 +9,8 @@ import Calendar from './components/Calendar';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
+import BlueCard from './components/BlueCard';
+
 import { MakeBooking } from './components/MakeBooking';
 
 const small = [1,2,3,4,5,6]
@@ -124,7 +126,7 @@ const EmployeeList = () => {
                 </Container>
             </Grid>
             
-            
+            {calendar && <BlueCard />}
                 <Grid className={classes.grid}>
                     {listBig && (
                         <Grid className={classes.gridBigCard}>
