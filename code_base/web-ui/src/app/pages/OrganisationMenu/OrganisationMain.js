@@ -7,7 +7,8 @@ import Search from "../../components/Search/Search";
 const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: "#263238",
-        backgroundSize: "100% 100%",
+        width: "auto",
+        height: "2000px",
     },
 }));
 
@@ -15,12 +16,8 @@ export default function OrganisationMain() {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
+        <div className={classes.root}>
             <NavBar />
-
-            <div className={classes.root}>
-                <Account />
-            </div>
-        </React.Fragment>
+        </div>
     );
 }

@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
         borderRadius: "40px 40px 40px 40px",
         margin: "20px",
-        paddingBottom: "30px",
         width: "381px",
         height: "262px",
     },
