@@ -63,10 +63,7 @@ public class OrganisationServiceImpl implements OrganisationService {
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
         }
-        if (env.acceptsProfiles(Profiles.of("rabbit"))) {
-            // Send site save request that came from ui to rabbitmq queue
-            sendDataToRabbitMq(organisation);
-        }
+        sendDataToRabbitMq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -102,9 +99,14 @@ public class OrganisationServiceImpl implements OrganisationService {
     }
 
     private void sendDataToRabbitMq(Organisation organisation) {
-        String organizationDetails=gson.toJson(organisation);
-        // System.out.println("Info sended to rabbitmq : "+ organizationDetails);
-        logger.info("Info sended to rabbitmq : "+ organizationDetails);
-        rabbitMQSender.send(organizationDetails);
+        try {
+            String organizationDetails=gson.toJson(organisation);
+            // System.out.println("Info sended to rabbitmq : "+ organizationDetails);
+            logger.info("Info sended to rabbitmq : "+ organizationDetails);
+            rabbitMQSender.send(organizationDetails);
+        }catch (NullPointerException exception)
+        {
+            logger.error("sendDataToRabbitMq", exception.getMessage());
+        }
     }
 }
