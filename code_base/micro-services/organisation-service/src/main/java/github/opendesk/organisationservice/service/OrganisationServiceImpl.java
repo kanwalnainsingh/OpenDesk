@@ -27,6 +27,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.sound.midi.SysexMessage;
+
 import static github.opendesk.organisationservice.converter.OrganisationConverter.organisationDaoToOrganisationModel;
 
 @Service
@@ -36,7 +38,7 @@ public class OrganisationServiceImpl implements OrganisationService {
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
 
     @Autowired
-    private RabbitMQSender sender;
+    private RabbitMQSender rabbitMQSender;
 
     @Autowired
     private Gson gson;
@@ -55,15 +57,20 @@ public class OrganisationServiceImpl implements OrganisationService {
         return organisationDaoToOrganisationModel.apply(organisationRepository.findById(id).orElseGet(() -> OrganisationDao.builder().build()));
     }
 
-
     @Override
     public Organisation createOrganisation(Organisation organisation) {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
+        System.out.println(Profiles.of("rabbit"));
+        System.out.println("accepted "+ env.acceptsProfiles(Profiles.of("rabbit")));
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
+        }
+        if (env.acceptsProfiles(Profiles.of("rabbit"))) {
+            System.out.println("here is entering");
             // Send site save request that came from ui to rabbitmq queue
             sendDataToRabbitMq(organisation);
         }
+        System.out.println("here is not entering");
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -84,7 +91,7 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public void uploadSiteDetials(MultipartFile organisationLogo) throws IOException {
         byte[] bytes = organisationLogo.getBytes();
-        String str=new String(bytes);
+        String str = new String(bytes);
         Path path = Paths.get(UPLOADED_FOLDER + organisationLogo.getOriginalFilename());
         System.out.println("Path: " + path.toString());
         Files.write(path, bytes);
@@ -99,8 +106,11 @@ public class OrganisationServiceImpl implements OrganisationService {
     }
 
     private void sendDataToRabbitMq(Organisation organisation) {
+        System.out.println("Sending data? ");
         String organizationDetails=gson.toJson(organisation);
+        System.out.println("Info sended to rabbitmq : "+ organizationDetails);
         logger.info("Info sended to rabbitmq : "+ organizationDetails);
-        sender.send(organizationDetails);
+        System.out.println(rabbitMQSender);
+        rabbitMQSender.send(organizationDetails);
     }
 }

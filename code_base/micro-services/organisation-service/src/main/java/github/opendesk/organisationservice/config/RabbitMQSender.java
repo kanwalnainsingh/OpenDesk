@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 public class RabbitMQSender {
-
     @Autowired
     private RabbitTemplate template;
 
