@@ -20,5 +20,4 @@ public class DeskConfig {
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
 }
