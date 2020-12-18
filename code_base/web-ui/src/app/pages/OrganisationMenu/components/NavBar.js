@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Button } from "@material-ui/core";
 import { toAbsoluteUrl } from "../../../utils/utils";
+import SectionControls from "./SectionControls";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
     bar: {
         backgroundColor: "#407BFF",
+        minHeight: 110,
     },
     menuButton: {
         marginRight: theme.spacing(2),
