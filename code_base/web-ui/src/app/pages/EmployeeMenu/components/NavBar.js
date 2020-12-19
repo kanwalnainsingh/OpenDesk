@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import InputBase from '@material-ui/core/InputBase';
 import CloseIcon from '@material-ui/icons/Close';
 import Drawer from '@material-ui/core/Drawer';
@@ -70,7 +71,11 @@ export const NavBar = ({ handleDrawerOpen }) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h5">OPENDESK</Typography>
+                    <Typography variant="h5">
+                        <Box fontWeight="fontWeightBold" m={1}>
+                            OPENDESK
+                        </Box>
+                    </Typography>
                     <IconButton
                         color="inherit"
                         aria-label="open search"
