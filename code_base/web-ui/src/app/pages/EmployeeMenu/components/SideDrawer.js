@@ -171,7 +171,7 @@ export default function SideDrawer() {
           </UserItem>
           {[userInfo.email, userInfo.orgName].map((text) => (
             <ListItem key={text} className="user-text" style={{ padding: 0 }}>
-              <ListItemText primary={text} style={{ textAlign: "center" }} classes={{primary:classes.textStyle}} />
+              <ListItemText primary={text} style={{ textAlign: "center" }} />
             </ListItem>
           ))}
         </UserInfo>
