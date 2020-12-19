@@ -6,30 +6,15 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
-import TuneIcon from '@material-ui/icons/Tune';
 import Switches from './Switches';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import EditIcon from '@material-ui/icons/Edit';
-import AppsIcon from '@material-ui/icons/Apps';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import NewReleasesIcon from '@material-ui/icons/NewReleases';
-import HelpIcon from '@material-ui/icons/Help';
-import FeedbackIcon from '@material-ui/icons/Feedback';
-import BorderAllIcon from '@material-ui/icons/BorderAll';
 import theme from '../Index';
 import { NavBar } from '../components/NavBar'
 import SvgIcon from '@material-ui/core/SvgIcon';
-import Icon from '@material-ui/core/Icon';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import BookingIcon from './icons/booking'
 
 const userInfo = {
   avatar: '/static/images/avatar/1.jpg',
@@ -182,7 +167,7 @@ export default function SideDrawer() {
             <Avatar
               src={userInfo.avatar}
               className="avatar" />
-            <div class="oval-shadow"></div>
+            <div className="oval-shadow"></div>
           </UserItem>
           {[userInfo.email, userInfo.orgName].map((text) => (
             <ListItem key={text} className="user-text" style={{ padding: 0 }}>
