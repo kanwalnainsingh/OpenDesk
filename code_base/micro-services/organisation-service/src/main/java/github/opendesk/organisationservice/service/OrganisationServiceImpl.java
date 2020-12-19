@@ -1,6 +1,7 @@
 package github.opendesk.organisationservice.service;
 
 import com.google.gson.Gson;
+import github.opendesk.organisationservice.config.RabbitMQSender;
 import github.opendesk.organisationservice.converter.OrganisationConverter;
 import github.opendesk.organisationservice.dao.OrganisationDao;
 import github.opendesk.organisationservice.repository.OrganisationRepository;
@@ -26,6 +27,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.sound.midi.SysexMessage;
+
 import static github.opendesk.organisationservice.converter.OrganisationConverter.organisationDaoToOrganisationModel;
 
 @Service
@@ -33,6 +36,9 @@ public class OrganisationServiceImpl implements OrganisationService {
 
     private final Logger logger = LoggerFactory.getLogger(OrganisationServiceImpl.class);
     private static final String UPLOADED_FOLDER = "./src/main/resources/organisationLogo/";
+
+    @Autowired
+    private RabbitMQSender rabbitMQSender;
 
     @Autowired
     private Gson gson;
@@ -51,13 +57,13 @@ public class OrganisationServiceImpl implements OrganisationService {
         return organisationDaoToOrganisationModel.apply(organisationRepository.findById(id).orElseGet(() -> OrganisationDao.builder().build()));
     }
 
-
     @Override
     public Organisation createOrganisation(Organisation organisation) {
         OrganisationDao organisationDao = organisationRepository.save(OrganisationConverter.organisationModelToOrganisationDao.apply(organisation));
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
         }
+        sendDataToRabbitMq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
@@ -78,7 +84,7 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public void uploadSiteDetials(MultipartFile organisationLogo) throws IOException {
         byte[] bytes = organisationLogo.getBytes();
-        String str=new String(bytes);
+        String str = new String(bytes);
         Path path = Paths.get(UPLOADED_FOLDER + organisationLogo.getOriginalFilename());
         System.out.println("Path: " + path.toString());
         Files.write(path, bytes);
@@ -90,5 +96,17 @@ public class OrganisationServiceImpl implements OrganisationService {
         logger.info("topic Name: "+topicName);
         logger.info("organization Details : "+ organizationDetails);
         kafkaTemplate.send(topicName, organizationDetails);
+    }
+
+    private void sendDataToRabbitMq(Organisation organisation) {
+        try {
+            String organizationDetails=gson.toJson(organisation);
+            // System.out.println("Info sended to rabbitmq : "+ organizationDetails);
+            logger.info("Info sended to rabbitmq : "+ organizationDetails);
+            rabbitMQSender.send(organizationDetails);
+        }catch (NullPointerException exception)
+        {
+            logger.error("sendDataToRabbitMq", exception.getMessage());
+        }
     }
 }
