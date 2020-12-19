@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Sticky from 'react-sticky-el';
 
 import Aux from '../../HOC/Auxiliary'
@@ -20,8 +19,7 @@ class addSite extends Component {
         floor: [],
         openDesk: '',
         reservedDesk: '',
-        openDeskArray: [],
-        id: ''
+        openDeskArray: []
     }
 
     onChangeSite = (e) => {
@@ -106,13 +104,14 @@ class addSite extends Component {
         }
         OrganisationService.saveOrganisation(request)
         .then((response)=>{
-            this.state.id = response.data.orgId;
+            console.log(response.data)
+            let id = response.data.orgId;
+            history.push({
+                pathname: ('/sites/'+ id)
+            })
         })
         console.log(request)
         // this.state.id = 2;
-        history.push({
-            pathname: ('/sites/'+ this.state.id)
-        })
     }
 
     render() {
