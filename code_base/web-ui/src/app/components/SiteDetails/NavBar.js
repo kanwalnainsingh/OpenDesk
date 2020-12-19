@@ -1,8 +1,19 @@
-import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  createMuiTheme,
+  IconButton,
+  makeStyles,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@material-ui/core";
 import React from "react";
 import { toAbsoluteUrl } from "../../utils/utils";
+import SearchIcon from "@material-ui/icons/Search";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   title: {
     fontWeight: "bold",
     fontSize: "50px",
@@ -22,8 +33,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//NavBar component
-export default function NavBar() {
+const theme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: "#FFFFFF",
+    },
+  },
+  typography: {
+    fontFamily: "Poppins, sans-serif",
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 100,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
+const DesktopNav = () => {
   const classes = useStyles();
   return (
     <AppBar position="static" color="primary" className={classes.nav}>
@@ -79,5 +109,54 @@ export default function NavBar() {
         </Typography>
       </div>
     </AppBar>
+  );
+};
+
+const MobileNav = () => {
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "10px 20px auto 20px",
+        }}
+      >
+        <div>
+          <IconButton size="medium" edge="start">
+            <SearchIcon color="secondary" />
+          </IconButton>
+        </div>
+        <div>
+          <IconButton edge="end" size="medium">
+            <MoreVertIcon color="secondary" />
+          </IconButton>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Typography
+          variant="h3"
+          component="h3"
+          style={{ fontWeight: "bold", color: "#FFFFFF" }}
+        >
+          Sites
+        </Typography>
+      </div>
+    </>
+  );
+};
+
+//NavBar component
+export default function NavBar() {
+  const mobileBreakPoint = useMediaQuery(theme.breakpoints.down("sm"));
+  return (
+    <ThemeProvider theme={theme}>
+      {mobileBreakPoint ? <MobileNav /> : <DesktopNav />}
+    </ThemeProvider>
   );
 }
