@@ -15,7 +15,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import theme from '../Index';
 import { NavBar } from '../components/NavBar'
 import SvgIcon from '@material-ui/core/SvgIcon';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 const userInfo = {
   avatar: '/static/images/avatar/1.jpg',
