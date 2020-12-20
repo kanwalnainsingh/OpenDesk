@@ -15,6 +15,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import theme from '../Index';
 import { NavBar } from '../components/NavBar'
 import SvgIcon from '@material-ui/core/SvgIcon';
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
 
 const userInfo = {
   avatar: '/static/images/avatar/1.jpg',
@@ -54,6 +56,8 @@ const UserInfo = styled(List)`
     opacity: 1;
     filter: blur(9px);
   }
+
+
 `;
 
 const UserItem = styled(ListItem)`
@@ -79,9 +83,6 @@ const WrapperDrawer = styled(Drawer)`
   & div{border: 0;
         direction: rtl;
         text-align: left;}
-
-  & div > *{}
-  
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -180,11 +181,16 @@ export default function SideDrawer() {
               className="avatar" />
             <div className="oval-shadow"></div>
           </UserItem>
-          {[userInfo.email, userInfo.orgName].map((text) => (
-            <ListItem key={text} className="user-text" style={{ padding: 0 }}>
-              <ListItemText primary={text} style={{ textAlign: "center" }} />
+            <ListItem key={userInfo.email} className="user-text" style={{ padding: 0 }}>
+              <ListItemText primary={
+                <Box fontWeight="fontWeightBold" style={{ textAlign: "center", fontSize: '20px' }}>
+                  {userInfo.email}
+                </Box>}
+              />
             </ListItem>
-          ))}
+            <ListItem key={userInfo.orgName} className="user-text" style={{ padding: 0 }}>
+              <ListItemText primary={userInfo.orgName} style={{ textAlign: "center" }} />
+            </ListItem>
         </UserInfo>
         <Defaults style={{ direction: "ltr"}}>
           <ListItem key="defaults" style={{ paddingLeft: paddingNavItems, paddingTop: 25 }}>
