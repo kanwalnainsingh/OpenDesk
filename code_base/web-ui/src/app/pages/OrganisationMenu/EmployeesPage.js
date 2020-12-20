@@ -1,20 +1,36 @@
 import React from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider, makeStyles} from "@material-ui/core/styles";
 import NavBar from "./components/NavBar";
+import TextArea from "./components/TextArea";
 const theme = createMuiTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
   },
-  background: {
-    pink: "#FF575F",
-    black: "#1F2E35",
-    blue: "#407BFF",
-    yellow: "#FF8A34",
-    green: "#25C685",
-    purple: "#BA68C8",
-  },
+  palette: {
+    background: {
+        default: "#263238"
+    }
+  }
 });
 
+const useStyle = makeStyles((theme) => ({
+    root: {
+      height: "100vh",
+      display: "flex",
+    },
+    employeesArea: {
+        backgroundColor: '#263238',
+    }
+  }));
+
 export default function EmployeesPage() {
-    return <NavBar/>;
+    const classes = useStyle();
+    return (
+        <ThemeProvider theme={theme}>
+            <NavBar/>
+            <div className={classes.employeesArea}>
+                <TextArea/>
+            </div>
+        </ThemeProvider>
+    );
 } 

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         fontFamily: "Poppins",
         fontWeight: "bold",
-        fontSize: "2.5rem",
+        fontSize: "3.0rem",
         textTransform: "none",
         opacity: '0.3',
         '&:focus': {
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     logo: { 
         width: "3.0rem",
+        paddingRight: "3rem"
     }
 }));
 
