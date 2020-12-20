@@ -63,7 +63,7 @@ public class OrganisationServiceImpl implements OrganisationService {
         if (env.acceptsProfiles(Profiles.of("local"))) {
             sendDataToKafka(organisation);
         }
-        sendDataToRabbitMq(organisation);
+        //sendDataToRabbitMq(organisation);
         return organisationDaoToOrganisationModel.apply(organisationDao);
     }
 
