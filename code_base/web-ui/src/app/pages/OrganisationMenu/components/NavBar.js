@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         fontSize: "2.5rem",
         textTransform: "none",
-        opacity: '0.3'
+        opacity: '0.3',
+        '&:focus': {
+            opacity: '1.0'
+        }
     },
     logo: { 
         width: "3.0rem",

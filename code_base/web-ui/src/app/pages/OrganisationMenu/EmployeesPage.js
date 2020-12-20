@@ -15,9 +15,6 @@ const theme = createMuiTheme({
   },
 });
 
-
-
 export default function EmployeesPage() {
     return <NavBar/>;
-
 } 
