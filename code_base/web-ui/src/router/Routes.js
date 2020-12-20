@@ -7,9 +7,9 @@ import WIPRouter from "./WIPRouter"
 import Sites from '../app/container/Sites/Sites'
 import Index from '../app/pages/EmployeeMenu/Index'
 import NewSite from '../app/pages/NewSite/NewSite'
+import EmployeeBooking from "../app/pages/EmployeeBooking/EmployeeBooking";
 
 export const Routes = () => {
-  
   return (
     <Router history={history}>
     <Switch>
@@ -23,6 +23,7 @@ export const Routes = () => {
       <Route path="/newsite" component={NewSite}/>
       <Route path="/sites/:id" component={Sites}/>
       <Route exact path="/employee" component={Index} />
+      <Route exact path="/employeebooking" component={EmployeeBooking} />
     </Switch>
     </Router>
   );
