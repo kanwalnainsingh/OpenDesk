@@ -6,7 +6,7 @@ import HomeRouter from "./HomeRouter"
 import WIPRouter from "./WIPRouter"
 import Sites from '../app/container/Sites/Sites'
 import Index from '../app/pages/EmployeeMenu/Index'
-
+import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 export const Routes = () => {
   
   return (
@@ -17,7 +17,8 @@ export const Routes = () => {
         <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      <Route path="/organisation" component={AddSite} />
+      {/*<Route path="/organisation" component={AddSite} /> */ }
+      <Route path="/organisation" component={EmployeesPage} />
       <Route path="/wip" component={WIPRouter} />
       <Route path="/sites/:id" component={Sites}/>
       <Route exact path="/employee" component={Index} />
