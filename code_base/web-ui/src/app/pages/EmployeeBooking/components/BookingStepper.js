@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiStepLabel-label': {
       fontSize: 20
     },
-    '& .MuiStepper-root' : {
+    '& .MuiStepper-root': {
       paddingBottom: 0
     }
   },
@@ -191,7 +191,7 @@ export function BookingStepper() {
       </Stepper>
       <div>
         {activeStep === steps.length - 1 || activeStep === steps.length ? (
-          <div style={{ height: 100, overflow: 'hidden', position: 'relative'}}>
+          <div style={{ height: 100, overflow: 'hidden', position: 'relative' }}>
             <Button onClick={handleNext} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
               {activeStep === steps.length - 1 ? 'OKAY' : 'BOOK DESK'}
             </Button>

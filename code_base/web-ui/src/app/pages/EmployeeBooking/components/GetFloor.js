@@ -28,7 +28,7 @@ function getFloors() {
     return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 }
 
-export const GetFloor = () => {
+export const GetFloor = ({ handleNext }) => {
     const classes = useStyles();
     const mockFloors = getFloors();
     const [floor, setFloor] = React.useState();
@@ -43,7 +43,7 @@ export const GetFloor = () => {
             <Box className={classes.root}>
                 <ToggleButtonGroup exclusive value={floor} onChange={handleFloor} aria-label="floor number">
                     {mockFloors.map((mock) =>
-                        <NumberButton value={mock} aria-label={mock}>{mock}</NumberButton>
+                        <NumberButton onClick={() => handleNext} value={mock} aria-label={mock}>{mock}</NumberButton>
                     )}
                 </ToggleButtonGroup>
             </Box>
