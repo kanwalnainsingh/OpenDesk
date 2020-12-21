@@ -15,7 +15,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import theme from '../Index';
 import { NavBar } from '../components/NavBar'
 import SvgIcon from '@material-ui/core/SvgIcon';
-import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
 const userInfo = {
@@ -56,8 +55,6 @@ const UserInfo = styled(List)`
     opacity: 1;
     filter: blur(9px);
   }
-
-
 `;
 
 const UserItem = styled(ListItem)`
