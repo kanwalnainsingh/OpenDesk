@@ -1,6 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -15,7 +16,12 @@ const useStyles = makeStyles((theme) => ({
             textAlign: "center",
             position: "absolute !important",
             bottom: "0 !important",
-            left: "0 !important"
+            left: "0 !important",
+        },
+        "&::-webkit-input-placeholder": {
+            color: "gray !important",
+            bottom: "0 !important",
+            position: "absolute !important",
         }
     }
 }));
@@ -24,11 +30,9 @@ export default function TextArea() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
         <TextareaAutosize id="text" className={classes.textArea}
             placeholder="Type Employee Email addresses seperated by commas to Invite them"
         />
-        </div>
     );
 }
 

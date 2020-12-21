@@ -1,19 +1,9 @@
 import React from "react";
 import { createMuiTheme, ThemeProvider, makeStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
-import { red } from "@material-ui/core/colors";
 const theme = createMuiTheme({
     overrides: {
-        // Style sheet name ⚛️
         MuiButton: {
-          // Name of the rule
-          /*text: {
-            // Some CSS
-            border: 0,
-            color: 'white',
-            height: 48,
-            padding: '0 30px',
-          },*/
           label: {
               display: "inline-block"
           }

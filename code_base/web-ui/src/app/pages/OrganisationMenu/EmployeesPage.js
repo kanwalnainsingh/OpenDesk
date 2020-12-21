@@ -3,6 +3,8 @@ import { createMuiTheme, ThemeProvider, makeStyles} from "@material-ui/core/styl
 import NavBar from "./components/NavBar";
 import TextArea from "./components/TextArea";
 import LinkButton from "./components/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
@@ -20,7 +22,7 @@ const useStyle = makeStyles((theme) => ({
       display: "flex",
     },
     employeesArea: {
-        backgroundColor: '#263238',
+        // backgroundColor: '#263238',
         paddingLeft: "2.813rem",
         paddingTop: "3rem"
     },
@@ -33,13 +35,18 @@ export default function EmployeesPage() {
     const classes = useStyle();
     return (
         <ThemeProvider theme={theme}>
+            <CssBaseline />
             <NavBar/>
-            <div className={classes.employeesArea}>
-                <TextArea/>
-                <div className={classes.linkArea}>
-                  <LinkButton/>
-                </div>
+            <div>
+              <div className={classes.employeesArea}>
+                  <TextArea/>
+                  <div className={classes.linkArea}>
+                    <LinkButton/>
+                  </div>
+              </div>
+
             </div>
+            
         </ThemeProvider>
     );
 } 
