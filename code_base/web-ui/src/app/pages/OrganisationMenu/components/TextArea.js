@@ -13,16 +13,20 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "1.25rem",
         '&::placeholder': {
             color: "gray",
-            textAlign: "center",
-            position: "absolute !important",
+            /*position: "absolute !important",
             bottom: "0 !important",
-            left: "0 !important",
+            left: "0 !important",*/
+            fontSize: "1rem",
+            width: "20.5rem",
+            height: "4rem",
+            color: "#263238",
+            opacity: '0.3',
+            paddingTop: "26rem",
+            paddingLeft: "1.688rem",
+            fontWeight: "600",
+            letterSpacing: "0.01rem",
+            fontFamily: "Poppins, sans-serif",
         },
-        "&::-webkit-input-placeholder": {
-            color: "gray !important",
-            bottom: "0 !important",
-            position: "absolute !important",
-        }
     }
 }));
 
@@ -35,12 +39,4 @@ export default function TextArea() {
         />
     );
 }
-
-/* textarea::placeholder {
-    align-self: unset;
-    color: red;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}*/
 
