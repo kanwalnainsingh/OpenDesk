@@ -8,17 +8,18 @@ const theme = createMuiTheme({
       main: '#407BFF'
     }
   },
-    typography: {
-      fontFamily: "Poppins, sans-serif"
-    }
-  });
+  typography: {
+    fontFamily: "Poppins, sans-serif"
+  }
+});
 
 export default function Index() {
-    return (
-        <ThemeProvider theme={theme}>
-        <div>
-        <SideDrawer/>
-        </div>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        <SideDrawer />
+      </div>
+    </ThemeProvider>
+
+  );
 }

@@ -25,3 +25,5 @@
 - start kafka server
 - create the topic mentioned in application-local.yaml
 - refer [https://kafka.apache.org/quickstart] for the commands
+# Local Dev set spring profile to local
+-Dspring.profiles.active=local
