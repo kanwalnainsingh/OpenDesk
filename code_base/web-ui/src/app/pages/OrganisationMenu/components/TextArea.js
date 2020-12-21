@@ -8,11 +8,11 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
     },
     textArea: {
+        padding: "0.5rem",
         width: "23.813rem",
         height: "30.688rem !important",
         borderRadius: "1.25rem",
         '&::placeholder': {
-            color: "gray",
             /*position: "absolute !important",
             bottom: "0 !important",
             left: "0 !important",*/
@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
             letterSpacing: "0.01rem",
             fontFamily: "Poppins, sans-serif",
         },
+        '&:focus': {
+            outline: "none",
+        }
     }
 }));
 
