@@ -2,9 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Button, BottomNavigation } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { toAbsoluteUrl } from "../../../utils/utils";
-
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
     bar: {
         backgroundColor: "#407BFF",
-        paddingBottom: "2.0rem"
+        minHeight: 110,
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -21,17 +20,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         fontFamily: "Poppins",
         fontWeight: "bold",
-        fontSize: "3.0rem",
+        fontSize: "25px",
         textTransform: "none",
-        opacity: '0.3',
-        '&:focus': {
-            opacity: '1.0'
-        }
     },
-    logo: { 
-        width: "3.0rem",
-        paddingRight: "3rem"
-    }
 }));
 
 export default function NavBar() {
@@ -44,17 +35,24 @@ export default function NavBar() {
                     <Button color="inherit" className={classes.title}>
                         Sites
                     </Button>
+
                     <Button color="inherit" className={classes.title}>
                         Employees
                     </Button>
+
                     <Button color="inherit" className={classes.title}>
                         Account
                     </Button>
                     <Button color="inherit" className={classes.title}>
                         Search
                     </Button>
+                    {/*<SectionControls>
+                        <p>Sort by</p>
+                        <p>Filter</p>
+                    </SectionControls>*/}
+
                     <img
-                        className={classes.logo}
+                        style={{ width: "3.5rem" }}
                         alt="Logo"
                         src={toAbsoluteUrl("/media/logos/blue-logo.svg")}
                     />
