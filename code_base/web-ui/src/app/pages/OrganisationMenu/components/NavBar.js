@@ -4,8 +4,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Button } from "@material-ui/core";
 import { toAbsoluteUrl } from "../../../utils/utils";
+import { useHistory } from "react-router-dom";
 import SectionControls from "./SectionControls";
-
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -29,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
     const classes = useStyles();
+    const history = useHistory();
+    const [age, setAge] = React.useState("");
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
 
     return (
         <div className={classes.root}>
@@ -37,15 +48,22 @@ export default function NavBar() {
                     <Button color="inherit" className={classes.title}>
                         Sites
                     </Button>
+
                     <Button color="inherit" className={classes.title}>
                         Employees
                     </Button>
+
                     <Button color="inherit" className={classes.title}>
                         Account
                     </Button>
                     <Button color="inherit" className={classes.title}>
                         Search
                     </Button>
+                    {/*<SectionControls>
+                        <p>Sort by</p>
+                        <p>Filter</p>
+                    </SectionControls>*/}
+
                     <img
                         style={{ width: "3.5rem" }}
                         alt="Logo"

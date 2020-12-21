@@ -1,5 +1,12 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
-export default function SectionControls() {
-    return <div></div>;
+const useStyles = makeStyles((theme) => ({
+    root: {},
+}));
+
+export default function SectionControls({ children }) {
+    const classes = useStyles();
+
+    return <div>{children}</div>;
 }

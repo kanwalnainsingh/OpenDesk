@@ -18,6 +18,7 @@ export default function OrganisationMain() {
     return (
         <div className={classes.root}>
             <NavBar />
+            <Account />
         </div>
     );
 }

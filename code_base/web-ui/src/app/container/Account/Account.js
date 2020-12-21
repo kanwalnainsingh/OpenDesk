@@ -5,8 +5,9 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
+import BlockIcon from "@material-ui/icons/Block";
 import EditIcon from "@material-ui/icons/Edit";
-import AppsIcon from "@material-ui/icons/Apps";
+import NotificationsIcon from "@material-ui/icons/Notifications";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 import HelpIcon from "@material-ui/icons/Help";
@@ -28,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         width: "381px",
         height: "262px",
     },
-
     avatar: {
         border: "3px solid white",
         width: "100px",
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 const navList = [
     {
         text: "Notifications",
-        icon: <AppsIcon />,
+        icon: <NotificationsIcon />,
     },
     {
         text: "Edit profile",
@@ -74,7 +74,7 @@ const navList = [
     },
     {
         text: "Terminate Account",
-        icon: <FeedbackIcon />,
+        icon: <BlockIcon />,
     },
 ];
 
@@ -83,10 +83,8 @@ export default function Account() {
 
     return (
         <div>
-            <div className={classes.userInfo}>
-                <div className={classes.userItem}>
-                    <Avatar src={userInfo.avatar} className={classes.avatar} />
-                </div>
+            <div className={classes.userInfo} style={{ textAlign: "center" }}>
+                <Avatar src={userInfo.avatar} className={classes.avatar} />
                 {[userInfo.email, userInfo.orgName].map((text) => (
                     <ListItem key={text} style={{ padding: 0 }}>
                         <ListItemText
