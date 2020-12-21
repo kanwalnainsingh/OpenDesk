@@ -14,6 +14,7 @@ import { GetDesk } from './GetDesk';
 import IconButton from '@material-ui/core/IconButton';
 import { BinIcon } from '../icons/BinIcon';
 import { StepContext } from '../state/StepContext';
+import { FormContext } from '../state/FormContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiStepper-root': {
       paddingBottom: 0
+    },
+    '& .MuiButton-label': {
+      position: 'relative',
+      top: -250,
+      left: 30,
+      fontSize: 20,
+      fontWeight: 600,
+      color: 'white'
     }
   },
   button: {
@@ -89,26 +98,6 @@ function getSteps() {
   return ['Site', 'Floor', 'Date', 'Desk', 'Confirm Booking'];
 }
 
-const initialValues = {
-  site: '',
-  floor: 0,
-  date: new Date(),
-  desk: ''
-}
-
-function getMockData(step) {
-  switch (step) {
-    case 0:
-      return '2715 Ash Dr. San Jose, South Dakota 83475';
-    case 1:
-      return '2nd Floor';
-    case 2:
-      return '22 November, 2020';
-    case 3:
-      return 'DESK 2A is selected';
-  }
-}
-
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -123,8 +112,9 @@ function getStepContent(step) {
 }
 
 export function BookingStepper() {
-  const [values, setValues] = useState(initialValues);
+
   const [activeStep, setActiveStep] = useContext(StepContext);
+  const { siteInput, floorInput, dateInput } = useContext(FormContext);
   const classes = useStyles();
   const steps = getSteps();
 
@@ -132,13 +122,7 @@ export function BookingStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleFinish = () => {
-    alert('Congrats')
-  };
+  const selected = [siteInput, floorInput, dateInput.toString().slice(0, 15), 'A desk will be selected automatically'];
 
   return (
     <div className={classes.root}>
@@ -178,7 +162,7 @@ export function BookingStepper() {
                 {label}
                 {index < activeStep &&
                   <div style={{ position: 'absolute', height: 48, width: 310, paddingTop: 10 }}>
-                    <Typography>{getMockData(index)}</Typography>
+                    <Typography>{selected[index]}</Typography>
                   </div>}
               </div>
             </StepLabel>
@@ -191,27 +175,22 @@ export function BookingStepper() {
         ))}
       </Stepper>
       <div>
-        {activeStep === steps.length - 1 || activeStep === steps.length ? (
+        {activeStep === 5 &&
           <div style={{ height: 100, overflow: 'hidden', position: 'relative' }}>
             <Button onClick={handleNext} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
-              {activeStep === steps.length - 1 ? 'OKAY' : 'BOOK DESK'}
+              BOOK DESK
             </Button>
           </div>
-        ) : (
-            <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                Next
-              </Button>
-            </div>
-          )}
+        }
+      </div>
+      <div>
+        {activeStep === 6 &&
+          <div style={{ height: 100, overflow: 'hidden', position: 'relative' }}>
+            <Button onClick={handleNext} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
+              OKAY
+            </Button>
+          </div>
+        }
       </div>
     </div >
   );

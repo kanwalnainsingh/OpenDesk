@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Box from '@material-ui/core/Box';
 import { StepContext } from '../state/StepContext';
+import { FormContext } from '../state/FormContext';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -32,7 +33,8 @@ function getFloors() {
 export const GetFloor = () => {
     const classes = useStyles();
     const mockFloors = getFloors();
-    const [floor, setFloor] = React.useState();
+    const { floorInput } = useContext(FormContext);
+    const [ floor, setFloor ] = floorInput;
     const [activeStep, setActiveStep] = useContext(StepContext);
 
     const handleFloor = (event, newFloorNumber) => {
