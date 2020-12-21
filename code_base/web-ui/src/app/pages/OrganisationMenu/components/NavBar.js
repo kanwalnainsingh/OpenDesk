@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     logo: { 
-        width: "4.0rem",
+        // width: "4.0rem",
         paddingRight: "3rem"
     }
 }));

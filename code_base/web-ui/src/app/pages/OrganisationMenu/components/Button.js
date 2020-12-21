@@ -46,15 +46,3 @@ export default function LinkButton() {
         </ThemeProvider>
     );
 }
-
-
-/**
- * 
-element.style {
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: 700;
-}
- */
