@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -16,11 +16,12 @@ import { BinIcon } from '../icons/BinIcon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    height: window.innerHeight,
     position: 'relative',
     '& .MuiStepLabel-label': {
       fontSize: 20
+    },
+    '& .MuiStepper-root' : {
+      paddingBottom: 0
     }
   },
   button: {
@@ -87,6 +88,13 @@ function getSteps() {
   return ['Site', 'Floor', 'Date', 'Desk', 'Confirm Booking'];
 }
 
+const initialValues = {
+  site: '',
+  floor: 0,
+  date: new Date(),
+  desk: ''
+}
+
 function getMockData(step) {
   switch (step) {
     case 0:
@@ -114,6 +122,7 @@ function getStepContent(step) {
 }
 
 export function BookingStepper() {
+  const [values, setValues] = useState(initialValues);
   const [activeStep, setActiveStep] = React.useState(0);
   const classes = useStyles();
   const steps = getSteps();
@@ -126,8 +135,8 @@ export function BookingStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
+  const handleFinish = () => {
+    alert('Congrats')
   };
 
   return (
@@ -141,17 +150,25 @@ export function BookingStepper() {
         }}></div>
       <div className={classes.line} style={activeStep <= 4 ? {
         backgroundColor: '#eaeaf0',
-        bottom: 0,
-        height: 250
+        bottom: '1vh',
+        height: 200,
+        left: 38,
+        zIndex: -10
       } : {
           backgroundColor: 'rgb(38, 50, 56, .3)',
-          bottom: 0,
-          height: 303
+          bottom: '1vh',
+          height: 200,
+          left: 38,
+          zIndex: -10
         }}></div>
       <Typography style={{ padding: '22px 0 30px 79px', fontWeight: 600, fontSize: 20 }}>NEW BOOKING</Typography>
-      <IconButton style={{ position: 'absolute', height: 150, width: 150, right: -75, top: -75, borderRadius: 100, backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
-        <BinIcon />
-      </IconButton>
+      <div style={{ position: 'absolute', top: 0, right: 0 }}>
+        <div style={{ height: 75, width: 75, overflow: 'hidden', position: 'relative', right: 0, top: 0 }}>
+          <IconButton style={{ position: 'absolute', height: 150, width: 150, right: -75, top: -75, borderRadius: 100, backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
+            <BinIcon />
+          </IconButton>
+        </div>
+      </div>
       <Stepper activeStep={activeStep} orientation="vertical" connector={<ColorlibConnector />}>
         {steps.map((label, index) => (
           <Step key={label}>
@@ -173,10 +190,10 @@ export function BookingStepper() {
         ))}
       </Stepper>
       <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Button onClick={handleReset} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
-              BOOK DESK
+        {activeStep === steps.length - 1 || activeStep === steps.length ? (
+          <div style={{ height: 100, overflow: 'hidden', position: 'relative'}}>
+            <Button onClick={handleNext} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
+              {activeStep === steps.length - 1 ? 'OKAY' : 'BOOK DESK'}
             </Button>
           </div>
         ) : (
@@ -190,7 +207,7 @@ export function BookingStepper() {
                 onClick={handleNext}
                 className={classes.button}
               >
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                Next
               </Button>
             </div>
           )}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { BookingStepper } from './components/BookingStepper'
 
@@ -15,6 +15,7 @@ const theme = createMuiTheme({
 );
 
 export default function Index() {
+
     return (
         <ThemeProvider theme={theme}>
             <div>
