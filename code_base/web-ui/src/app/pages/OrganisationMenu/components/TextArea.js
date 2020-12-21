@@ -7,7 +7,16 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
     },
     textArea: {
-        
+        width: "23.813rem",
+        height: "30.688rem !important",
+        borderRadius: "1.25rem",
+        '&::placeholder': {
+            color: "gray",
+            textAlign: "center",
+            position: "absolute !important",
+            bottom: "0 !important",
+            left: "0 !important"
+        }
     }
 }));
 
@@ -16,12 +25,18 @@ export default function TextArea() {
 
     return (
         <div className={classes.root}>
-        <TextareaAutosize className={classes.textArea}
-            aria-label="maximum height"
-            placeholder="Maximum 4 rows"
-            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua."
+        <TextareaAutosize id="text" className={classes.textArea}
+            placeholder="Type Employee Email addresses seperated by commas to Invite them"
         />
         </div>
     );
 }
+
+/* textarea::placeholder {
+    align-self: unset;
+    color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}*/
+
