@@ -1,10 +1,11 @@
 import { Button, Typography } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import { StepContext } from '../state/StepContext';
 
 function mockSiteData() {
     return ['1901 Thornridge Cir. Shiloh, Hawaii 81063',
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
         width: 500,
         height: 450,
     },
-    buttonGroup :{
+    buttonGroup: {
         display: 'flex',
         flexDirection: 'column'
     }
@@ -54,9 +55,14 @@ export function GetSite() {
     const classes = useStyles();
     const sites = mockSiteData();
     const [site, setSite] = React.useState('1901 Thornridge Cir. Shiloh, Hawaii 81063');
+    const [activeStep, setActiveStep] = useContext(StepContext);
 
     const handleSite = (event, newSelectedSite) => {
         setSite(newSelectedSite);
+    };
+
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
     return (
@@ -65,7 +71,7 @@ export function GetSite() {
             <GridList cellHeight={160} className={classes.gridList} cols={3}>
                 <ToggleButtonGroup exclusive value={site} onChange={handleSite} aria-label="site" cols={3} className={classes.buttonGroup}>
                     {sites.map((mockSite, index) => (
-                        <ToggleButton value={index} aria-label={mockSite} cols={2}>
+                        <ToggleButton value={index} aria-label={mockSite} cols={2} onClick={handleNext}>
                             {mockSite}
                         </ToggleButton>
                     ))}

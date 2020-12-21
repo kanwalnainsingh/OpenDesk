@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { BookingStepper } from './components/BookingStepper'
+import { StepProvider } from "./state/StepContext";
 
 const theme = createMuiTheme({
     palette: {
@@ -19,7 +20,9 @@ export default function Index() {
     return (
         <ThemeProvider theme={theme}>
             <div>
-                <BookingStepper />
+                <StepProvider>
+                    <BookingStepper />
+                </StepProvider>
             </div>
         </ThemeProvider>
 

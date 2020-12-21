@@ -1,17 +1,23 @@
 import 'date-fns';
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
+import { StepContext } from '../state/StepContext';
 
 export const Calendar = () => {
     const [selectedDate, setSelectedDate] = React.useState(new Date());
+    const [activeStep, setActiveStep] = useContext(StepContext);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
+    };
+
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
     return (
@@ -25,7 +31,7 @@ export const Calendar = () => {
                     id="date-picker-inline"
                     label="Date picker inline"
                     value={selectedDate}
-                    onChange={handleDateChange}
+                    onChange={handleDateChange, handleNext}
                     KeyboardButtonProps={{
                         'aria-label': 'change date',
                     }}

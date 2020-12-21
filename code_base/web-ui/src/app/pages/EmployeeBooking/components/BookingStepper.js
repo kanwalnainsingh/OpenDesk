@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -13,6 +13,7 @@ import { GetDate } from './GetDate';
 import { GetDesk } from './GetDesk';
 import IconButton from '@material-ui/core/IconButton';
 import { BinIcon } from '../icons/BinIcon';
+import { StepContext } from '../state/StepContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -123,7 +124,7 @@ function getStepContent(step) {
 
 export function BookingStepper() {
   const [values, setValues] = useState(initialValues);
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useContext(StepContext);
   const classes = useStyles();
   const steps = getSteps();
 
