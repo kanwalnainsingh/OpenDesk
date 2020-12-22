@@ -9,6 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { toAbsoluteUrl } from "../../utils/utils";
 import ButtonsMobile from "./components/ButtonsMobile";
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
@@ -69,7 +70,12 @@ const useStyle = makeStyles((theme) => ({
       lineHeight: "1.5rem",
     },
     buttonsMobile: {
-      
+        marginTop: "8.688rem",
+        textAlign: "-webkit-center"
+    },
+    ellipse: {
+        position: "relative",
+        display: "block"
     }
   }));
 
@@ -115,7 +121,8 @@ export default function EmployeesPage() {
                 Invite Employees Check <br/> Employees List 
               </div> 
             </div>
-            <div className={classes.buttonsMobile}>
+            <div className={classes.buttonsMobile}>  
+              <img className={classes.ellipse} src={toAbsoluteUrl("/media/employees/icons/ellipse.svg")}/>
               < ButtonsMobile />
             </div>
             
