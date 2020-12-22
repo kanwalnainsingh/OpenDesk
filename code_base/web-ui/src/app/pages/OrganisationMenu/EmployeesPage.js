@@ -29,10 +29,12 @@ const useStyle = makeStyles((theme) => ({
       display: "flex",
     },
     employeesArea: {
+        width: "25.4%",
         paddingLeft: "2.813rem",
         paddingTop: "3rem"
     },
     linkArea: {
+        width: "100%",
         paddingTop: "7.375rem"
     },
     labelsArea: {
