@@ -8,6 +8,7 @@ import Sites from '../app/container/Sites/Sites'
 import Index from '../app/pages/EmployeeMenu/Index'
 import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 import NewSite from '../app/pages/NewSite/NewSite'
+import EmployeesPageMobile from "../app/pages/OrganisationMenu/EmployeesPageMobile";
 export const Routes = () => {
   
   return (
@@ -20,6 +21,8 @@ export const Routes = () => {
       <Route path="/home" component={HomeRouter} />
       {/*<Route path="/organisation" component={AddSite} /> */ }
       <Route path="/organisation" component={EmployeesPage} />
+      <Route path="/invitation" component={EmployeesPageMobile} />
+
       <Route path="/wip" component={WIPRouter} />
       <Route path="/newsite" component={NewSite}/>
       <Route path="/sites/:id" component={Sites}/>

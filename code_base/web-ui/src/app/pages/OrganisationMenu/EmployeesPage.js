@@ -9,6 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { toAbsoluteUrl } from "../../utils/utils";
 import ButtonsMobile from "./components/ButtonsMobile";
+import { Link } from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {
@@ -76,6 +77,10 @@ const useStyle = makeStyles((theme) => ({
     ellipse: {
         position: "relative",
         display: "block"
+    },
+    link: {
+      textDecoration: "none",
+      color: 'inherit'
     }
   }));
 
@@ -118,15 +123,14 @@ export default function EmployeesPage() {
                 1672 Employees Invited 
               </div>
               <div className={classes.labels}> 
-                Invite Employees Check <br/> Employees List 
+              <Link to ='/invitation' className={classes.link}>Invite Employees Check </Link>
+                <br/> Employees List 
               </div> 
             </div>
             <div className={classes.buttonsMobile}>  
               <img className={classes.ellipse} src={toAbsoluteUrl("/media/employees/icons/ellipse.svg")}/>
               < ButtonsMobile />
             </div>
-            
-            
         </ThemeProvider>
     );
     }
