@@ -117,7 +117,7 @@ export default function EmployeesPage() {
             <img
               className={classes.search}
               alt="Search"
-              src={toAbsoluteUrl("/media/home/icons/search.svg")}
+              src={toAbsoluteUrl("/media/employees/icons/search.svg")}
             />
             <div className={classes.employeesLabel}>
               <EmployeesLabel/>
