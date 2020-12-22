@@ -11,6 +11,7 @@ import InputBase from '@material-ui/core/InputBase';
 import CloseIcon from '@material-ui/icons/Close';
 import Drawer from '@material-ui/core/Drawer';
 import styled from 'styled-components';
+import Zoom from '@material-ui/core/Zoom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchDrawer = styled(Drawer)`
     width: 1000px;
+    & div{border: 0;}
 `;
 
 export const NavBar = ({ handleDrawerOpen }) => {
@@ -80,7 +82,7 @@ export const NavBar = ({ handleDrawerOpen }) => {
                         color="inherit"
                         aria-label="open search"
                         onClick={() => handleSearchOpen()}>
-                        <SearchIcon />
+                        <SearchIcon style={{ fill: "white", fontSize: 30 }}/>
                     </IconButton>
                     <SearchDrawer
                         variant="persistent"
@@ -90,18 +92,20 @@ export const NavBar = ({ handleDrawerOpen }) => {
                     >
                         <div className={classes.searchDrawer}>
                             <div className={classes.drawerHeader}>
-                                <IconButton onClick={handleSearchClose}>
+                                <IconButton onClick={handleSearchClose} style={{ position: "relative", bottom: 10 }}>
                                     <CloseIcon style={{ fill: "white", fontSize: 25 }} />
                                 </IconButton>
                                 <InputBase
                                     placeholder="Search bookings"
-                                    style={{ color: "white", width: "80%", fontSize: 20  }}
+                                    style={{ color: "white", width: "80%", fontSize: 20, position: "relative", bottom: 10 }}
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
-                                <IconButton
-                                    aria-label="open search">
-                                    <SearchIcon  style={{ fill: "white", fontSize: 30 }} />
-                                </IconButton>
+                                <Zoom in={open} style={{ transitionDelay: open ? '200ms' : '0ms' }}>
+                                    <IconButton
+                                        aria-label="open search" style={{ position: "relative", bottom: 10 }}>
+                                        <SearchIcon  style={{ fill: "white", fontSize: 30 }}/>
+                                    </IconButton>
+                                </Zoom>
                             </div>
                         </div>
                     </SearchDrawer>
