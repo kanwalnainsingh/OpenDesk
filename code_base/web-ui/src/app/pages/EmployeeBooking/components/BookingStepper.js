@@ -186,7 +186,7 @@ export function BookingStepper() {
       <div>
         {activeStep === 6 &&
           <div style={{ height: 100, overflow: 'hidden', position: 'relative' }}>
-            <Button onClick={handleNext} className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
+            <Button className={classes.button} style={{ position: 'absolute', height: 528, width: 528, left: 11, bottom: -450, borderRadius: '100%', backgroundColor: '#407BFF', paddingTop: 75, paddingRight: 75 }}>
               OKAY
             </Button>
           </div>

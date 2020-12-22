@@ -12,42 +12,61 @@ function mockSiteData() {
         '2715 Ash Dr. San Jose, South Dakota 83475',
         '2972 Westheimer Rd. Santa Ana, Illinois 85486',
         '8502 Preston Rd. Inglewood, Maine 98380',
+        '1901 Thornridge Cir. Shiloh, Hawaii 81063',
         '2715 Ash Dr. San Jose, South Dakota 83475',
         '2972 Westheimer Rd. Santa Ana, Illinois 85486',
         '8502 Preston Rd. Inglewood, Maine 98380',
+        '1901 Thornridge Cir. Shiloh, Hawaii 81063',
         '2715 Ash Dr. San Jose, South Dakota 83475',
         '2972 Westheimer Rd. Santa Ana, Illinois 85486',
         '8502 Preston Rd. Inglewood, Maine 98380',
+        '1901 Thornridge Cir. Shiloh, Hawaii 81063',
         '2715 Ash Dr. San Jose, South Dakota 83475',
         '2972 Westheimer Rd. Santa Ana, Illinois 85486',
-        '8502 Preston Rd. Inglewood, Maine 98380',
-        '2715 Ash Dr. San Jose, South Dakota 83475',
-        '2972 Westheimer Rd. Santa Ana, Illinois 85486',
-        '8502 Preston Rd. Inglewood, Maine 98380',
-        '2715 Ash Dr. San Jose, South Dakota 83475',
-        '2972 Westheimer Rd. Santa Ana, Illinois 85486',
-        '8502 Preston Rd. Inglewood, Maine 98380',
-        '4140 Parker Rd. Allentown, New Mexico 31134'];
+        '8502 Preston Rd. Inglewood, Maine 98380',];
 }
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        flexDirection: 'column',
-        overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
-        borderBottom: '1px solid #C4C4C4',
+        position: 'aboslute',
+        '& .MuiToggleButton-root': {
+            textTransform: 'none',
+            color: '#263238',
+            fontSize: 16,
+            textAlign: 'left',
+            border: 'none',
+            borderTop: '1px solid #C4C4C4',
+            width: 310,
+            margin: '0 10px 10px 0px',
+            [theme.breakpoints.up('lg')]: {
+                border: '1px solid #C4C4C4',
+            },
+        },
+    },
+    label: {
+        fontSize: 16,
+        width: 310,
         padding: '0 0 24px 5px'
     },
     gridList: {
-        width: 500,
+        width: 330,
         height: 450,
+        [theme.breakpoints.up('lg')]: {
+            width: 1100,
+        },
     },
     buttonGroup: {
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignContent: 'center',
+        [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignContent: 'unset',
+            marginLeft: 100,
+        },
     }
 }));
 
@@ -68,8 +87,8 @@ export function GetSite() {
 
     return (
         <div className={classes.root}>
-            <Typography style={{ fontSize: 16 }}>Tap to select a Site</Typography>
-            <GridList cellHeight={160} className={classes.gridList} cols={3}>
+            <Typography className={classes.label}>Tap to select a Site</Typography>
+            <GridList cellHeight={160} className={classes.gridList}>
                 <ToggleButtonGroup exclusive value={site} onChange={handleSite} aria-label="site" cols={3} className={classes.buttonGroup}>
                     {sites.map((mockSite, index) => (
                         <ToggleButton value={mockSite} aria-label={mockSite} cols={2} onClick={handleNext}>
