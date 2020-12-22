@@ -21,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         fontFamily: "Poppins",
         fontWeight: "bold",
-        fontSize: "3.0rem",
+        fontSize: "3.125rem",
+        fontWeight: "bold",
+        letterSpacing: "0.01rem",
         textTransform: "none",
         opacity: '0.3',
         '&:focus': {
