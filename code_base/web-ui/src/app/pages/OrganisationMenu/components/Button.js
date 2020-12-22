@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     linkButton: {
         color: "#FFFFFF",
         backgroundColor: "#407BFF",
-        width: "23.813rem",
+        width: "inherit",
         height: "4.938rem",
         borderRadius: "1.25rem",
     },
