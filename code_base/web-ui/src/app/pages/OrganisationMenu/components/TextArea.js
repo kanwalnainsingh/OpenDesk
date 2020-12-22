@@ -1,5 +1,5 @@
 import React from "react";
-import { createMuiTheme, ThemeProvider, makeStyles} from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
   
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
         padding: "0rem",
         '&::placeholder': {
             paddingTop: 22.375*.85+"rem",
-            // textAlign: "center",
             fontFamily: "Poppins, sans-serif",
             fontWeight: "600",
             fontSize: "1rem",

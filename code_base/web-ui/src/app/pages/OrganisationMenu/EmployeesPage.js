@@ -1,15 +1,16 @@
 import React from "react";
 import { createMuiTheme, ThemeProvider, makeStyles} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { toAbsoluteUrl } from "../../utils/utils";
+import { Link } from "react-router-dom";
+
 import NavBar from "./components/NavBar";
 import TextArea from "./components/TextArea";
 import LinkButton from "./components/Button";
 import Labels from "./components/Labels";
 import EmployeesLabel from "./components/EmployeesLabel";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { toAbsoluteUrl } from "../../utils/utils";
 import ButtonsMobile from "./components/ButtonsMobile";
-import { Link } from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {

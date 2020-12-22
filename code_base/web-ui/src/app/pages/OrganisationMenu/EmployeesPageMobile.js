@@ -26,7 +26,6 @@ const useStyle = makeStyles((theme) => ({
       display: "flex",
     },
     back: {
-        // position: "absolute",
         paddingTop: "3%",
         paddingLeft: "5.2%",
     },
