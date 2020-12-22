@@ -9,8 +9,8 @@ import Index from '../app/pages/EmployeeMenu/Index'
 import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 import NewSite from '../app/pages/NewSite/NewSite'
 import EmployeesPageMobile from "../app/pages/OrganisationMenu/EmployeesPageMobile";
+
 export const Routes = () => {
-  
   return (
     <Router history={history}>
     <Switch>
@@ -27,6 +27,7 @@ export const Routes = () => {
       <Route path="/newsite" component={NewSite}/>
       <Route path="/sites/:id" component={Sites}/>
       <Route exact path="/employee" component={Index} />
+      <Route exact path="/employeebooking" component={EmployeeBooking} />
     </Switch>
     </Router>
   );
