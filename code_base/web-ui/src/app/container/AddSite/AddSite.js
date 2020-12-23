@@ -99,6 +99,8 @@ class addSite extends Component {
 
 
         let request = {
+            orgId: "demo-org",
+            companyName: "Demo Corp Limited",
             city: this.state.location,
             sites: sitesArray
         }
