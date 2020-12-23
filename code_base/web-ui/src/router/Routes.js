@@ -9,7 +9,7 @@ import Index from '../app/pages/EmployeeMenu/Index'
 import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 import NewSite from '../app/pages/NewSite/NewSite'
 import EmployeesPageMobile from "../app/pages/OrganisationMenu/EmployeesPageMobile";
-
+import EmployeeBooking from "../app/pages/EmployeeBooking/EmployeeBooking";
 export const Routes = () => {
   return (
     <Router history={history}>
