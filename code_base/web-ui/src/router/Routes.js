@@ -19,9 +19,9 @@ export const Routes = () => {
         <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      {/*<Route path="/organisation" component={AddSite} /> */ }
-      <Route path="/organisation" component={EmployeesPage} />
-      <Route path="/invitation" component={EmployeesPageMobile} />
+      <Route path="/organisation" component={AddSite} />
+      <Route path="/invitationDesktop" component={EmployeesPage} />
+      <Route path="/invitationMobile" component={EmployeesPageMobile} />
 
       <Route path="/wip" component={WIPRouter} />
       <Route path="/newsite" component={NewSite}/>
