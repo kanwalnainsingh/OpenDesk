@@ -6,13 +6,10 @@ import HomeRouter from "./HomeRouter"
 import WIPRouter from "./WIPRouter"
 import Sites from '../app/container/Sites/Sites'
 import Index from '../app/pages/EmployeeMenu/Index'
-import OrganisationMain from "../app/pages/OrganisationMenu/OrganisationMain";
-import Account from "../app/container/Account/Account";
-import Search from "../app/components/Search/Search"
 import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 import NewSite from '../app/pages/NewSite/NewSite'
+import EmployeesPageMobile from "../app/pages/OrganisationMenu/EmployeesPageMobile";
 import EmployeeBooking from "../app/pages/EmployeeBooking/EmployeeBooking";
-
 export const Routes = () => {
   return (
     <Router history={history}>
@@ -22,11 +19,10 @@ export const Routes = () => {
         <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      <Route path="/organisation" component={AddSite} />
-      <Route path="/account" component={OrganisationMain} />
-      <Route path="/search" component={Search} />
       {/*<Route path="/organisation" component={AddSite} /> */ }
       <Route path="/organisation" component={EmployeesPage} />
+      <Route path="/invitation" component={EmployeesPageMobile} />
+
       <Route path="/wip" component={WIPRouter} />
       <Route path="/newsite" component={NewSite}/>
       <Route path="/sites/:id" component={Sites}/>
