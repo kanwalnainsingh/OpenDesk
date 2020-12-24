@@ -29,6 +29,7 @@ const BorderLinearProgress = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
     root: {
         borderRadius: "1.25rem",
+        overflow: "inherit",
         '& .MuiTypography-h5': {
             fontSize: "0.938rem",
         },
@@ -43,14 +44,33 @@ const useStyles = makeStyles((theme) => ({
         color: "#263238",
     }, 
     numbers: {
-        marginTop: "-15%",
-        float: "right",
+        marginLeft: "40%",
+        marginRight: "3.649635036%",
+        width: "80%",
+    },
+    details: {
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+    },
+    numbers: {
+        display: "inline-block",
+        width: "100%",
+        textAlign: "end"
+    },
+    numberNumbers: {
+        display: "inline-block",
+        verticalAlign: "top"
+        // marginRight: "56.83%",
+    },
+    titles: {
+        fontSize: "0.875rem",
+        fontWeight: "500",
+        // marginLeft: "25.8%"
     },
     desksNumbers:{
-        fontSize: "1.5rem",
-        width: "50%",
-        display: "inline-block",
-        textAlign: "right"
+        textAlign: "right",
+        display: "inline",
+        // marginRight: "12.16545012%",
     },
     floors: {
         display: "inline-block",
@@ -66,6 +86,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "-7.09%",
     },
     content: {
+        marginTop: "-15%",
+    },
+    bar: {
+
     }
 }));
 
@@ -82,19 +106,33 @@ export default function SiteCard(props) {
         title= {  props.siteInformation ? "Total Opendesks: "  + props.siteInformation.desks : ""}
         />
         
-     
         <CardContent className={classes.content}>
             <div className={classes.numbers} >
-                <div className={classes.desksNumbers}>
-                    { props.siteInformation ? props.siteInformation.booked : ""} Booked Desks
+                <div className={classes.details}>
+                    <div className={classes.numberNumbers} style={{verticalAlign: "top"}}>
+                    { props.siteInformation ? props.siteInformation.booked : ""} <br/> 
+                    <div className={classes.titles} style={{fontSize: "0.875rem"}}>
+                        Booked Desks
+                    </div>
+                    </div>
+                    <div className={classes.numberNumbers} style={{verticalAlign: "top"}}>
+                        { props.siteInformation ? props.siteInformation.available : ""} <br/>
+                        <div className={classes.titles} style={{fontSize: "0.875rem"}}> 
+                            Available Desks 
+                        </div> 
+                    </div>
                 </div>
-                <div className={classes.desksNumbers}>
-
-                { props.siteInformation ? props.siteInformation.available : ""} Available Desks
-                </div>
+                
             </div>
-            
-            <div>
+            {/* <div className={classes.titles}>
+                    <div className={classes.desksNumbers} style={{float: 'left'}}>
+                        Booked Desks
+                    </div>
+                    <div className={classes.desksNumbers} style={{marginLeft: "20.9%"}}>
+                        Available Desks
+                    </div>
+            </div> */}
+            <div className={classes.bar}>
                 <BorderLinearProgress variant="determinate" value={ props.siteInformation.booked * 100 / props.siteInformation.desks } />
             </div>
         </CardContent>

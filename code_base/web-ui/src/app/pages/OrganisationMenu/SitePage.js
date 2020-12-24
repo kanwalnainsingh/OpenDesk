@@ -13,8 +13,8 @@ import BackArrow from "./components/BackArrow";
 const siteInformation = {
   location: "Nefkzi, Manhattan",
   floors: "6",
-  desks: "122",
-  booked: "89",
+  desks: "841",
+  booked: "275",
   available: "592",
   address: "3517 W. Gray St. Utica, Manhattan 57867",
 };
