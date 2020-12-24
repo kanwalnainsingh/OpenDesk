@@ -32,7 +32,6 @@ export default function SitePage() {
               <CssBaseline />
               <NavBar/>
               <SubMenu />
-              
           </ThemeProvider>
       );
     }

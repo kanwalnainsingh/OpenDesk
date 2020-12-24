@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Button } from "@material-ui/core";
 import { toAbsoluteUrl } from "../../../utils/utils";
+import { NavLink, withRouter } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,7 +45,11 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "right",
         float: "right",
         width: "49%",
-    }
+    },
+    link: {
+        textDecoration: "none",
+        color: 'inherit'
+      }
 }));
 
 export default function SubMenu() {
@@ -56,7 +61,9 @@ export default function SubMenu() {
                 <Toolbar className={classes.bar}>
                     <div className={classes.left}>
                     <Button color="inherit" className={classes.title}>
-                        Add Site
+                        <NavLink to={`/newsite`} className={classes.link}>
+                            Add Site
+                        </NavLink>
                     </Button>
                     <Button color="inherit" className={classes.title}>
                         Inactive Sites
