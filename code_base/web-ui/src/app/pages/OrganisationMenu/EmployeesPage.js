@@ -118,7 +118,7 @@ export default function EmployeesPage() {
             <img
               className={classes.search}
               alt="Search"
-              src={toAbsoluteUrl("/media/employees/icons/search.svg")}
+              src={toAbsoluteUrl("/media/organization/employees/icons/search.svg")}
             />
             <div className={classes.employeesLabel}>
               <EmployeesLabel/>
@@ -131,7 +131,7 @@ export default function EmployeesPage() {
               </div> 
             </div>
             <div className={classes.buttonsMobile}>  
-              <img className={classes.ellipse} src={toAbsoluteUrl("/media/employees/icons/ellipse.svg")}/>
+              <img className={classes.ellipse} src={toAbsoluteUrl("/media/organization/employees/icons/ellipse.svg")}/>
               < ButtonsMobile />
             </div>
         </ThemeProvider>

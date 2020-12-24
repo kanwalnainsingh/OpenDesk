@@ -20,7 +20,7 @@ export const Routes = () => {
         <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      {/* <Route path="/organisation" component={AddSite} /> */}
+      <Route path="/organisationFirst" component={AddSite} />
       <Route path="/organisation" component={SitePage} />
       <Route path="/invitationDesktop" component={EmployeesPage} />
       <Route path="/invitationMobile" component={EmployeesPageMobile} />
