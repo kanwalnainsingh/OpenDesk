@@ -3,13 +3,8 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { toAbsoluteUrl } from "../../../utils/utils";
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import LinearProgress from "@material-ui/core/LinearProgress";
-import CardMedia from '@material-ui/core/CardMedia';
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
@@ -21,18 +16,21 @@ const BorderLinearProgress = withStyles((theme) => ({
         theme.palette.grey[theme.palette.type === "light" ? 200 : 700]
     },
     bar: {
-      borderRadius: 5,
-      backgroundColor: "#1a90ff"
+      backgroundColor: "#407BFF",
     }
   }))(LinearProgress);
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        marginBottom: "50px",
         borderRadius: "1.25rem",
         overflow: "inherit",
         '& .MuiTypography-h5': {
             fontSize: "0.938rem",
         },
+        '& .MuiCardContent-root:last-child':{
+            paddingBottom: '2.476%'
+        }
     },
     total: {
         verticalAlign: "top",
@@ -60,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
     numberNumbers: {
         display: "inline-block",
         verticalAlign: "top"
-        // marginRight: "56.83%",
     },
     titles: {
         fontSize: "0.875rem",
@@ -83,13 +80,33 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign: "middle",
     },
     iconSite: {
+        width: "27%",
         marginTop: "-7.09%",
     },
     content: {
         marginTop: "-15%",
+        paddingBottom: "2.476%",
     },
     bar: {
-
+        width: "100%",
+        position: "relative",
+        marginTop: "4.085%",
+        '& .MuiLinearProgress-root': {
+            borderRadius: "0.938rem",
+            height: "3.188rem",
+            background: "#263238",
+        }
+    },
+    textBar: {
+        color: "white",
+        textAlign: "center",
+        position: "absolute",
+        top: "33.34%",
+        bottom: "33.34%",
+        left: "34.93%",
+        right: "34.93%",
+        fontSize: "1rem",
+        fontWeight: "700",
     }
 }));
 
@@ -100,7 +117,7 @@ export default function SiteCard(props) {
     <Card className={classes.root}>
         <img
               className={classes.iconSite}
-              src={toAbsoluteUrl("/media/organization/site/icons/building.svg")}
+              src={toAbsoluteUrl(props.siteInformation ? props.siteInformation.img : "")}
         />
         <CardHeader className={classes.total}
         title= {  props.siteInformation ? "Total Opendesks: "  + props.siteInformation.desks : ""}
@@ -109,31 +126,28 @@ export default function SiteCard(props) {
         <CardContent className={classes.content}>
             <div className={classes.numbers} >
                 <div className={classes.details}>
-                    <div className={classes.numberNumbers} style={{verticalAlign: "top"}}>
+                    <div className={classes.numberNumbers}>
                     { props.siteInformation ? props.siteInformation.booked : ""} <br/> 
-                    <div className={classes.titles} style={{fontSize: "0.875rem"}}>
+                    <div className={classes.titles}>
                         Booked Desks
                     </div>
                     </div>
-                    <div className={classes.numberNumbers} style={{verticalAlign: "top"}}>
+                    <div className={classes.numberNumbers} style={{marginLeft: "14.33%"}}>
                         { props.siteInformation ? props.siteInformation.available : ""} <br/>
-                        <div className={classes.titles} style={{fontSize: "0.875rem"}}> 
+                        <div className={classes.titles}> 
                             Available Desks 
                         </div> 
                     </div>
                 </div>
-                
             </div>
-            {/* <div className={classes.titles}>
-                    <div className={classes.desksNumbers} style={{float: 'left'}}>
-                        Booked Desks
-                    </div>
-                    <div className={classes.desksNumbers} style={{marginLeft: "20.9%"}}>
-                        Available Desks
-                    </div>
-            </div> */}
             <div className={classes.bar}>
-                <BorderLinearProgress variant="determinate" value={ props.siteInformation.booked * 100 / props.siteInformation.desks } />
+                <BorderLinearProgress 
+                variant="determinate" 
+                value={ props.siteInformation.booked * 100 / props.siteInformation.desks } 
+                />
+                <div className={classes.textBar}>
+                { Math.floor(props.siteInformation.booked * 100 / props.siteInformation.desks) + "% Booked"} 
+                </div>
             </div>
         </CardContent>
     </Card>

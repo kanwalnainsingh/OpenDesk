@@ -17,6 +17,28 @@ const siteInformation = {
   booked: "275",
   available: "592",
   address: "3517 W. Gray St. Utica, Manhattan 57867",
+  img: "/media/organization/site/icons/building.svg",
+};
+
+const siteInformation1 = {
+  location: "Nefkzi, Manhattan",
+  floors: "6",
+  desks: "122",
+  booked: "89",
+  available: "23",
+  address: "3517 W. Gray St. Utica, Manhattan 57867",
+  img: "/media/organization/site/icons/0.svg",
+};
+
+
+const siteInformation2 = {
+  location: "Nefkzi, Manhattan",
+  floors: "6",
+  desks: "841",
+  booked: "275",
+  available: "592",
+  address: "3517 W. Gray St. Utica, Manhattan 57867",
+  img: "/media/organization/site/icons/1.svg",
 };
 
 const theme = createMuiTheme({
@@ -123,8 +145,7 @@ export default function SitePage() {
           
             <div className={classes.sitesZone}>
               <SiteCard siteInformation={siteInformation}/>
-              {/* <SiteCard siteInformation={siteInformation}/>
-              <SiteCard siteInformation={siteInformation}/> */}
+              <SiteCard siteInformation={siteInformation1}/>
             </div>
         </ThemeProvider>
     );
