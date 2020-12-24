@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Button, FormControl, Input, makeStyles, Typography } from '@material-ui/core';
+import React, { useState, useContext } from 'react';
+import { Button, formatMs, FormControl, Input, makeStyles, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { SiteFormContext } from '../state/SiteFormContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,16 +37,29 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const Floor = () => {
+const Floor = (props) => {
     const classes = useStyles();
+    const { floorInput, deskInput } = useContext(SiteFormContext);
+    const [floor, setFloor] = floorInput;
+    const [desk, setDesk] = deskInput;
+
+    const onChangeFloor = (e) => {
+        setFloor(e.target.value);
+    }
+
+    const onChangeDesk = (e) => {
+        setDesk(e.target.value);
+    }
+
     return (
         <div style={{ marginBottom: 25 }}>
             <Input
                 className={classes.input}
-                id="floor number"
+                id={props.id}
                 placeholder="Floor No."
                 disableUnderline={true}
                 style={{ marginRight: 15, paddingLeft: 15 }}
+                onChange={(event) => onChangeFloor(event)}
             />
             <Input
                 className={classes.input}
@@ -53,33 +67,34 @@ const Floor = () => {
                 placeholder="Desks"
                 disableUnderline={true}
                 style={{ paddingLeft: 15 }}
+                onChange={(event) => onChangeDesk(event)}
             />
         </div>
     )
 }
 
+let floorId = 1;
+
 export const AddFloorForm = () => {
-    const [inputList, setInputList] = useState([]);
+    const [inputList, setInputList] = useState([<Floor id="floor-id-0" />]);
     const classes = useStyles();
-    const matches = useMediaQuery('(min-width:600px)');
+    const width600 = useMediaQuery('(min-width:600px)');
 
     const onAddBtnClick = () => {
-        setInputList(inputList.concat(<Floor />));
+        setInputList([...inputList, < Floor id={`floor-id-${floorId}`} />]);
+        floorId++;
     };
 
-    if (matches) {
+    if (width600) {
         return (
             <div className={classes.root}>
                 <FormControl>
                     <div id="floors" className={classes.margin}>
-                        <div>
-                            <Floor />
-                        </div>
                         {inputList}
                     </div>
                 </FormControl>
                 <Button
-                    onClick={() => onAddBtnClick()}
+                    onClick={onAddBtnClick}
                     className={classes.addFloor}>ADD FLOOR</Button>
             </div>
         )
@@ -89,14 +104,11 @@ export const AddFloorForm = () => {
                 <Typography variant="h4" style={{ position: "absolute", top: -80, color: "white", fontWeight: 600 }}>FLOORS</Typography>
                 <FormControl>
                     <div id="floors" className={classes.margin}>
-                        <div>
-                            <Floor />
-                        </div>
                         {inputList}
                     </div>
                 </FormControl>
                 <Button
-                    onClick={() => onAddBtnClick()}
+                    onClick={onAddBtnClick}
                     className={classes.addFloor}>ADD FLOOR</Button>
             </div>
         )

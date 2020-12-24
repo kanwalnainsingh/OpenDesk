@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { FormControl, Input, makeStyles, Typography } from '@material-ui/core';
 import locationPin from '../images/Pin.png'
+import { SiteFormContext } from '../state/SiteFormContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,12 +44,20 @@ const useStyles = makeStyles((theme) => ({
 
 export const LocationForm = () => {
     const classes = useStyles();
+    const { locationInput } = useContext(SiteFormContext);
+    const [location, setLocation] = locationInput;
+
+    const onChangeLocation = (e) => {
+        setLocation(e.target.value);
+    }
+
     return (
         <div className={classes.root}>
             <div className={classes.outerSpace}>
                 <Typography style={{ marginTop: 21, fontWeight: 600, fontSize: 16 }}>PICK ON MAP</Typography>
                 <FormControl className={classes.margin}>
                     <Input
+                        onChange={(event) => onChangeLocation(event)}
                         className={classes.input}
                         id="location"
                         placeholder="Location"
