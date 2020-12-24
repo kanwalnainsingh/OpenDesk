@@ -62,12 +62,10 @@ const useStyles = makeStyles((theme) => ({
     titles: {
         fontSize: "0.875rem",
         fontWeight: "500",
-        // marginLeft: "25.8%"
     },
     desksNumbers:{
         textAlign: "right",
         display: "inline",
-        // marginRight: "12.16545012%",
     },
     floors: {
         display: "inline-block",

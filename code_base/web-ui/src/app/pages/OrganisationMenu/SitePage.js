@@ -10,6 +10,9 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 import BackArrow from "./components/BackArrow";
 
+import SiteCardOverview from "./components/SiteCardOverview";
+import AddSiteCard from "./components/AddSiteCard";
+
 const siteInformation = {
   location: "Nefkzi, Manhattan",
   floors: "6",
@@ -103,6 +106,10 @@ const useStyle = makeStyles((theme) => ({
       display: "inline-block",
       marginRight: "7.34%",
   },
+  overview:{
+    width: "25.4%",
+    margin: "2.734% 2.4% 2.734% 2.4%"
+  },
   }));
 
 export default function SitePage() {
@@ -114,6 +121,13 @@ export default function SitePage() {
               <CssBaseline />
               <NavBar/>
               <SubMenu />
+              { /* Zone of cards */}
+              <div className={classes.overview}>
+                <SiteCardOverview siteInformation={siteInformation}/>
+                <SiteCardOverview siteInformation={siteInformation1}/>
+                <SiteCardOverview siteInformation={siteInformation2}/>
+                <AddSiteCard />
+              </div>
           </ThemeProvider>
       );
     }
