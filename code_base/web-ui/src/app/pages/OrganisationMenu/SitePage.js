@@ -79,6 +79,12 @@ const useStyle = makeStyles((theme) => ({
       fontWeight: "700",
       fontSize: "1.5rem"
     },
+    informationDesktop: {
+      display: "inline-block",
+      verticalAlign: "top",
+      width: "25.4%",
+      margin: "2.734% 2.4% 2.734% 2.4%"
+    },
     sitesZone:{
       margin: "3.65%",
     },
@@ -115,7 +121,10 @@ const useStyle = makeStyles((theme) => ({
       display: "inline-block",
       verticalAlign: "top",
       width: "25.4%",
-      margin: "2.734% 2.4% 2.734% 2.4%"
+      marginLeft: "7.2%",
+      marginTop: "2.734%",
+      marginBottom: "2.4%",
+      marginRight:"2.4% "
     }
   }));
 
@@ -139,8 +148,27 @@ export default function SitePage() {
                 { /* Zone of cards */}
                 <div className={classes.cardsDetails}>
                   <SiteCard siteInformation={siteInformation}/>
+                  <SiteCard siteInformation={siteInformation1}/>
+                  <SiteCard siteInformation={siteInformation2}/>
                 </div>
-              </div>
+                { /* Title and datepicker zone */}
+                <div className={classes.informationDesktop}>
+                    <div className={classes.title} style={{paddingTop: "0"}}>
+                      {siteInformation.location}
+                      <div className={classes.address}>
+                          <LocationOnIcon fontSize="inherit" />
+                          { siteInformation ? siteInformation.address : ""} 
+                      </div>
+                      <div className={classes.details}>
+                        <div className={classes.floors}>
+                          { siteInformation ? siteInformation.floors : ""} Floors
+                        </div>
+                        { siteInformation ? siteInformation.desks : ""} Desks
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
               
 
           </ThemeProvider>

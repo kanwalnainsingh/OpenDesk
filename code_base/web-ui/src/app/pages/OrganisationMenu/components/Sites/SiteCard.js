@@ -22,7 +22,7 @@ const BorderLinearProgress = withStyles((theme) => ({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginBottom: "50px",
+        marginBottom: "12.701%",
         borderRadius: "1.25rem",
         overflow: "inherit",
         '& .MuiTypography-h5': {
@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign: "middle",
     },
     iconSite: {
-        width: "27%",
         marginTop: "-7.09%",
     },
     content: {
