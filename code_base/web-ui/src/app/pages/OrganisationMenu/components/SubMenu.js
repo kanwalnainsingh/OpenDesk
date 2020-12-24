@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiAppBar-colorPrimary': {
             backgroundColor: "#407BFF",
         },
-        '& .MuiPaper-elevation': {
+        '& .MuiPaper-elevation4': {
             boxShadow: "none",
         }
     },

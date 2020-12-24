@@ -9,6 +9,7 @@ import Index from '../app/pages/EmployeeMenu/Index'
 import EmployeesPage from "../app/pages/OrganisationMenu/EmployeesPage";
 import NewSite from '../app/pages/NewSite/NewSite'
 import EmployeesPageMobile from "../app/pages/OrganisationMenu/EmployeesPageMobile";
+import SitePage from "../app/pages/OrganisationMenu/SitePage";
 import EmployeeBooking from "../app/pages/EmployeeBooking/EmployeeBooking";
 export const Routes = () => {
   return (
@@ -19,7 +20,8 @@ export const Routes = () => {
         <Redirect exact from="/" to="/wip" />
       }
       <Route path="/home" component={HomeRouter} />
-      <Route path="/organisation" component={AddSite} />
+      {/* <Route path="/organisation" component={AddSite} /> */}
+      <Route path="/organisation" component={SitePage} />
       <Route path="/invitationDesktop" component={EmployeesPage} />
       <Route path="/invitationMobile" component={EmployeesPageMobile} />
 
