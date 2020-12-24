@@ -4,7 +4,7 @@ OpenDesk is an open source project for helping organisation optimize office desk
 We are running at https://www.bookopendesk.com/
 
 ## Why would organisation need OpenDesk?
-As organisation are moving towards the culture of work from home(WFH), and many have decided for permanent WFH options, Organisation would like to reduce the cost of office infrastructure and reduce number of desk space. Open desk will help manage a balance between WFH and WFO culture.
+As organisation are moving towards the culture of work from home, and many have decided for permanent WFH options, Organisation would like to reduce the cost of office infrastructure and reduce number of desk space. Open desk will help manage a balance between WFH and WFO culture.
 
 ## Contribution guide:
 - Fork the github project.
