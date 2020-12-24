@@ -2,16 +2,16 @@ import React from "react";
 import { createMuiTheme, ThemeProvider, makeStyles} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import NavBar from "./components/NavBar";
-import SubMenu from "./components/SubMenu";
-import { toAbsoluteUrl } from "../../utils/utils";
-import SiteCard from "./components/SiteCard";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-
+import { toAbsoluteUrl } from "../../utils/utils";
+// general components
+import NavBar from "./components/NavBar";
 import BackArrow from "./components/BackArrow";
-
-import SiteCardOverview from "./components/SiteCardOverview";
-import AddSiteCard from "./components/AddSiteCard";
+// specific components
+import SubMenu from "./components/Sites/SubMenu";
+import SiteCard from "./components/Sites/SiteCard";
+import SiteCardOverview from "./components/Sites/SiteCardOverview";
+import AddSiteCard from "./components/Sites/AddSiteCard";
 
 const siteInformation = {
   location: "Nefkzi, Manhattan",
@@ -105,11 +105,18 @@ const useStyle = makeStyles((theme) => ({
     floors: {
       display: "inline-block",
       marginRight: "7.34%",
-  },
-  overview:{
-    width: "25.4%",
-    margin: "2.734% 2.4% 2.734% 2.4%"
-  },
+    },
+    overview:{
+      display: "inline-block",
+      width: "25.4%",
+      margin: "2.734% 2.4% 2.734% 2.4%"
+    },
+    cardsDetails: {
+      display: "inline-block",
+      verticalAlign: "top",
+      width: "25.4%",
+      margin: "2.734% 2.4% 2.734% 2.4%"
+    }
   }));
 
 export default function SitePage() {
@@ -121,13 +128,21 @@ export default function SitePage() {
               <CssBaseline />
               <NavBar/>
               <SubMenu />
-              { /* Zone of cards */}
-              <div className={classes.overview}>
-                <SiteCardOverview siteInformation={siteInformation}/>
-                <SiteCardOverview siteInformation={siteInformation1}/>
-                <SiteCardOverview siteInformation={siteInformation2}/>
-                <AddSiteCard />
+              <div>
+                { /* Zone of overview cards */}
+                <div className={classes.overview}>
+                  <SiteCardOverview siteInformation={siteInformation}/>
+                  <SiteCardOverview siteInformation={siteInformation1}/>
+                  <SiteCardOverview siteInformation={siteInformation2}/>
+                  <AddSiteCard />
+                </div>
+                { /* Zone of cards */}
+                <div className={classes.cardsDetails}>
+                  <SiteCard siteInformation={siteInformation}/>
+                </div>
               </div>
+              
+
           </ThemeProvider>
       );
     }

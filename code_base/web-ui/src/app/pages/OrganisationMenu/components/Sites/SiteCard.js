@@ -3,7 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import { toAbsoluteUrl } from "../../../utils/utils";
+import { toAbsoluteUrl } from "../../../../utils/utils";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 const BorderLinearProgress = withStyles((theme) => ({
