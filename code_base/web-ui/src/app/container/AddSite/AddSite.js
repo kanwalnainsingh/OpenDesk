@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Sticky from 'react-sticky-el';
 
 import Aux from '../../HOC/Auxiliary'
@@ -100,6 +99,8 @@ class addSite extends Component {
 
 
         let request = {
+            orgId: "demo-org",
+            companyName: "Demo Corp Limited",
             city: this.state.location,
             sites: sitesArray
         }
