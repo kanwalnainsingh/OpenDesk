@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import { FinishLaterMobile } from './components/FinishLaterMobile';
 import { FinishLaterDesktop } from './components/FinishLaterDesktop';

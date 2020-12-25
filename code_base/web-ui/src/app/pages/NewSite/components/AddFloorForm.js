@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { Button, formatMs, FormControl, Input, makeStyles, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { SiteFormContext } from '../state/SiteFormContext';
 import { Floor } from '../components/Floor';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,10 +30,9 @@ const useStyles = makeStyles((theme) => ({
 
 export const AddFloorForm = () => {
     const classes = useStyles();
-    const width600 = useMediaQuery('(min-width:600px)');
-
-    const [floors, setFloors] = useState({ count: [1] })
-    const [floorDetails, setFloorDetails] = useState([<Floor key={0} id={0} />])
+    const desktop = useMediaQuery('(min-width:600px)');
+    const [floors, setFloors] = useState({ count: [1] });
+    const [floorDetails, setFloorDetails] = useState([<Floor key={0} id={0} />]);
 
     const handleAddFloor = () => {
         let floorArray = [...floors.count]
@@ -45,12 +43,11 @@ export const AddFloorForm = () => {
         for (let i = 0; i < floors.count.length; i++) {
             let displayFloor = [...floorDetails]
             displayFloor.push(<Floor key={floors.count[i]} id={floors.count[i]} />)
-
             setFloorDetails(displayFloor)
         }
     }
 
-    if (width600) {
+    if (desktop) {
         return (
             <div className={classes.root}>
                 <form>

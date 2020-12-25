@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 export const Floor = (props) => {
     const classes = useStyles();
     const { floorInput } = useContext(SiteFormContext);
-    const [floor, setFloor] = floorInput;
+    const [floor] = floorInput;
 
     const onBlurFloor = (e, id) => {
         console.log(floor)

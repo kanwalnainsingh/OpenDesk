@@ -20,7 +20,7 @@ export const FinishLaterMobile = () => {
     const { siteNameInput, locationInput, floorInput } = useContext(SiteFormContext);
     const [siteName] = siteNameInput;
     const [location] = locationInput;
-    const [floor, setFloor] = floorInput;
+    const [floor] = floorInput;
 
     const clickSubmit = () => {
         let floors = []
