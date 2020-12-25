@@ -17,27 +17,39 @@ const useStyles = makeStyles(() => ({
 
 export const FinishLaterMobile = () => {
     const classes = useStyles();
-    const { siteNameInput, locationInput, floorInput, deskInput } = useContext(SiteFormContext);
+    const { siteNameInput, locationInput, floorInput } = useContext(SiteFormContext);
     const [siteName] = siteNameInput;
     const [location] = locationInput;
-    const [floor] = floorInput;
-    const [desk] = deskInput;
+    const [floor, setFloor] = floorInput;
 
     const clickSubmit = () => {
-
-        let sitesArray = []
-        sitesArray.push({
-            name: siteName,
-            location: location,
-            floors: floor
+        let floors = []
+        floor.forEach((f, index) => {
+            if (f.name == undefined) {
+                f.name = ''
+            }
+            if (f.openDesk == undefined) {
+                f.openDesk = ''
+            }
+            if (f.reservedDesk == undefined) {
+                f.reservedDesk = ''
+            }
+            floors.push({
+                floorId: index.toString(),
+                name: f.name,
+                openDesk: f.openDesk,
+                reservedDesk: ''
+            })
         })
 
         let request = {
             orgId: "demo-org",
-            companyName: "Demo Corp Limited",
-            city: location,
-            sites: sitesArray
+            id: "demo-id",
+            name: siteName,
+            location: location,
+            floors: floors
         }
+
         OrganisationService.saveOrganisation(request)
             .then((response) => {
                 console.log(response.data)
@@ -47,7 +59,6 @@ export const FinishLaterMobile = () => {
                 })
             })
         console.log(request)
-        // this.state.id = 2;
     }
 
     return (
