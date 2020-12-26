@@ -147,8 +147,15 @@ const useStyle = makeStyles((theme) => ({
     }
   }));
 
-const clickHandler = function (){ 
+const clickHandler = (e) => { 
   console.log("clicking");
+    e.preventDefault(); 
+    console.log("123")
+    console.log(e.target.style);
+    console.log(e.target.classList); //to change style via css
+    let styles = e.target.style;
+    styles.bottom = "0";
+    console.log(e.target.style.bottom);
     // this.setState({currentPosition: (this.state.currentPosition + 1)%this.state.totalLength})
   }
 
@@ -229,8 +236,8 @@ export default function SitePage() {
               <SiteCard siteInformation={siteInformation}/>
               <SiteCard siteInformation={siteInformation1}/>
             </div>
-            <div className={classes.mobileCalendar} onClick={console.log("hola")}>
-              <CalendarSite disabled={true}/>
+            <div className={classes.mobileCalendar} onClick={clickHandler}>
+              <CalendarSite onClick={clickHandler}/>
             </div>
         </ThemeProvider>
     );
