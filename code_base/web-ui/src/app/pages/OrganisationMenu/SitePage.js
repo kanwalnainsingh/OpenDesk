@@ -198,7 +198,9 @@ export default function SitePage() {
                         { siteInformation ? siteInformation.desks : ""} Desks
                       </div>
                     </div>
-                    <CalendarSite />
+                    <div style={{height: "510px"}}>
+                      <CalendarSite />
+                    </div>
                 </div>
                     
               </div>
@@ -236,7 +238,7 @@ export default function SitePage() {
               <SiteCard siteInformation={siteInformation}/>
               <SiteCard siteInformation={siteInformation1}/>
             </div>
-            <div className={classes.mobileCalendar} onClick={clickHandler}>
+            <div className={classes.mobileCalendar} style={{height: "350px"}}>
               <CalendarSite onClick={clickHandler}/>
             </div>
         </ThemeProvider>
