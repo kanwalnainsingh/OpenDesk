@@ -180,7 +180,6 @@ export default function SitePage() {
                         { siteInformation ? siteInformation.desks : ""} Desks
                       </div>
                     </div>
-
                     <CalendarSite />
                 </div>
                     

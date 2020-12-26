@@ -5,6 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import { toAbsoluteUrl } from "../../../../utils/utils";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
@@ -109,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SiteCard(props) {
   const classes = useStyles();
+  const cellphone = useMediaQuery('(max-width:375px)');
   return (
     <Card className={classes.root}>
         <img
@@ -141,7 +143,7 @@ export default function SiteCard(props) {
                 variant="determinate" 
                 value={ props.siteInformation.booked * 100 / props.siteInformation.desks } 
                 />
-                <div className={classes.textBar}>
+                <div className={classes.textBar} style={ cellphone ? { top: "14%"} : {}}>
                 { Math.floor(props.siteInformation.booked * 100 / props.siteInformation.desks) + "% Booked"} 
                 </div>
             </div>
