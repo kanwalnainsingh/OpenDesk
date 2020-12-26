@@ -109,7 +109,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SiteCard(props) {
   const classes = useStyles();
-  console.log(props);
   return (
     <Card className={classes.root}>
         <img

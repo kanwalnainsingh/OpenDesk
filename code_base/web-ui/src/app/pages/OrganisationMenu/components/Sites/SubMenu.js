@@ -37,12 +37,10 @@ const useStyles = makeStyles((theme) => ({
         marginRight: "3%"
     },
     left:{
-        // display: "flex",
         float: "left",
         width: "49%",
     },
     right: {
-        // display: "flex",
         textAlign: "right",
         float: "right",
         width: "49%",

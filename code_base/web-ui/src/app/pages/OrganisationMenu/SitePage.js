@@ -169,11 +169,11 @@ export default function SitePage() {
                 <div className={classes.informationDesktop}>
                     <div className={classes.title} style={{paddingTop: "0"}}>
                       {siteInformation.location}
-                      <div className={classes.address}>
-                          <LocationOnIcon fontSize="inherit" />
+                      <div className={classes.address} style={{marginTop: "5.775%"}}>
+                          <LocationOnIcon fontSize="inherit"  />
                           { siteInformation ? siteInformation.address : ""} 
                       </div>
-                      <div className={classes.details}>
+                      <div className={classes.details} style={{marginTop: "2.365%", marginBottom: "16.8%"}}>
                         <div className={classes.floors}>
                           { siteInformation ? siteInformation.floors : ""} Floors
                         </div>
