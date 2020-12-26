@@ -12,6 +12,16 @@ import SubMenu from "./components/Sites/SubMenu";
 import SiteCard from "./components/Sites/SiteCard";
 import SiteCardOverview from "./components/Sites/SiteCardOverview";
 import AddSiteCard from "./components/Sites/AddSiteCard";
+// import {
+//   DatePicker,
+//   TimePicker,
+//   DateTimePicker,
+//   MuiPickersUtilsProvider,
+// } from '@material-ui/pickers';
+// import DateFnsUtils from '@date-io/date-fns';
+import CalendarSite from "./components/Sites/CalendarSite";
+
+
 
 const siteInformation = {
   location: "Nefkzi, Manhattan",
@@ -83,7 +93,10 @@ const useStyle = makeStyles((theme) => ({
       display: "inline-block",
       verticalAlign: "top",
       width: "25.4%",
-      margin: "2.734% 2.4% 2.734% 2.4%"
+      marginLeft: "6.067%",
+      marginTop: "2.734%",
+      marginBottom: "2.4%",
+      marginRight:"2.4% "
     },
     sitesZone:{
       margin: "3.65%",
@@ -121,16 +134,17 @@ const useStyle = makeStyles((theme) => ({
       display: "inline-block",
       verticalAlign: "top",
       width: "25.4%",
-      marginLeft: "7.2%",
+      marginLeft: "6%",
       marginTop: "2.734%",
       marginBottom: "2.4%",
       marginRight:"2.4% "
-    }
+    },
   }));
 
 export default function SitePage() {
     const classes = useStyle();
     const desktop = useMediaQuery('(min-width:992px)');
+
     if (desktop) {
       return (
           <ThemeProvider theme={theme}>
@@ -166,11 +180,12 @@ export default function SitePage() {
                         { siteInformation ? siteInformation.desks : ""} Desks
                       </div>
                     </div>
-                  </div>
-                </div>
-                
-              
 
+                    <CalendarSite />
+                </div>
+                    
+              </div>
+                
           </ThemeProvider>
       );
     }

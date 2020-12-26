@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     },
     bar: {
         backgroundColor: "#407BFF",
-        paddingLeft: "5%",
+        padding: "0",
+        marginLeft: "2.4%",
     },
     menuButton: {
         marginRight: theme.spacing(0),
