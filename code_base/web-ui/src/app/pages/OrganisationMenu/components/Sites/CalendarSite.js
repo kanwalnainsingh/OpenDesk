@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
             width: "47%",
             height: "30px",
             '& .MuiButton-label': {
-                justifyContent: "start",
+                // justifyContent: "start",
             }
             
         },
@@ -73,10 +73,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CalendarSite() {
+export default function CalendarSite(props) {
+    console.log(props);
     const classes = useStyles();
     const [date, changeDate] = useState(new Date());
-
     return (
         <div className={classes.root}>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -85,6 +85,7 @@ export default function CalendarSite() {
                     className={classes.datePicker}
                     autoOk
                     // orientation="landscape"
+                    disabled = {props.disabled ? props.disabled : false}
                     variant="static"
                     openTo="date"
                     value={date}

@@ -139,7 +139,18 @@ const useStyle = makeStyles((theme) => ({
       marginBottom: "2.4%",
       marginRight:"2.4% "
     },
+    mobileCalendar: {
+      position: "absolute",
+      margin: "auto",
+      bottom: "-33%",
+      width: "100%",
+    }
   }));
+
+const clickHandler = function (){ 
+  console.log("clicking");
+    // this.setState({currentPosition: (this.state.currentPosition + 1)%this.state.totalLength})
+  }
 
 export default function SitePage() {
     const classes = useStyle();
@@ -217,6 +228,9 @@ export default function SitePage() {
             <div className={classes.sitesZone}>
               <SiteCard siteInformation={siteInformation}/>
               <SiteCard siteInformation={siteInformation1}/>
+            </div>
+            <div className={classes.mobileCalendar} onClick={console.log("hola")}>
+              <CalendarSite disabled={true}/>
             </div>
         </ThemeProvider>
     );

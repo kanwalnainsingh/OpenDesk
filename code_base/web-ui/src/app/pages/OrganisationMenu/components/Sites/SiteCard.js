@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SiteCard(props) {
   const classes = useStyles();
-  const cellphone = useMediaQuery('(max-width:375px)');
+  const cellphone = useMediaQuery('(max-width:387px)');
   return (
     <Card className={classes.root}>
         <img
