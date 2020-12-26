@@ -23,6 +23,7 @@ const BorderLinearProgress = withStyles((theme) => ({
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        height: "169px",
         marginBottom: "12.701%",
         borderRadius: "1.25rem",
         overflow: "inherit",
@@ -88,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
     bar: {
         width: "100%",
         position: "relative",
-        marginTop: "4.085%",
         '& .MuiLinearProgress-root': {
             borderRadius: "0.938rem",
             height: "3.188rem",

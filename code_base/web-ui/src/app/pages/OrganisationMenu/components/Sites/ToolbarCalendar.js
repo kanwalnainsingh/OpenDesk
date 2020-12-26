@@ -28,7 +28,7 @@ export default function ToolbarCalendar(date) {
     const classes = useStyle();
       return (
         <Toolbar className={classes.toolbar}>
-            <div className={classes.date}>
+            <div className={classes.date} id="headerToolbarCalendar">
                 {formatted_date}
             </div>
         </Toolbar>

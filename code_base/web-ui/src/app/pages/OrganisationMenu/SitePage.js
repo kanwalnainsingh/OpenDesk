@@ -100,6 +100,7 @@ const useStyle = makeStyles((theme) => ({
     },
     sitesZone:{
       margin: "3.65%",
+      marginTop: "10.22%"
     },
     back: {
       paddingTop: "3%",
@@ -115,11 +116,13 @@ const useStyle = makeStyles((theme) => ({
     address:{
       fontSize: "0.813rem",
       fontWeight: "500",
+      marginTop: "5.355%",
 
     },
     details: {
       fontSize: "1rem",
       fontWeight: "600",
+      marginTop: "1.706%",
     },
     floors: {
       display: "inline-block",
@@ -142,21 +145,26 @@ const useStyle = makeStyles((theme) => ({
     mobileCalendar: {
       position: "absolute",
       margin: "auto",
-      bottom: "-33%",
+      bottom: "-40%",
       width: "100%",
     }
   }));
 
 const clickHandler = (e) => { 
-  console.log("clicking");
-    e.preventDefault(); 
-    console.log("123")
-    console.log(e.target.style);
-    console.log(e.target.classList); //to change style via css
-    let styles = e.target.style;
-    styles.bottom = "0";
-    console.log(e.target.style.bottom);
-    // this.setState({currentPosition: (this.state.currentPosition + 1)%this.state.totalLength})
+    const calendarSite =document.getElementById('calendarSite');
+    const header = document.getElementById('headerToolbarCalendar');
+    if (e.target === header && calendarSite.contains(e.target)) {
+      console.log(calendarSite.style.height);
+      if(calendarSite.style.bottom === "0.1%") {
+        calendarSite.style.bottom = "-40%";
+        calendarSite.style.height = "350px";
+      }
+      else {
+        // clicked in the header
+        calendarSite.style.bottom = "0.1%";
+        calendarSite.style.height = "510px";
+      }
+    }
   }
 
 export default function SitePage() {
@@ -220,7 +228,7 @@ export default function SitePage() {
               className={classes.points}
               src={toAbsoluteUrl("/media/organization/site/icons/points.svg")}
             />
-            <div className={classes.title}>
+            <div className={classes.title} style={{marginTop: "10.95%", paddingTop: "0"}}>
               {siteInformation.location}
               <div className={classes.address}>
                   <LocationOnIcon fontSize="inherit" />
@@ -237,9 +245,10 @@ export default function SitePage() {
             <div className={classes.sitesZone}>
               <SiteCard siteInformation={siteInformation}/>
               <SiteCard siteInformation={siteInformation1}/>
+              <SiteCard siteInformation={siteInformation2}/>
             </div>
-            <div className={classes.mobileCalendar} style={{height: "350px"}}>
-              <CalendarSite onClick={clickHandler}/>
+            <div id="calendarSite" className={classes.mobileCalendar} style={{height: "350px"}}  onClick={clickHandler}>
+              <CalendarSite/>
             </div>
         </ThemeProvider>
     );
