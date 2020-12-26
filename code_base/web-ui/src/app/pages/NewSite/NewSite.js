@@ -7,7 +7,8 @@ import { SiteNameForm } from './components/SiteNameForm';
 import { LocationForm } from './components/LocationForm';
 import { AddFloorForm } from './components/AddFloorForm';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import logo from './images/Logo.png'
+import logo from './images/Logo.png';
+import { SiteFormProvider } from '../NewSite/state/SiteFormContext';
 
 const theme = createMuiTheme({
     palette: {
@@ -65,42 +66,44 @@ export default function NewSite() {
     if (desktop) {
         return (
             <ThemeProvider theme={theme}>
-                <div className={classes.desktopBackground}>
-                    <div className={classes.desktopRoot}>
-                        <img src={logo} style={{ position: "absolute", top: 30, right: 50 }}></img>
-                        <NewSiteTitle />
-                        <FinishLaterDesktop />
-                    </div>
-                    <div className={classes.desktopSecondary}>
-                        <div className={classes.desktopDivider}>
-                            <SiteNameForm />
-                            <LocationForm />
+                <SiteFormProvider>
+                    <div className={classes.desktopBackground}>
+                        <div className={classes.desktopRoot}>
+                            <img src={logo} style={{ position: "absolute", top: 30, right: 50 }}></img>
+                            <NewSiteTitle />
+                            <FinishLaterDesktop />
                         </div>
-                        <div style={{ marginTop: 15 }}>
-                            <AddFloorForm />
+                        <div className={classes.desktopSecondary}>
+                            <div className={classes.desktopDivider}>
+                                <SiteNameForm />
+                                <LocationForm />
+                            </div>
+                            <div style={{ marginTop: 15 }}>
+                                <AddFloorForm />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </SiteFormProvider>
             </ThemeProvider>
         );
     } else {
         return (
             <ThemeProvider theme={theme}>
-                <div className={classes.mobileBackground}>
-                    <div className={classes.mobileRoot}>
-                        <FinishLaterMobile />
-                        <NewSiteTitle />
-                        <SiteNameForm />
-                        <LocationForm />
+                <SiteFormProvider>
+                    <div className={classes.mobileBackground}>
+                        <div className={classes.mobileRoot}>
+                            <FinishLaterMobile />
+                            <NewSiteTitle />
+                            <SiteNameForm />
+                            <LocationForm />
+                        </div>
+                        <div className={classes.mobileSecondary}>
+                            <AddFloorForm />
+                        </div>
                     </div>
-                    <div className={classes.mobileSecondary}>
-                        <AddFloorForm />
-                    </div>
-                </div>
+                </SiteFormProvider>
             </ThemeProvider>
 
         );
     }
-
-
 };

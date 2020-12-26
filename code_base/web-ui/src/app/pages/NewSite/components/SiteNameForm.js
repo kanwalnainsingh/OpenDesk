@@ -1,6 +1,7 @@
-import React from 'react';
-import { FormControl, Input, InputAdornment, InputLabel, makeStyles } from '@material-ui/core';
-import building from '../images/Building.png'
+import React, { useContext } from 'react';
+import { FormControl, Input, InputAdornment, makeStyles } from '@material-ui/core';
+import building from '../images/Building.png';
+import { SiteFormContext } from '../state/SiteFormContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,10 +25,18 @@ const useStyles = makeStyles((theme) => ({
 
 export const SiteNameForm = () => {
     const classes = useStyles();
+    const { siteNameInput } = useContext(SiteFormContext);
+    const [siteName, setSiteName] = siteNameInput;
+
+    const onChangeSite = (e) => {
+        setSiteName(e.target.value);
+    }
+
     return (
         <div className={classes.root}>
             <FormControl className={classes.margin}>
                 <Input
+                    onChange={(event) => onChangeSite(event)}
                     className={classes.input}
                     id="input-with-icon-adornment"
                     placeholder="Site Name"
