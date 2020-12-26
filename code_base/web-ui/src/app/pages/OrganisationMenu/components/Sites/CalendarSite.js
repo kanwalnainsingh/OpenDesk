@@ -77,8 +77,10 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiPickersCalendarHeader-switchHeader': {
             position: "absolute",
             marginTop: "0",
-            width: "96%",
+            width: "105%",
             bottom: "0",
+            marginLeft: "-5%",
+            marginRight: "-5%",
         },
         '& .MuiPickersBasePicker-container.MuiPickersBasePicker-containerLandscape': {
             height: "100%",
@@ -122,12 +124,12 @@ export default function CalendarSite() {
                     onMonthChange={changeActualMonth}
                     leftArrowIcon = 
                     {
-                        <div>
+                        <div style={{opacity: "0.3"}}>
                             {monthLeftArrow.substr(0,3)}
                         </div>
                     }
                     rightArrowIcon = {
-                        <div>
+                        <div style={{opacity: "0.3"}}>
                             {monthRightArrow.substr(0,3)}
                         </div>
                     } 
