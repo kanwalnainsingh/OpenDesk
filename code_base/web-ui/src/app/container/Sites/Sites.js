@@ -8,7 +8,7 @@ import { BottomMenu } from "../../components/SiteDetails/BottomMenu";
 import AddSite from "../../components/SiteDetails/AddSite";
 
 //uncomment below line to run from mockdata
-//const data = require("../../../Asset/mockData/onboardmock.json");
+const data = require("../../../Asset/mockData/onboardmock.json");
 
 const theme = createMuiTheme({
   palette: {
@@ -98,7 +98,7 @@ class sites extends Component {
       this.countOpenDesk(response.data);
     });
     //uncomment below line to run from mock data
-    //this.state.siteDetails = data;
+    this.state.siteDetails = data;
   }
 
   countOpenDesk = (response) => {
@@ -118,7 +118,7 @@ class sites extends Component {
     }
   };
   render() {
-    //this.state.siteDetails = data;
+    this.state.siteDetails = data;
     console.log(this.state.siteDetails);
     return (
       <ThemeProvider theme={theme}>
