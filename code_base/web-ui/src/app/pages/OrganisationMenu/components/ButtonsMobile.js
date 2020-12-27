@@ -36,13 +36,13 @@ export default function ButtonsMobile() {
         <div className={classes.root}>
             <ButtonGroup className={classes.group}>
                 <IconButton className={classes.buttons}>
-                    <img src={toAbsoluteUrl("/media/employees/icons/menuIconBuilding.svg")}/>
+                    <img src={toAbsoluteUrl("/media/organization/employees/icons/menuIconBuilding.svg")}/>
                 </IconButton>
                 <IconButton className={classes.buttons}>
-                    <img src={toAbsoluteUrl("/media/employees/icons/menuIconEmployee.svg")}/>
+                    <img src={toAbsoluteUrl("/media/organization/employees/icons/menuIconEmployee.svg")}/>
                 </IconButton>
                 <IconButton className={classes.buttons}>
-                    <img src={toAbsoluteUrl("/media/employees/icons/menuIconKey.svg")}/>
+                    <img src={toAbsoluteUrl("/media/organization/employees/icons/menuIconKey.svg")}/>
                 </IconButton>
             </ButtonGroup>
 

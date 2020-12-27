@@ -17,7 +17,7 @@ export default function BackArrow() {
       return (
         <Link to ='/organisation' className={classes.link}>
         <img
-            src={toAbsoluteUrl("/media/employees/icons/backArrow.svg")}
+            src={toAbsoluteUrl("/media/organization/employees/icons/backArrow.svg")}
         />
         </Link>
     );
