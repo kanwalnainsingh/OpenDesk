@@ -1,9 +1,14 @@
 spring:
   application.name: organisation-service
-  cloud.kubernetes.reload.enabled: true
+  cloud.kubernetes.reload.enabled: false
   redis:
     host: redis-service
     port: 6379
+  rabbitmq:
+   host: rabbitmq
+   port: 5672
+   username: guest
+   password: guest
 server.port: 8084
 management:
   endpoint:
@@ -16,7 +21,7 @@ management:
 ribbon:
   http:
     client:
-      enabled: true
+      enabled: false
 server.servlet.context-path: /api/organisation-service
 client:
   api:
