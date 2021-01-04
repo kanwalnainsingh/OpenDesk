@@ -107,6 +107,7 @@ public class DeskController {
         return deskService.addDesk(Desk);
     }
 
+
     @PostMapping("/availability")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Desk checkAvailability(@RequestBody Booking booking) {
@@ -120,11 +121,13 @@ public class DeskController {
             @ApiResponse(responseCode = "204", description = "No Content")
     }
     )
+
     public ResponseEntity<List<Desk>> persistDesks(@RequestBody Organisation organisation) {
         List<Desk> desks = deskService.persistDesks(organisation);
         ResponseEntity.BodyBuilder responseEntityBuilder = buildResponseEntity(desks);
         return responseEntityBuilder.body(desks);
     }
+
 
     /**
      *
