@@ -48,7 +48,7 @@ export const FinishLaterDesktop = () => {
             floors: floors
         }
 
-        OrganisationService.saveOrganisation(request)
+        OrganisationService.saveSite(request)
             .then((response) => {
                 console.log(response.data)
                 let id = response.data.orgId;
