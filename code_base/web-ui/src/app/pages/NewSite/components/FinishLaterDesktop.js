@@ -42,7 +42,6 @@ export const FinishLaterDesktop = () => {
 
         let request = {
             orgId: "demo-org",
-            id: "demo-id",
             name: siteName,
             location: location,
             floors: floors
