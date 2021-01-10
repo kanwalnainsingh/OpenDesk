@@ -30,6 +30,7 @@ import React from 'react';
      padding-left: 31px;
      color: #FFFFFF;
      font-size: 18px;
+     font-weight: 600;
  `;
 
  const BookCard = styled(Card)`
@@ -49,12 +50,14 @@ import React from 'react';
 
  const BoxTitle = styled(Typography)`
      font-size: 18px;
+     font-weight: 600;
  `;
 
  const BoxSubtitle = styled(Typography)`
      font-size: 12px;
      color: rgba(38, 50, 56, .5);
      font-weight: 600;
+     letter-spacing: 0.16px;
  `;
 
  export const MakeBooking = () => {
