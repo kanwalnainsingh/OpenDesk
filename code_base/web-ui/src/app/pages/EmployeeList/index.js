@@ -8,7 +8,7 @@ import SmallCard from './components/SmallCard';
 import Calendar from './components/Calendar';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
-
+import CustomIcon from './components/icons/CustomIcon';
 import BlueCard from './components/BlueCard';
 
 import { MakeBooking } from './components/MakeBooking';
@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
         },
         iconActive: {
             color: "white",
+            fill: "white",
             background: "#407BFF",
             borderRadius: "5px",
             padding: 5,
@@ -104,14 +105,13 @@ const EmployeeList = () => {
                     <Typography className={classes.title}>Your bookings</Typography>
                 </Container>
                 <Container className={classes.icons}>
-                    <SvgIcon className={!listBig?classes.icon:classes.iconActive} 
+                    <CustomIcon className={!listBig?classes.icon:classes.iconActive} 
                                         onClick={() => {setListBig(true); 
                                         setListSmall(false); 
-                                        setCalendar(false)}}>
-                                            <path fill="currentColor" d="M15 7V16H10V7H15M21 5H18V18H21V5M17 5H8V18H17V5M7 5H4V18H7V5Z" />
-                                        </SvgIcon>  
-                    
-
+                                        setCalendar(false)}} 
+                                        fill="currentColor" />
+                                           
+                
                     <FormatListBulletedIcon className={!listSmall?classes.icon:classes.iconActive} 
                                             onClick={() => {setListBig(false); 
                                             setListSmall(true); 

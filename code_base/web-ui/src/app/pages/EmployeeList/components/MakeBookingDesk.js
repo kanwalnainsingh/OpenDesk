@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const MakeBookingDesk = () => {
+export const MakeBookingDesk = () => {
     const classes = useStyles();
 
     return(
@@ -35,7 +35,5 @@ const MakeBookingDesk = () => {
                 </Container>
             </Container>
         </>
-    )
-}
-
-export default MakeBookingDesk;
+    );
+};
