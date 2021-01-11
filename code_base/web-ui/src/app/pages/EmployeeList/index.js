@@ -148,7 +148,7 @@ const EmployeeList = () => {
                     )}
                     {
                         calendar && (
-                            <Calendar />
+                            <Calendar fullWidth={true}/>
                         )
                     }
                 </Grid>
