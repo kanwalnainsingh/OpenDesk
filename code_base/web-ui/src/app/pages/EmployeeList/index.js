@@ -18,14 +18,15 @@ const small = [1,2,3,4,5,6]
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      fontFamily: "Popins",
+      fontFamily: "Poppins",
     },
     gridContainer: {
         padding: 0
     },
     title: {
         fontSize: 18,
-        fontWeight: 600
+        fontFamily: "Poppins",
+        fontWeight: 500
     },
     headerContainer: {
         background: "#407BFF",
@@ -36,13 +37,11 @@ const useStyles = makeStyles((theme) => ({
     header: {
         display: "flex",
         justifyContent: "space-between",
-        padding: "20px 15px",
+        padding: "10px 15px",
         background: "white",
         borderRadius: "40px 40px 0 0"
     },
-    grid: {
-        padding: "25px 0",
-    },
+   
     gridBigCard: {
         display: "flex",
         overflow: "scroll",
@@ -102,7 +101,7 @@ const EmployeeList = () => {
             <Container className={classes.headerContainer}>
             <Grid className={classes.header}>
                 <Container>
-                    <Typography className={classes.title}>Your bookings</Typography>
+                    <p className={classes.title}>Your Bookings</p>
                 </Container>
                 <Container className={classes.icons}>
                     <CustomIcon className={!listBig?classes.icon:classes.iconActive} 

@@ -24,9 +24,12 @@
      flex-direction: row;
      justify-content: center;
      margin: 27px 0 27px 0;
+     font-family: 'Poppins';
  `;
 
  const MakeBookingTitle = styled(Typography)`
+     font-family: 'Poppins';
+     font-style: normal;
      padding-left: 31px;
      color: #FFFFFF;
      font-size: 18px;
