@@ -26,8 +26,8 @@ const useStyles = makeStyles({
         background: "#407BFF",
         color: "#F2F2F2",
         fontSize: "large",
-        margin: "0 auto"
-
+        margin: "0 auto",
+        boxShadow: "0px 1px 10px 0px rgb(0,0,0, 0.25)"
     },
     bullet: {
       display: 'absolute',
@@ -57,14 +57,14 @@ const useStyles = makeStyles({
     grid: {
         textAlign: 'center',
         marginTop: 5
-    }
+    },
   });
 
 const BigCard = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
     return(
+        <>
         <Card className={classes.cardBlue} >
             <Card className={classes.root}>
             <CardContent>
@@ -101,7 +101,8 @@ const BigCard = () => {
                 </Grid>
             </Grid>
         </Card>
-    )
-}
+        </>
+    );
+};
 
 export default BigCard;
