@@ -62,6 +62,10 @@ import React, { useState} from "react";
          '& .MuiPickersDay-hidden': {
              opacity: "20%"
         },
+        '& .MuiPickersDay-daySelected': {
+            width: "28px",
+            height: "28px"
+         },
          '& .MuiPickersDay-daySelected:hover': {
             background: "#407BFF",
             color: "white",

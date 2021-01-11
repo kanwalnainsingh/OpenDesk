@@ -18,18 +18,21 @@ import React from "react";
          width: "100%",
          textAlign: "center",
          alignItems: "center",
+         color: "black",
+         fontFamily: "Poppins",
+         fontWeight: 500
      }
    }));
 
  export default function ToolbarCalendar(date) {
      const dateFormat= new Date(date);
-     const month = dateFormat.toLocaleString('default', { month: 'long' });
+     const month = dateFormat.toLocaleString('default', { month: 'short' });
      const formatted_date = dateFormat.getDate() + " " + month + ", " + (dateFormat.getFullYear())
      const classes = useStyle();
        return (
          <Toolbar className={classes.toolbar}>
              <div className={classes.date} id="headerToolbarCalendar">
-                 {formatted_date}
+                 {month}
              </div>
          </Toolbar>
      );
