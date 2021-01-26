@@ -3,6 +3,7 @@ package github.opendesk.deskservice.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class DeskConfig {
@@ -13,5 +14,10 @@ public class DeskConfig {
 
         jedisConnectionFactory.afterPropertiesSet();
         return jedisConnectionFactory;
+    }
+
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

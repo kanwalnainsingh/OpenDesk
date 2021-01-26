@@ -5,6 +5,7 @@ import github.opendesk.organisationservice.service.SiteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,5 +22,12 @@ public class SiteController {
     @GetMapping("/site/{siteId}")
     public Site getSite(@PathVariable String siteId){
         return siteService.getSite(siteId);
+    }
+
+
+    @DeleteMapping("/site/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteDesk(@PathVariable("id") String SiteId) {
+        siteService.deleteSite(SiteId);
     }
 }

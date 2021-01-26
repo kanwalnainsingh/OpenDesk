@@ -2,6 +2,7 @@ package github.opendesk.deskservice.service;
 
 import github.opendesk.deskservice.converter.DeskConverter;
 import github.opendesk.deskservice.dao.DeskDao;
+import github.opendesk.deskservice.model.Booking;
 import github.opendesk.deskservice.model.Floor;
 import github.opendesk.deskservice.model.Organisation;
 import github.opendesk.deskservice.model.Site;
@@ -13,6 +14,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -43,6 +45,7 @@ public class DeskServiceImpl implements DeskService {
 
     @Override
     public Desk updateDesk(Desk desk) {
+        //ToDO: add desk and update desk seems to be same code, will have to merge it to one
         DeskDao bookingDao = deskRepository.save(DeskConverter.deskModelToDeskDao.apply(desk));
         return DeskConverter.deskDaoToDeskModel.apply(bookingDao);
     }
@@ -70,6 +73,31 @@ public class DeskServiceImpl implements DeskService {
         return deskDaoList.stream().map(DeskConverter.deskDaoToDeskModel).collect(Collectors.toList());
     }
 
+    @Override
+    public Desk checkAvailability(List bookings, Booking booking) {
+        List bookingList = (List) bookings
+                .stream()
+                .filter(b -> b.equals(booking))
+                .collect(Collectors.toList());
+
+        List<Desk> desks = getDesksByOrgIdSiteIdAndFloorId(booking.getOrgId(), booking.getSiteId(), booking.getFloorId());
+
+        List availableDesks = new ArrayList<>();
+
+        for (Booking b : (List<Booking>) bookingList) {
+            for (Desk d : desks) {
+                if (!(b.getDeskId().equals(d.getId()))) {
+                    availableDesks.add(d);
+                }
+
+            }
+        }
+        if (availableDesks.isEmpty()) {
+            return null;
+        } else {
+            return (Desk) availableDesks.get(0);
+        }
+    }
     /**
      * @param organisation
      * @return
@@ -105,10 +133,10 @@ public class DeskServiceImpl implements DeskService {
         IntStream.rangeClosed(1, isOpenDesk ? Integer.parseInt(floor.getOpenDesk()) :
                 Integer.parseInt(floor.getReservedDesk())).forEach(deskNo -> {
             persistDesks.add(DeskDao.builder()
-                    .id(orgId + siteId + floor.getFloorId() + "_" + deskNo)
-                    .seatSerial(floor.getName() + "_" + deskNo)
+                    .id(orgId + siteId + floor.getFloorId() + (isOpenDesk ? "_OP" : "_RE") + "_" + deskNo)
+                    .seatSerial(floor.getName() + (isOpenDesk ? "_OP" : "_RE") + "_" + deskNo)
                     .isReserved(isOpenDesk ? "N" : "Y")
-                    .isAvailable(isOpenDesk ? "A": "NA")
+                    .isAvailable(isOpenDesk ? "A" : "NA")
                     .orgId(orgId)
                     .siteId(siteId)
                     .floorId(floor.getFloorId())
@@ -128,4 +156,3 @@ public class DeskServiceImpl implements DeskService {
         return modelDesks;
     }
 }
-

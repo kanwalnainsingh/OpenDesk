@@ -10,6 +10,9 @@ class OrganisationService {
     saveOrganisation(data) {
         return axios.post(rootUrl+serviceBase+'/organisation', data)
     }
+    saveSite(data) {
+            return axios.post(rootUrl+serviceBase+'/site', data)
+    }
 }
 
 export default new OrganisationService();
