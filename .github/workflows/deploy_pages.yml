@@ -31,6 +31,7 @@ jobs:
         working-directory: code_base/web-ui
         env:
           REACT_APP_STAGE: prod
+          CI: false
         run: npm run build
 
       - name: Deploy to GitHub Pages
