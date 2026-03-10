@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'code_base/web-ui/**'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: code_base/web-ui/package-lock.json
+
+      - name: Install dependencies
+        working-directory: code_base/web-ui
+        run: npm ci --legacy-peer-deps
+
+      - name: Build
+        working-directory: code_base/web-ui
+        env:
+          REACT_APP_STAGE: prod
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        working-directory: code_base/web-ui
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npx gh-pages -d build --dotfiles
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
