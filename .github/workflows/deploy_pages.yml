@@ -19,13 +19,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: code_base/web-ui/package-lock.json
+          node-version: '16'
 
       - name: Install dependencies
         working-directory: code_base/web-ui
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Build
         working-directory: code_base/web-ui
