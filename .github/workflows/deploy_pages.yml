@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'code_base/web-ui/**'
+      - '.github/workflows/deploy_pages.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        working-directory: code_base/web-ui
+        run: npm install --legacy-peer-deps
+
+      - name: Build
+        working-directory: code_base/web-ui
+        env:
+          REACT_APP_STAGE: prod
+          CI: false
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        working-directory: code_base/web-ui
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kanwalnainsingh/OpenDesk.git
+          npx gh-pages -d build --dotfiles

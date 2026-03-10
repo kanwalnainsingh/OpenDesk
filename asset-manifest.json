@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/OpenDesk/static/css/main.f3fdbbe0.chunk.css",
+    "main.js": "/OpenDesk/static/js/main.fc96254c.chunk.js",
+    "main.js.map": "/OpenDesk/static/js/main.fc96254c.chunk.js.map",
+    "runtime-main.js": "/OpenDesk/static/js/runtime-main.f7762a03.js",
+    "runtime-main.js.map": "/OpenDesk/static/js/runtime-main.f7762a03.js.map",
+    "static/js/2.7881b934.chunk.js": "/OpenDesk/static/js/2.7881b934.chunk.js",
+    "static/js/2.7881b934.chunk.js.map": "/OpenDesk/static/js/2.7881b934.chunk.js.map",
+    "index.html": "/OpenDesk/index.html",
+    "static/css/main.f3fdbbe0.chunk.css.map": "/OpenDesk/static/css/main.f3fdbbe0.chunk.css.map",
+    "static/js/2.7881b934.chunk.js.LICENSE.txt": "/OpenDesk/static/js/2.7881b934.chunk.js.LICENSE.txt",
+    "static/media/Group66.9b310adb.svg": "/OpenDesk/static/media/Group66.9b310adb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f7762a03.js",
+    "static/js/2.7881b934.chunk.js",
+    "static/css/main.f3fdbbe0.chunk.css",
+    "static/js/main.fc96254c.chunk.js"
+  ]
+}
