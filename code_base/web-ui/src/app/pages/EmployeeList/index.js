@@ -130,7 +130,7 @@ const EmployeeList = () => {
                     {listBig && (
                         <Grid className={classes.gridBigCard}>
                             {small.map(x => (
-                                <Grid className={classes.cardContainer}>
+                                <Grid key={x} className={classes.cardContainer}>
                                     <BigCard item xs={8} />
                                 </Grid>
                             ))}
@@ -139,7 +139,7 @@ const EmployeeList = () => {
                     {listSmall && (
                         <Grid>
                            {small.map(x => (
-                                <Grid className={classes.smallCardContainer}>
+                                <Grid key={x} className={classes.smallCardContainer}>
                                     <SmallCard item xs={8} />
                                 </Grid>
                            ))}

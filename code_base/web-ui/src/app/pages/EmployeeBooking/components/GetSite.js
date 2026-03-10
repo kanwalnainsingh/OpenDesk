@@ -91,7 +91,7 @@ export function GetSite() {
             <GridList cellHeight={160} className={classes.gridList}>
                 <ToggleButtonGroup exclusive value={site} onChange={handleSite} aria-label="site" cols={3} className={classes.buttonGroup}>
                     {sites.map((mockSite, index) => (
-                        <ToggleButton value={mockSite} aria-label={mockSite} cols={2} onClick={handleNext}>
+                        <ToggleButton key={index} value={mockSite} aria-label={mockSite} cols={2} onClick={handleNext}>
                             {mockSite}
                         </ToggleButton>
                     ))}

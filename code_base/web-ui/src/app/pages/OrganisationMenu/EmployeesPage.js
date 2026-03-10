@@ -126,7 +126,7 @@ export default function EmployeesPage() {
                 1672 Employees Invited 
               </div>
               <div className={classes.labels}> 
-              <Link to ='/invitation' className={classes.link}>Invite Employees Check </Link>
+              <Link to='/invitationMobile' className={classes.link}>Invite Employees Check </Link>
                 <br/> Employees List 
               </div> 
             </div>

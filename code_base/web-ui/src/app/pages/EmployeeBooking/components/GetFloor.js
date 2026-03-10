@@ -67,7 +67,7 @@ export const GetFloor = () => {
             <Box className={classes.root}>
                 <ToggleButtonGroup className={classes.buttonGroup} exclusive value={floor} onChange={handleFloor} aria-label="floor number">
                     {mockFloors.map((mock) =>
-                        <NumberButton onClick={handleNext} value={mock} aria-label={mock}>{mock}</NumberButton>
+                        <NumberButton key={mock} onClick={handleNext} value={mock} aria-label={mock}>{mock}</NumberButton>
                     )}
                 </ToggleButtonGroup>
             </Box>

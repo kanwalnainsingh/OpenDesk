@@ -108,6 +108,8 @@ function getStepContent(step) {
       return <GetDate />;
     case 3:
       return <GetDesk />;
+    default:
+      return null;
   }
 }
 

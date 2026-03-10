@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Link } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { toAbsoluteUrl } from "../../../../../utils/utils";
 
 const useStyles = makeStyles((theme) => ({
@@ -8,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "#000",
     paddingLeft: theme.spacing(2),
+    textDecoration: "none",
+    cursor: "pointer",
   },
 }));
 
 export default function Nav() {
   const classes = useStyles();
-
-  const preventDefault = (event) => event.preventDefault();
 
   return (
     <AppBar
@@ -31,13 +32,13 @@ export default function Nav() {
           />
         </div>
         <div>
-          <Link className={classes.navItem} href="#" onClick={preventDefault}>
+          <Link className={classes.navItem} to="/home/howitworks">
             See How It Works
           </Link>
-          <Link className={classes.navItem} href="#" onClick={preventDefault}>
+          <Link className={classes.navItem} to="/home/contactus">
             Contact Us
           </Link>
-          <Link className={classes.navItem} href="#" onClick={preventDefault}>
+          <Link className={classes.navItem} to="/home/about">
             About Us
           </Link>
         </div>

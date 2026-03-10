@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import history from '../../../../history';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -92,6 +93,12 @@ const useStyles = makeStyles((theme) => ({
     width: 411,
   }
 }));
+
+const navRoutes = {
+  'View all bookings': '/employee',
+  'Calendar view': '/employee',
+  'Edit profile': '/employeemenu',
+};
 
 const navList = [
   {
@@ -236,6 +243,7 @@ export default function SideDrawer() {
             <ListItem
               button key={option.text}
               aria-label={option.text}
+              onClick={() => navRoutes[option.text] && history.push(navRoutes[option.text])}
               style={{ paddingLeft: 0,
                        paddingBottom: 10,
                        direction: "ltr" }}>
