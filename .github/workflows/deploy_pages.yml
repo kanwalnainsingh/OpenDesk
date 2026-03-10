@@ -1,11 +1,13 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - 'code_base/web-ui/**'
+      - '.github/workflows/deploy_pages.yml'
 
 permissions:
   contents: write
